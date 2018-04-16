@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <?php include 'inc/essential.php'; ?>
+  </head>
+  <body>
+    <?php include 'inc/modal.php'; ?>
+    <?php include 'inc/alert.php'; ?>
+    <?php include 'inc/upload.php'; ?>
+    <div class="wrapper">
+      <?php include 'inc/navbar.php' ?>
+      <div class="main-panel">
+        <nav class="navbar navbar-transparent navbar-absolute">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#"> Administrator </a>
+            </div>
+            <div class="collapse navbar-collapse">
+              <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    <i class="material-icons">person</i>
+                    <p class="hidden-lg hidden-md">Notifications</p> Akun
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li>
+                      <a href="#">
+                        <i class="material-icons">power_settings_new</i>
+                        Keluar
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        <div class="content">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-12">
+                <h2><i class="material-icons">pan_tool</i> Selamat Datang, <b style="color:purple">User</b>!</h2>
+              </div>
+              <div class="col-md-4">
+                <img src="https://www.coolheadtech.com/hs-fs/hub/189007/file-526634248-png/google-apps-admin-panel-icon.png?t=1522945830559&width=237&name=google-apps-admin-panel-icon.png" class="img-responsive pp_image">
+              </div>
+              <div class="col-md-3">
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <?php
+        include 'inc/footer.php';
+        ?>
+      </div>
+    </div>
+  </body>
+  <!--   Core JS Files   -->
+  <script src="assets/js/jquery-3.2.1.min.js" type="text/javascript"></script>
+  <script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
+  <script src="assets/js/material.min.js" type="text/javascript"></script>
+  <!--  Charts Plugin -->
+  <script src="assets/js/chartist.min.js"></script>
+  <!--  Dynamic Elements plugin -->
+  <script src="assets/js/arrive.min.js"></script>
+  <!--  PerfectScrollbar Library -->
+  <script src="assets/js/perfect-scrollbar.jquery.min.js"></script>
+  <!--  Notifications Plugin    -->
+  <script src="assets/js/bootstrap-notify.js"></script>
+  <!-- Material Dashboard javascript methods -->
+  <script src="assets/js/material-dashboard.js?v=1.2.0"></script>
+  <!-- Material Dashboard DEMO methods, don't include it in your project! -->
+  <script src="assets/js/demo.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+    
+        // Javascript method's body can be found in assets/js/demos.js
+        demo.initDashboardPageCharts();
+    
+    });
+  </script>
+  
+  <script>
+    $(document).ready(function(){
+      //Init classes
+      var http = new HtRequest();
+      var modal = new Modal();
+      //Functions
+      $(".ajax-call").click(function(){
+        var call = $(this).attr("atr-type");
+        modal.triggerModal("open","");
+        if(call === "profil")
+        {
+          http.htGet("reqs/profil.php",".md-content");
+          modal.triggerModal("close");
+          modal.triggerModal("open","PROFIL MAHASISWA");
+        }
+        else if(call === "status")
+        {
+          http.htGet("reqs/status.php",".md-content");
+          modal.triggerModal("close");
+          modal.triggerModal("open","STATUS MAGANG");
+        }
+        else if(call === "sk")
+        {
+          http.htGet("reqs/sk.php",".md-content");
+          modal.triggerModal("close");
+          modal.triggerModal("open","SYARAT & KETENTUAN MAGANG");
+        }
+        else if(call === "instansi")
+        {
+          http.htGet("reqs/instance.php",".md-content");
+          modal.triggerModal("close");
+          modal.triggerModal("open","INSTANSI");
+        }
+        else
+        {
+          http.htError();
+        }
+      });
+    });
+  </script>
+</html>
+

@@ -1,0 +1,82 @@
+<style>
+  .status-head
+  {
+    font-weight:bold;
+  }
+  
+  .data-type
+  {
+    width:30%;
+    float:left;
+    box-sizing:border-box;
+    padding:5px;
+    border-bottom:2px;
+    margin:0;
+  }
+  
+  .data-content
+  {
+    font-weight: bold;
+    width:70%;
+    float:left;
+    margin:0;
+    box-sizing:border-box;
+    padding:5px;
+    text-transform: uppercase;
+  }
+  
+  .data-status
+  {
+    float:left;
+    box-sizing:border-box;
+    width:100%;
+    font-weight:bold;
+    margin-top:10px;
+  }
+  
+  .act-wrapper
+  {
+    float:left;
+    box-sizing:border-box;
+    width:100%;
+    padding:10px;
+  }
+  
+  .ul-data > li
+  {
+    margin-top:30px;
+    font-size:18px;
+    text-transform: capitalize;
+    line-height:30px;
+  }
+</style>
+<div class="col-md-12" style="padding-bottom:50px;">
+  <h3 class="status-head">Informasi</h3>
+  <ul class="ul-data">
+    <li>MATA KULIAH MAGANG SEBAGAI ALTERNATIF UNTUK MENGGANTIKAN MATA KULIAH KKN DENGAN BOBOT SKS TOTAL 4 SKS DAN DURASI PELAKSANAAN SELAMA 2 BULAN.</li>
+    <li>BAGI MAHASISWA YANG MENGONTRAK MAGANG BERSAMAAN DENGAN MATA KULIAH TATAP MUKA, MAKA MAGANG HARUS DILAKSANAKAN DI LUAR JADWAL PERKULIAHAN (DI AWAL ATAU AKHIR SEMESTER). UNTUK MATA KULIAH TATAP MUKA, MAHASISWA TETAP DIWAJIBKAN HADIR MINIMAL 75% DARI TOTAL KEHADIRAN DOSEN.</li>
+    <li>BAGI MAHASISWA YANG MENGONTRAK MAGANG TIDAK BERSAMAN DENGAN MATA KULIAH TATAP MUKA, MAKA PELAKSANAAN MAGANG DAPAT DILAKSANAKAN SEPANJANG SEMESTER. </li>
+    <li>MAHASISWA DAPAT MENGONTRAK MAGANG DAN SKRIPSI SECARA BERSAMAAN MULAI SEMESTER GANJIL 2015/2016.</li>
+    <li>MAGANG DAPAT DILAKSANAKAN SEBELUM JADWAL PENGISIAN KRS GANJIL 2015/2016.</li>
+  </ul>
+  <h3 class="status-head">Prosedur</h3>
+  <ul class="ul-data">
+    <li>MAHASISWA MENGHUBUNGI INSTANSI TEMPAT MAGANG SECARA INFORMAL UNTUK MENGETAHUI APAKAH BISA MELAKSANAKAN MAGANG DI INSTANSI TERSEBUT.</li>
+    <li>MAHASISWA MENGURUS PERSYARATAN ADMINISTRASI MAGANG.</li>
+    <li>MAHASISWA MENGIRIMKAN SURAT PENGANTAR MAGANG BESERTA PROPOSAL MAGANG KE INSTANSI/PERUSAHAAN YANG DITUJU.</li>
+    <li>APABILA MAHASISWA DITERIMA MAGANG OLEH INSTANSI YANG DITUJU, MAHASISWA HARUS MELAPORKAN KE TU FAKULTAS DENGAN MENUNJUKKAN SURAT BALASAN PENERIMAAN MAGANG DARI INSTANSI YANG DITUJU.</li>
+    <li>SEBELUM PELAKSANAAN MAGANG, MAHASISWA AKAN MENDAPAT PEMBEKALAN.</li>
+    <li>SELAMA MAGANG MAHASISWA HARUS MENGISI LOGBOOK (FORMULIR DAPAT DIMINTA DI PRODI ATAU TU FAKULTAS).</li>
+    <li>DOSEN PEMBIMBING MAGANG AKAN DITENTUKAN OLEH PRODI.</li>
+    <li>MAHASISWA HARUS MENYERAHKAN LAPORAN MAGANG PADA AKHIR PELAKSANAAN MAGANG UNTUK DISEMINARKAN.</li>
+  </ul>
+  <h3 class="status-head">Syarat Administratif</h3>
+  <ul class="ul-data">
+    <li>LULUS MATA KULIAH TATAP MUKA MINIMAL 120 SKS (KATEGORI LULUS ADALAH NILAI C KE ATAS) DENGAN MENYERAHKAN BUKTI BERUPA FOTOKOPI KHS ATAU TRANSKRIP.</li>
+    <li>MEMBUAT PROPOSAL RINGKAS MENGENAI USULAN TOPIK MAGANG.</li>
+    <li>MENGISI FORMULIR MAGANG YANG DISETUJUI OLEH KETUA PRODI (FORMULIR DAPAT DIMINTA DI PRODI ATAU TU FAKULTAS).</li>
+    <li>BERKAS A,B, DAN C YANG TELAH LENGKAP DISERAHKAN KE TU UNTUK DIBUATKAN SURAT PENGANTAR MAGANG DARI FAKULTAS UNTUK DIKIRIMKAN KE INSTANSI/PERUSAHAAN YANG DITUJU.</li>
+  </ul>
+  <h3 class="status-head">Sumber</h3>
+  <h5><a class="btn btn-primary" href="http://edisaputra.staff.unja.ac.id/2016/06/08/informasi-magang-dan-skripsi/" target="_blank">Informasi Magang oleh Bapak Edi Saputra</a></h5>
+</div>
