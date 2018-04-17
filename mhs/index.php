@@ -34,7 +34,7 @@
                   </a>
                   <ul class="dropdown-menu">
                     <li>
-                      <a href="#">
+                      <a href="../action/logout.php" class="btn btn-default" style="width:100%;">
                         <i class="material-icons">power_settings_new</i>
                         Keluar
                       </a>
