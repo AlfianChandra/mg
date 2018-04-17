@@ -43,11 +43,11 @@
   }
 </style>
 <div class="col-md-12">
-  <h3 class="status-head">Status Kualifikasi Magang</h3>
-  <h5 class="data-type">Nama</h5><h5 class="data-content">Alfian Chandra</h5>
-  <h5 class="data-type">Total SKS</h5><h5 class="data-content">110 SKS</h5>
-  <h5 class="data-type">IPK</h5><h5 class="data-content">2,69</h5>
-  <h5 class="data-type">Semester</h5><h5 class="data-content">6 (GENAP)</h5>
+  <h3 class="status-head">Status Kualifikasi Magang</h3><?php require_once '../../core/Mahasiswa.php'; ?>
+  <h5 class="data-type">Nama</h5><h5 class="data-content"> : <?= $mahasiswa->nama ?></h5>
+  <h5 class="data-type">Total SKS</h5><h5 class="data-content"> : <?= $mahasiswa->sks ?> SKS</h5>
+  <h5 class="data-type">IPK</h5><h5 class="data-content"> : <?= $mahasiswa->ipk ?></h5>
+  <h5 class="data-type">Semester</h5><h5 class="data-content"> : <?= $mahasiswa->semester ?></h5>
   <div class="alert alert-success data-status">Anda Terkualifikasi untuk melaksanakan Magang. Silahkan persiapkan Persyaratan Magang Anda.</div>
 </div>
 
