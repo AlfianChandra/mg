@@ -52,7 +52,7 @@ if($_POST)
 <div class="col-md-12">
   <button type='button' class='btn btn-default backbtn'>Kembali</button>
   <button type='button' class='btn btn-danger'>Hapus</button>
-  <button type='button' class='btn btn-warning'>Edit</button>
+  <button type='button' class='btn btn-info'>Edit</button>
 </div>
 
 <script>
