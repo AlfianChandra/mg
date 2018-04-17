@@ -31,7 +31,7 @@
     <div class="limiter">
       <div class="container-login100" style='height:100px;'>
         <div class="wrap-login100">
-          <form class="login100-form">
+          <form class="login100-form" method="POST" action="../action/login.php">
             <span class="login100-form-title p-b-34">
             ADMINISTRATOR AUTH
             </span>
@@ -44,9 +44,7 @@
               <span class="focus-input100"></span>
             </div>
             <div class="container-login100-form-btn">
-              <button class="login100-form-btn">
-              Sign in
-              </button>
+              <input type="submit" class="login100-form-btn" value="Sign in">
             </div>
           </form>
           <div class="login100-more">
