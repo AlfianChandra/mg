@@ -230,3 +230,33 @@ class UploadSys
     }
   }
 }
+
+class SideBar
+{
+  playSidebar(cmd,title)
+  {
+    if(cmd === "close")
+    {
+      $(".side-bar").css("width","0%");
+      $(".side-bar").css("opacity","0");
+      $(".side-close").fadeOut(500);
+    }
+    else if(cmd === "open")
+    {
+      $(".side-bar").css("width","30%");
+      $(".side-bar").css("opacity","1");
+      $(".side-title").html(title);
+      $(".side-close").fadeIn(500);
+      
+      $(".side-dismiss").click(function(){
+        $(".side-bar").css("width","0%");
+        $(".side-bar").css("opacity","0");
+        $(".side-close").fadeOut(500);
+      });
+    }
+    else
+    {
+      console.log("Unknown Command");
+    }
+  }
+}
