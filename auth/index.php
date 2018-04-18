@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <?php 
+        require_once '../core/Auth.php';
+        $auth->isLogin();
+     ?>
     <title>INTERNAPP SYSTEM GATEWAY</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
