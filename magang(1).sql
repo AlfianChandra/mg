@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 17 Apr 2018 pada 14.44
+-- Generation Time: 18 Apr 2018 pada 18.15
 -- Versi Server: 10.1.10-MariaDB
 -- PHP Version: 5.6.19
 
@@ -88,15 +88,19 @@ INSERT INTO `dosen` (`nip`, `nama`) VALUES
 
 CREATE TABLE `instansi` (
   `username` varchar(20) NOT NULL,
-  `nama_instansi` varchar(50) NOT NULL
+  `nama_instansi` varchar(50) NOT NULL,
+  `kapasitas` tinyint(4) NOT NULL,
+  `deskripsi` varchar(500) NOT NULL,
+  `syarat` varchar(500) NOT NULL,
+  `kriteria` varchar(500) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `instansi`
 --
 
-INSERT INTO `instansi` (`username`, `nama_instansi`) VALUES
-('telkom', 'telkom jambi');
+INSERT INTO `instansi` (`username`, `nama_instansi`, `kapasitas`, `deskripsi`, `syarat`, `kriteria`) VALUES
+('telkom', 'telkom jambi', 3, 'ini adalah telkom jambi', 'matkul jaringan harus A', 'pekerja keras');
 
 -- --------------------------------------------------------
 

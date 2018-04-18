@@ -8,6 +8,10 @@
 </style>
 <div class='col-md-12'>
   <h3 style='font-weight:bold;'>Pilih Instansi</h3>
+  <?php 
+    require_once '../../core/Instansi.php'; 
+    $instansi->pilihInstansi();
+  ?>
   <table class='table table-responsive table-striped table-hover'>
     <thead>
       <tr>
@@ -17,14 +21,13 @@
     </thead>
       
       <tbody>
-        <tr class='clicker' data-id='1'>
-          <td>Kepolisian Daerah</td>
-          <td>4</td>
-        </tr>
-        <tr class='clicker' data-id='2'>
-          <td>PT. Angkasapura</td>
-          <td>4</td>
-        </tr>
+        <?php 
+            $i=1;
+            foreach ($instansi->datas as $key) {
+              echo "<tr class='clicker' data-id='$i'><td>".$key->nama_instansi."</td><td>".$key->kapasitas."</td></tr>";
+            }
+            $i++;
+         ?>
       </tbody>
   </table>
 </div>

@@ -1,7 +1,11 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <?php include 'inc/essential.php'; ?>
+    <?php 
+      include 'inc/essential.php'; 
+      require_once '../core/Instansi.php';
+    ?>
+
   </head>
   <body>
     <?php include 'inc/modal.php'; ?>

@@ -5,6 +5,7 @@
 	{
 		public $username;
 		public $nama;
+		public $data;
 		
 		//set data mahasiswa
 		function __construct()
@@ -20,9 +21,24 @@
 				$this->nama_instansi	= $row->nama_instansi;
 				
 			}
-
-
 		}
+
+		function pilihInstansi()
+		{	
+			
+
+			$query = "SELECT * FROM instansi";
+			$result = $this->conn->query($query);
+
+
+			$this->datas = [];
+			while($row = $result->fetch_object())
+			{
+				$this->datas[] = $row;
+				// die(var_dump($this->datas));
+			}
+		}
+
 	}
 
 	$instansi = new Instansi();
