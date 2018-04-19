@@ -7,6 +7,7 @@
     <?php include 'inc/modal.php'; ?>
     <?php include 'inc/alert.php'; ?>
     <?php include 'inc/upload.php'; ?>
+    <?php include 'inc/sidebar.php'; ?>
     <div class="wrapper">
       <?php include 'inc/navbar.php' ?>
       <div class="main-panel">
@@ -60,9 +61,9 @@
         include 'inc/footer.php';
         ?>
       </div>
-    </div>
+    </div>    
   </body>
-  <!--   Core JS Files   -->
+    <!--   Core JS Files   -->
   <script src="assets/js/jquery-3.2.1.min.js" type="text/javascript"></script>
   <script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
   <script src="assets/js/material.min.js" type="text/javascript"></script>
@@ -84,47 +85,6 @@
         // Javascript method's body can be found in assets/js/demos.js
         demo.initDashboardPageCharts();
     
-    });
-  </script>
-  
-  <script>
-    $(document).ready(function(){
-      //Init classes
-      var http = new HtRequest();
-      var modal = new Modal();
-      //Functions
-      $(".ajax-call").click(function(){
-        var call = $(this).attr("atr-type");
-        modal.triggerModal("open","");
-        if(call === "profil")
-        {
-          http.htGet("reqs/profil.php",".md-content");
-          modal.triggerModal("close");
-          modal.triggerModal("open","PROFIL MAHASISWA");
-        }
-        else if(call === "status")
-        {
-          http.htGet("reqs/status.php",".md-content");
-          modal.triggerModal("close");
-          modal.triggerModal("open","STATUS MAGANG");
-        }
-        else if(call === "sk")
-        {
-          http.htGet("reqs/sk.php",".md-content");
-          modal.triggerModal("close");
-          modal.triggerModal("open","SYARAT & KETENTUAN MAGANG");
-        }
-        else if(call === "instansi")
-        {
-          http.htGet("reqs/instance.php",".md-content");
-          modal.triggerModal("close");
-          modal.triggerModal("open","INSTANSI");
-        }
-        else
-        {
-          http.htError();
-        }
-      });
     });
   </script>
 </html>

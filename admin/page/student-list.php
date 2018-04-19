@@ -8,6 +8,10 @@
   <h3 style='font-weight:bold;'>Mahasiswa</h3>
 </div>
 
+<div class="col-md-4">
+  <input type="text" required="required" name="search" class="form-control search" placeholder="Cari Mahasiswa (NIM/Nama)">
+</div>
+
 <div class='col-md-12'>
   <table class='table table-responsive table-striped table-hover'>
     <thead>
@@ -29,12 +33,28 @@
 $(document).ready(function(){
   var ht = new HtRequest();
   var modal = new Modal();
+  var side = new SideBar();
   
   $(".data-row").click(function(){
     var id = $(this).attr("id");
     var data = {"id":id};
     ht.htPost("page/student-data.php",data,".md-content");
     modal.triggerModal("open","Data Mahasiswa");
+  });
+  
+  setInterval(function(){
+    if($.trim($(".search").val()) !== "")
+    {
+      side.playSidebar("open","Hasil Pencarian Untuk: '<span style='color:orange'> "+ $(".search").val()+"</span> '");
+    }
+    else
+    {
+      side.playSidebar("close");
+    }
+  },0);
+  
+  $(".side-dismiss").click(function(){
+    $(".search").val("");
   });
 });
 </script>
