@@ -26,7 +26,7 @@ else
 </style>
 <div class='col-md-12'>
   <button type='button' class='btn btn-default back'>Kembali</button>
-  <a href="../action/pilih.php">Pilih</a>
+  <a class='btn btn-primary' href="../action/pilih.php">Pilih</a>
 </div>
 <div class='col-md-12'>
   <h3 class='prof-title'><?= $instansi->nama_instansi ?></h3>
