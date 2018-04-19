@@ -1,8 +1,15 @@
 <?php
+$host = 'localhost';
+$user = 'root';
+$pass = '';
+$db = 'magang';
+$con = mysqli_connect($host,$user,$pass,$db);
+
 if($_POST)
 {
   $id = $_POST['id'];
-  if($id == 1)
+  $get = mysqli_query($con,"SELECT * FROM mahasiswa WHERE nim = '$id'");
+  $fetch = mysqli_fetch_array($get);
   {
     ?>
 
@@ -29,30 +36,44 @@ if($_POST)
     <h5>Jenis Kelamin</h5>
     <h5>Program Studi</h5>
     <h5>Fakultas</h5>
-    <h5>Dosen P.A</h5>
+    <h5>NIP Pembimbing</h5>
     <h5>Semester</h5>
     <h5>IPK</h5>
-    <h5>Alamat E-Mail</h5>
+    <h5>SKS</h5>
   </div>
   
-  <div class='col-md-6'>
-    <h5>: Alfian Chandra</h5>
-    <h5>: F1E115029</h5>
-    <h5>: Kota Jambi</h5>
-    <h5>: 25 Desember 1997</h5>
-    <h5>: Laki-Laki</h5>
-    <h5>: S1 - Sistem Informasi</h5>
-    <h5>: Sains & Teknologi</h5>
-    <h5>: Indra Weni</h5>
-    <h5>: 6 (Genap)</h5>
-    <h5>: 2,69</h5>
-    <h5>: alfian.github404@gmail.com</h5>
+  <style>
+    .data > h5
+    {
+      text-transform: uppercase;
+    }
+  </style>
+  
+  <div class='col-md-6 data'>
+    <h5>: <?= $fetch['nama'] ?></h5>
+    <h5>: <?= $fetch['nim'] ?></h5>
+    <h5>: <?= $fetch['tempat_lahir'] ?></h5>
+    <h5>: <?= $fetch['tanggal_lahir'] ?></h5>
+    <h5>: <?php 
+            if($fetch['jenis_kelamin'] == 1)
+            {
+              ?>Laki-Laki<?php
+            }else{
+              ?>Perempuan<?php
+            }
+            ?></h5>
+    <h5>: <?= $fetch['prodi'] ?></h5>
+    <h5>: <?= $fetch['fakultas'] ?></h5>
+    <h5>: <?= $fetch['nip_pembimbing'] ?></h5>
+    <h5>: <?= $fetch['semester'] ?></h5>
+    <h5>: <?= $fetch['ipk'] ?></h5>
+    <h5>: <?= $fetch['sks'] ?></h5>
   </div>
 </div>
 <div class="col-md-12">
   <button type='button' class='btn btn-default backbtn'>Kembali</button>
-  <button type='button' class='btn btn-danger'>Hapus</button>
-  <button type='button' class='btn btn-info'>Edit</button>
+  <button type='button' nim='<?= $fetch['nim'] ?>' class='btn btn-danger'>Hapus</button>
+  <button type='button' nim='<?= $fetch['nim'] ?>' class='btn btn-info'>Edit</button>
 </div>
 
 <script>

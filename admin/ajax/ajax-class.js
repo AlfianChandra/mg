@@ -240,6 +240,7 @@ class SideBar
       $(".side-bar").css("width","0%");
       $(".side-bar").css("opacity","0");
       $(".side-close").fadeOut(500);
+      $(".cntn").fadeOut(50);
     }
     else if(cmd === "open")
     {
@@ -247,11 +248,12 @@ class SideBar
       $(".side-bar").css("opacity","1");
       $(".side-title").html(title);
       $(".side-close").fadeIn(500);
-      
+      $(".cntn").fadeIn(50);
       $(".side-dismiss").click(function(){
         $(".side-bar").css("width","0%");
         $(".side-bar").css("opacity","0");
         $(".side-close").fadeOut(500);
+        $(".cntn").fadeOut(50);
       });
     }
     else
