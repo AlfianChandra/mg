@@ -20,7 +20,7 @@
 			}
 		}
 
-		function pilihInstansi()
+		function lihatInstansi()
 		{	
 			
 			$query 	= "SELECT * FROM instansi";
@@ -46,8 +46,7 @@
 				$this->kapasitas		= $row->kapasitas;
 				$this->syarat			= $row->syarat;
 				$this->kriteria			= $row->kriteria;
-				$this->alamat_instansi	= $row->alamat_instansi;
-				
+				$this->alamat_instansi	= $row->alamat_instansi;		
 			}
 		}
 
@@ -59,6 +58,17 @@
 			$query 		= "UPDATE mahasiswa SET tempat_magang ='$id' WHERE nim='$username'";
 
 			$this->conn->query($query);
+		}
+
+		function statusInstansi()
+		{
+			$username	= $_SESSION['username'];
+			$query = "SELECT * FROM mahasiswa WHERE nim='$username'";
+
+			$result = $this->conn->query($query);
+			while ($row = $result->fetch_object()) {
+				$this->tempat_magang = $row->tempat_magang;
+			}
 		}
 
 	}

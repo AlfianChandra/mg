@@ -10,7 +10,8 @@
   <h3 style='font-weight:bold;'>Pilih Instansi</h3>
   <?php 
     require_once '../../core/Instansi.php'; 
-    $instansi->pilihInstansi();
+    $instansi->lihatInstansi();
+
   ?>
   <table class='table table-responsive table-striped table-hover'>
     <thead>

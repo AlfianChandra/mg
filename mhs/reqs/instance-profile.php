@@ -8,13 +8,11 @@ else
   require_once '../../core/Instansi.php';
   require_once '../../core/Mahasiswa.php';
 
-
   $id = $_POST['id'];
   $username = $mahasiswa->nim;
-
   $_SESSION['instansi'] = $id;
-  
   $instansi->instansiTerpilih($id);
+  $instansi->statusInstansi();
   
 }
     ?>
@@ -27,7 +25,13 @@ else
 <div class='col-md-12'>
   <button type='button' class='btn btn-default back'>Kembali</button>
   <?php if($mahasiswa->sks >= 120) : ?>
-  <a class='btn btn-primary' href="../action/pilih.php">Pilih</a>
+    <?php if (isset($instansi->tempat_magang) && $instansi->tempat_magang == $instansi->username) : ?>
+    <button type="button" class='btn btn-success'>terpilih</button> 
+    <?php elseif(isset($instansi->tempat_magang)) : ?>
+    <a class='btn btn-primary' href="../action/pilih.php">ubah instansi</a>
+    <?php else: ?>
+    <a class='btn btn-primary' href="../action/pilih.php">Pilih</a>
+    <?php endif; ?>
   <?php endif; ?>
 </div>
 <div class='col-md-12'>
