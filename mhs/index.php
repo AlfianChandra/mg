@@ -1,7 +1,12 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <?php include 'inc/essential.php'; ?>
+    <?php 
+      include 'inc/essential.php';
+      require_once '../core/Mahasiswa.php';
+      require_once '../core/Auth.php';
+      $auth->isNotLogin();
+     ?>
   </head>
   <body>
     <?php include 'inc/modal.php'; ?>
@@ -29,7 +34,7 @@
                   </a>
                   <ul class="dropdown-menu">
                     <li>
-                      <a href="#">
+                      <a href="../action/logout.php" class="btn btn-default" style="width:100%;">
                         <i class="material-icons">power_settings_new</i>
                         Keluar
                       </a>
@@ -44,7 +49,7 @@
           <div class="container-fluid">
             <div class="row">
               <div class="col-md-12">
-                <h2><i class="material-icons">pan_tool</i> Selamat Datang, <b style="color:purple">User</b>!</h2>
+                <h2><i class="material-icons">pan_tool</i> Selamat Datang, <b style="color:purple"><?= $mahasiswa->nama ?></b>!</h2>
               </div>
               <div class="col-md-4">
                 <img src="http://icons.iconarchive.com/icons/webalys/kameleon.pics/512/Student-3-icon.png" class="img-responsive pp_image"> 
