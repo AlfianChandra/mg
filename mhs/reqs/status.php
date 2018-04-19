@@ -48,7 +48,15 @@
   <h5 class="data-type">Total SKS</h5><h5 class="data-content"> : <?= $mahasiswa->sks ?> SKS</h5>
   <h5 class="data-type">IPK</h5><h5 class="data-content"> : <?= $mahasiswa->ipk ?></h5>
   <h5 class="data-type">Semester</h5><h5 class="data-content"> : <?= $mahasiswa->semester ?></h5>
-  <div class="alert alert-success data-status">Anda Terkualifikasi untuk melaksanakan Magang. Silahkan persiapkan Persyaratan Magang Anda.</div>
+
+  <?php if($mahasiswa->sks >= 120) : ?>
+  <div class="alert alert-success data-status">Anda Terkualifikasi untuk melaksanakan Magang. Silahkan persiapkan Persyaratan Magang Anda.
+  </div>
+  <?php else : ?>
+  <div class="alert alert-danger data-status">Anda Belum Terkualifikasi untuk melaksanakan Magang, karena SKS anda belum mencukupi. Silahkan periksa syarat dan ketentuan magang.
+  </div>
+  <?php endif; ?>
+
 </div>
 
 <script>

@@ -49,7 +49,7 @@
             <div class="row">
               <div class="col-md-12">
                 <h2><i class="material-icons">business</i> Instansi Magang</h2>
-                <button type='button' class='btn btn-primary instance'>Pilih Instansi</button>
+                <button type='button' class='btn btn-primary instance'>Lihat Instansi</button>
               </div>
             </div>
           </div>
