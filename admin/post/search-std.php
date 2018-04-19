@@ -18,7 +18,7 @@ while($fetch = mysqli_fetch_array($get))
 if(!$row)
 {
   ?>
-<h5 style='margin:0;text-align:center;text-transform: uppercase;font-size:16px;padding:10px;font-weight:bold;'>Tidak ada hasil</h5>
+<h5 style='margin:0;text-align:center;text-transform: uppercase;font-size:16px;padding:10px;font-weight:bold;'><span class='fa fa-inbox'></span> Tidak ada hasil</h5>
 <?php
 }
 ?>
