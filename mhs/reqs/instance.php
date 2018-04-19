@@ -22,11 +22,9 @@
       
       <tbody>
         <?php 
-            $i=1;
             foreach ($instansi->datas as $key) {
-              echo "<tr class='clicker' data-id='$i'><td>".$key->nama_instansi."</td><td>".$key->kapasitas."</td></tr>";
+              echo "<tr class='clicker' data-id='$key->username'><td>".$key->nama_instansi."</td><td>".$key->kapasitas."</td></tr>";
             }
-            $i++;
          ?>
       </tbody>
   </table>

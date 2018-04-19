@@ -5,7 +5,7 @@
       include 'inc/essential.php';
       require_once '../core/Mahasiswa.php';
       require_once '../core/Auth.php';
-      // require_once '../core/Instansi.php';
+
       $auth->isNotLogin();
      ?>
   </head>

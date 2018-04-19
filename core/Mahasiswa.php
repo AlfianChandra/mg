@@ -3,20 +3,7 @@
 
 	class Mahasiswa extends Database
 	{
-		public $nim;
-		public $nama;
-		public $tempat_lahir;
-		public $tanggal_lahir;
-		public $fakultas;
-		public $prodi;
-		public $telp;
-		public $jenis_kelamin;
-		public $nama_pembimbing;
-		public $sks;
-		public $ipk;
-		public $semester;
-
-
+		
 		//set data mahasiswa
 		function __construct()
 		{	

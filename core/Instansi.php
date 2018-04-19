@@ -3,9 +3,6 @@
 
 	class Instansi extends Database
 	{
-		public $username;
-		public $nama;
-		public $data;
 		
 		//set data mahasiswa
 		function __construct()
@@ -26,17 +23,42 @@
 		function pilihInstansi()
 		{	
 			
-
-			$query = "SELECT * FROM instansi";
+			$query 	= "SELECT * FROM instansi";
 			$result = $this->conn->query($query);
-
 
 			$this->datas = [];
 			while($row = $result->fetch_object())
 			{
 				$this->datas[] = $row;
-				// die(var_dump($this->datas));
 			}
+		}
+
+		function instansiTerpilih($id)
+		{	
+			$query 	= "SELECT * FROM instansi WHERE username = '$id'";
+			$result = $this->conn->query($query);
+
+			while($row = $result->fetch_object())
+			{
+				$this->username 		= $row->username;
+				$this->nama_instansi	= $row->nama_instansi;
+				$this->deskripsi		= $row->deskripsi;
+				$this->kapasitas		= $row->kapasitas;
+				$this->syarat			= $row->syarat;
+				$this->kriteria			= $row->kriteria;
+				$this->alamat_instansi	= $row->alamat_instansi;
+				
+			}
+		}
+
+		function milihInstansi()
+		{
+			$username	= $_SESSION['username'];
+			$id 		= $_SESSION['instansi'];
+			
+			$query 		= "UPDATE mahasiswa SET tempat_magang ='$id' WHERE nim='$username'";
+
+			$this->conn->query($query);
 		}
 
 	}
