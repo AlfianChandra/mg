@@ -18,13 +18,14 @@
       <tr>
         <td>Nama Instansi</td>
         <td>Kapasitas Pemagang</td>
+        <td>Jumlah Pemagang</td>
       </tr>
     </thead>
       
       <tbody>
         <?php 
             foreach ($instansi->datas as $key) {
-              echo "<tr class='clicker' data-id='$key->username'><td>".$key->nama_instansi."</td><td>".$key->kapasitas."</td></tr>";
+              echo "<tr class='clicker' data-id='$key->username'><td>".$key->nama_instansi."</td><td>".$key->kapasitas."</td><td>".$key->pemagang."</tr>";
             }
          ?>
       </tbody>
