@@ -8,14 +8,16 @@
   }
 </style>
 
+
+
 <div class='col-md-12'>
   <label>File Permohonan</label>
-  <a href='' class='btn btn-primary' style='width:100%;'>Unduh</a>
+  <a href='../action/download.php?type=permohonan' class='btn btn-primary' style='width:100%;'>Unduh</a>
 </div>
 
 <div class='col-md-12' style='padding:20px;'></div>
 
 <div class="col-md-12">  
   <label>File Pengajuan</label>
-  <a href='' class='btn btn-primary' style='width:100%;'>Unduh</a>
+  <a href='../action/download.php?type=pengajuan' class='btn btn-primary' style='width:100%;'>Unduh</a>
 </div>

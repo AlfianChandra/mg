@@ -34,16 +34,19 @@
   }
 </style>
 
-<form class='up-form' method='post'>
+<form class='up-form' method='post' enctype="multipart/form-data" action="../action/upload.php">
   <div class='col-md-12' style='padding:0px;'>
     <label>File Diunggah Dalam Format PDF*</label>
   </div>
   <div class='file-uploader'>
-    <input type='file' name='file' class='fileinput' accept='.pdf' required>
+    <input type='file' name='pengajuan' class='fileinput' accept='.pdf' required>
     <h5 class='file-title'>Seret File ke Area Ini atau Klik untuk Mengunggah</h5>
   </div>
   <div class='col-md-12' style='padding:0px;'>
     <a href='https://siakad.unja.ac.id' class='btn btn-primary' target='_blank'>Kunjungi SIAKAD UNJA</a>
+  </div>
+  <div>
+    <input type="submit" name="submit" value="upload">
   </div>
 </form>
 <script>
@@ -65,10 +68,10 @@ $(document).ready(function(){
     $(".up-form").submit();
   });
   
-  $(".up-form").submit(function(rev){
-    var up = new HtRequest();
-    rev.preventDefault();
-    up.upload("post/post-upload.php",$(this).serialize());
-  });
+  // $(".up-form").submit(function(rev){
+  //   var up = new HtRequest();
+  //   rev.preventDefault();
+  //   up.upload("post/post-upload.php",$(this).serialize());
+  // });
 });
 </script>

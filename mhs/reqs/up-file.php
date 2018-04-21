@@ -71,7 +71,7 @@ $(document).ready(function(){
     var type = $(this).attr("uptype");
     if(type === "permohonan")
     {
-      up.triggerSys("open","Unggah Dokumen Permohonan","uploader/persyaratan.php",".up-body-content");
+      up.triggerSys("open","Unggah Dokumen Permohonan","uploader/permohonan.php",".up-body-content");
     }
     else if(type === "pengajuan")
     {
