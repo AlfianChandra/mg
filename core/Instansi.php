@@ -58,6 +58,10 @@
 			$query 		= "UPDATE mahasiswa SET tempat_magang ='$id' WHERE nim='$username'";
 
 			$this->conn->query($query);
+
+			$query		= "UPDATE instansi SET pemagang_terdaftar = pemagang_terdaftar + 1 WHERE username ='$id'";
+
+			$this->conn->query($query);
 		}
 
 		function statusInstansi()
