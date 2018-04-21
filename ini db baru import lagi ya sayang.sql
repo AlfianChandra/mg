@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 21 Apr 2018 pada 15.45
+-- Generation Time: 21 Apr 2018 pada 18.41
 -- Versi Server: 10.1.10-MariaDB
 -- PHP Version: 5.6.19
 
@@ -60,7 +60,8 @@ INSERT INTO `auth` (`id`, `username`, `password`, `role`) VALUES
 (2, 'Kami-sama', '123', 1),
 (3, '2020', '123123', 2),
 (4, 'telkom', '12345', 3),
-(5, 'f1e115015', '111', 0);
+(5, 'f1e115015', '111', 0),
+(6, '11', '111', 0);
 
 -- --------------------------------------------------------
 
@@ -125,7 +126,7 @@ CREATE TABLE `mahasiswa` (
   `ipk` double NOT NULL,
   `semester` tinyint(4) NOT NULL,
   `nip_pembimbing` varchar(20) NOT NULL,
-  `tempat_magang` varchar(100) NOT NULL
+  `tempat_magang` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -133,8 +134,9 @@ CREATE TABLE `mahasiswa` (
 --
 
 INSERT INTO `mahasiswa` (`nim`, `nama`, `tempat_lahir`, `tanggal_lahir`, `fakultas`, `prodi`, `jenis_kelamin`, `telp`, `sks`, `ipk`, `semester`, `nip_pembimbing`, `tempat_magang`) VALUES
-('15', 'bro', 'kota jambi', '2018-04-01', 'fkip', 'kimia', 1, '0808', 125, 3.4, 7, '2020', 'telkom'),
-('f1e115015', 'yulia oktaviani', 'jambi', '2018-04-17', 'sains dan teknologi', 'sistem informasi', 0, '082289680251', 110, 3.8, 6, '2020', '');
+('11', 'lucy', 'jambi', '2018-04-02', 'feb', 'manajemen', 0, '081686372', 120, 3.2, 7, '2020', NULL),
+('15', 'bro', 'kota jambi', '2018-04-01', 'fkip', 'kimia', 1, '0808', 125, 3.4, 7, '2020', NULL),
+('f1e115015', 'yulia oktaviani', 'jambi', '2018-04-17', 'sains dan teknologi', 'sistem informasi', 0, '082289680251', 110, 3.8, 6, '2020', NULL);
 
 --
 -- Indexes for dumped tables
@@ -178,7 +180,7 @@ ALTER TABLE `mahasiswa`
 -- AUTO_INCREMENT for table `auth`
 --
 ALTER TABLE `auth`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

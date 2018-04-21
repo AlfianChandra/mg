@@ -25,12 +25,14 @@ else
 <div class='col-md-12'>
   <button type='button' class='btn btn-default back'>Kembali</button>
   <?php if($mahasiswa->sks >= 120) : ?>
-    <?php if (isset($instansi->tempat_magang) && $instansi->tempat_magang == $instansi->username) : ?>
-    <button type="button" class='btn btn-success'>terpilih</button> 
-    <?php elseif(isset($instansi->tempat_magang)) : ?>
-    <a class='btn btn-primary' href="../action/pilih.php">ubah instansi</a>
-    <?php else: ?>
-    <a class='btn btn-primary' href="../action/pilih.php">Pilih</a>
+    <?php if ($instansi->tempat_magang !== NULL) : ?>
+      <?php if ($instansi->tempat_magang == $instansi->username) : ?>
+        <button type="button" class='btn btn-success'>terpilih</button> 
+      <?php else : ?>
+        <a class='btn btn-primary' href="../action/pilih.php">ubah instansi</a>
+      <?php endif; ?>
+    <?php else : ?>
+      <a class='btn btn-primary' href="../action/pilih.php">Pilih</a>
     <?php endif; ?>
   <?php endif; ?>
 </div>
