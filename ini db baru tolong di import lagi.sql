@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 18 Apr 2018 pada 18.15
+-- Generation Time: 21 Apr 2018 pada 15.45
 -- Versi Server: 10.1.10-MariaDB
 -- PHP Version: 5.6.19
 
@@ -92,15 +92,19 @@ CREATE TABLE `instansi` (
   `kapasitas` tinyint(4) NOT NULL,
   `deskripsi` varchar(500) NOT NULL,
   `syarat` varchar(500) NOT NULL,
-  `kriteria` varchar(500) NOT NULL
+  `kriteria` varchar(500) NOT NULL,
+  `alamat_instansi` varchar(255) NOT NULL,
+  `pemagang` tinyint(4) NOT NULL,
+  `pemagang_terdaftar` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `instansi`
 --
 
-INSERT INTO `instansi` (`username`, `nama_instansi`, `kapasitas`, `deskripsi`, `syarat`, `kriteria`) VALUES
-('telkom', 'telkom jambi', 3, 'ini adalah telkom jambi', 'matkul jaringan harus A', 'pekerja keras');
+INSERT INTO `instansi` (`username`, `nama_instansi`, `kapasitas`, `deskripsi`, `syarat`, `kriteria`, `alamat_instansi`, `pemagang`, `pemagang_terdaftar`) VALUES
+('alpa', 'alfamart', 4, 'ini alpamart', 'manajemen A', 'penampilan menarik', 'karya maju', 2, 0),
+('telkom', 'telkom jambi', 3, 'ini adalah telkom jambi', 'matkul jaringan harus A', 'pekerja keras', 'sipin', 1, 4);
 
 -- --------------------------------------------------------
 
@@ -120,16 +124,17 @@ CREATE TABLE `mahasiswa` (
   `sks` int(3) NOT NULL,
   `ipk` double NOT NULL,
   `semester` tinyint(4) NOT NULL,
-  `nip_pembimbing` varchar(20) NOT NULL
+  `nip_pembimbing` varchar(20) NOT NULL,
+  `tempat_magang` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `mahasiswa`
 --
 
-INSERT INTO `mahasiswa` (`nim`, `nama`, `tempat_lahir`, `tanggal_lahir`, `fakultas`, `prodi`, `jenis_kelamin`, `telp`, `sks`, `ipk`, `semester`, `nip_pembimbing`) VALUES
-('15', 'bro', 'kota jambi', '2018-04-01', 'fkip', 'kimia', 1, '0808', 110, 3.4, 6, '2020'),
-('f1e115015', 'yulia oktaviani', 'jambi', '2018-04-17', 'sains dan teknologi', 'sistem informasi', 0, '082289680251', 110, 3.8, 6, '2020');
+INSERT INTO `mahasiswa` (`nim`, `nama`, `tempat_lahir`, `tanggal_lahir`, `fakultas`, `prodi`, `jenis_kelamin`, `telp`, `sks`, `ipk`, `semester`, `nip_pembimbing`, `tempat_magang`) VALUES
+('15', 'bro', 'kota jambi', '2018-04-01', 'fkip', 'kimia', 1, '0808', 125, 3.4, 7, '2020', 'telkom'),
+('f1e115015', 'yulia oktaviani', 'jambi', '2018-04-17', 'sains dan teknologi', 'sistem informasi', 0, '082289680251', 110, 3.8, 6, '2020', '');
 
 --
 -- Indexes for dumped tables
