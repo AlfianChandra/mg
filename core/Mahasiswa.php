@@ -80,6 +80,17 @@
 
 			$this->rows = mysqli_num_rows($result);
 		}
+
+		function tambahMahasiswa($nim, $nama, $tempat_lahir, $tanggal_lahir, $jenis_kelamin, $fakultas, $prodi, $telp, $sks, $ipk, $semester, $password)
+		{
+			$query 	= "INSERT INTO mahasiswa(nim, nama, tempat_lahir, tanggal_lahir, jenis_kelamin, fakultas, prodi, telp, sks, ipk, semester) VALUES ('$nim', '$nama', '$tempat_lahir', '$tanggal_lahir', '$jenis_kelamin', '$fakultas', '$prodi', '$telp', '$sks', '$ipk', '$semester')";
+
+			$this->conn->query($query);
+
+			$query = "INSERT INTO auth(username, password) VALUES ('$nim', '$password')";
+
+			return $this->conn->query($query);
+		}
 	}
 
 	$mahasiswa = new Mahasiswa();
