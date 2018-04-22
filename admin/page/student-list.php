@@ -1,11 +1,4 @@
-<?php
-$host = 'localhost';
-$user = 'root';
-$pass = '';
-$db = 'magang';
-$con = mysqli_connect($host,$user,$pass,$db);
-$get = mysqli_query($con,"SELECT * FROM mahasiswa");
-?>
+
 <style>
   .data-row
   {
@@ -35,11 +28,21 @@ $get = mysqli_query($con,"SELECT * FROM mahasiswa");
 </style>
 <div class='col-md-12'>
   <h3 style='font-weight:bold;'>Mahasiswa</h3>
+  <?php 
+    require_once '../../core/Mahasiswa.php'; 
+    
+    $mahasiswa->lihatMahasiswa();
+    
+  ?>
 </div>
 
 <div class="col-md-3" style='position:relative;'>
   <button type='button' class='clear-search'><span class='fa fa-close'></span></button>
-  <input type="text" required="required" name="search" class="form-control search" placeholder="Cari Mahasiswa (NIM/Nama)">
+
+  
+    <input type="text" required="required" name="search" class="form-control search" placeholder="Cari Mahasiswa (NIM/Nama)">
+  
+
 </div>
 
 <div class='col-md-12'>
@@ -52,16 +55,10 @@ $get = mysqli_query($con,"SELECT * FROM mahasiswa");
     </thead>
 
     <tbody>
-      <?php
-      while($fetch = mysqli_fetch_array($get))
-      {
-        ?>
-      <tr style='color:purple;font-weight:bold;text-transform: uppercase;' class='data-row' id='<?= $fetch['nim'] ?>'>
-        <td><?= $fetch['nim'] ?></td>
-        <td><?= $fetch['nama'] ?></td>
-      </tr>
-      <?php
-      }
+      <?php 
+        foreach ($mahasiswa->datas as $key) {
+          echo "<tr style='color:purple;font-weight:bold;text-transform: uppercase;' class='data-row' id='$key->nim'><td>".$key->nim."</td><td>".$key->nama."</td></tr>";
+        }
       ?>
 
     </tbody>

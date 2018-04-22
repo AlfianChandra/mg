@@ -1,23 +1,46 @@
 <?php
-$host = 'localhost';
-$user = 'root';
-$pass = '';
-$db = 'magang';
-$con = mysqli_connect($host,$user,$pass,$db);
 
-if($_POST)
-{
-  $id = $_POST['id'];
-  $get = mysqli_query($con,"SELECT * FROM mahasiswa WHERE nim = '$id'");
-  $fetch = mysqli_fetch_array($get);
-  {
-    ?>
+  if(!$_POST) {
+    echo "error";
+  }else{
+    $id = $_POST['id'];
+    require_once '../../core/Mahasiswa.php';
+    $mahasiswa->mahasiswaTerpilih($id);
+  }
+
+?>
 
 <style>
-  h5
+  .profile-head
   {
-    margin:0;
     font-weight:bold;
+  }
+  
+  .data-type
+  {
+    width:30%;
+    float:left;
+    box-sizing:border-box;
+    padding:5px;
+    border-bottom:2px;
+    margin:0;
+  }
+  
+  .data-content
+  {
+    font-weight: bold;
+    width:70%;
+    float:left;
+    margin:0;
+    box-sizing:border-box;
+    padding:5px;
+    text-transform: uppercase;
+  }
+  
+  .profile-content
+  {
+    height:300px;
+    overflow-y:auto;
   }
 </style>
 
@@ -28,47 +51,17 @@ if($_POST)
 
 <div class='col-md-9'>
   <h3 style='font-weight: bold;'>Data Mahasiswa</h3>
-  <div class='col-md-3'>
-    <h5>Nama Lengkap</h5>
-    <h5>NIM</h5>
-    <h5>Tempat Lahir</h5>
-    <h5>Tanggal Lahir</h5>
-    <h5>Jenis Kelamin</h5>
-    <h5>Program Studi</h5>
-    <h5>Fakultas</h5>
-    <h5>NIP Pembimbing</h5>
-    <h5>Semester</h5>
-    <h5>IPK</h5>
-    <h5>SKS</h5>
+  <div class="profile-content">
+    <h5 class="data-type">Nama</h5><h5 class="data-content"> : <?= $mahasiswa->nama ?></h5>
+    <h5 class="data-type">Jenis Kelamin</h5><h5 class="data-content">: <?= $mahasiswa->jenis_kelamin ?></h5>
+    <h5 class="data-type">Tempat & Tanggal Lahir</h5><h5 class="data-content">: <?= $mahasiswa->tempat_lahir . ', ' . $mahasiswa->tanggal_lahir ?></h5>
+    <h5 class="data-type">Nomor Telepon</h5><h5 class="data-content">: <?= $mahasiswa->telp ?></h5>
+    <h5 class="data-type">NIM</h5><h5 class="data-content">: <?= $mahasiswa->nim ?></h5>
+    <h5 class="data-type">Program Studi</h5><h5 class="data-content">: <?= $mahasiswa->prodi ?></h5>
+    <h5 class="data-type">Fakultas</h5><h5 class="data-content">: <?= $mahasiswa->fakultas ?></h5>
+    <h5 class="data-type">Dosen P.A</h5><h5 class="data-content">: <?= $mahasiswa->nama_pembimbing ?></h5>
   </div>
   
-  <style>
-    .data > h5
-    {
-      text-transform: uppercase;
-    }
-  </style>
-  
-  <div class='col-md-6 data'>
-    <h5>: <?= $fetch['nama'] ?></h5>
-    <h5>: <?= $fetch['nim'] ?></h5>
-    <h5>: <?= $fetch['tempat_lahir'] ?></h5>
-    <h5>: <?= $fetch['tanggal_lahir'] ?></h5>
-    <h5>: <?php 
-            if($fetch['jenis_kelamin'] == 1)
-            {
-              ?>Laki-Laki<?php
-            }else{
-              ?>Perempuan<?php
-            }
-            ?></h5>
-    <h5>: <?= $fetch['prodi'] ?></h5>
-    <h5>: <?= $fetch['fakultas'] ?></h5>
-    <h5>: <?= $fetch['nip_pembimbing'] ?></h5>
-    <h5>: <?= $fetch['semester'] ?></h5>
-    <h5>: <?= $fetch['ipk'] ?></h5>
-    <h5>: <?= $fetch['sks'] ?></h5>
-  </div>
 </div>
 <div class="col-md-12">
   <button type='button' class='btn btn-default backbtn'>Kembali</button>
@@ -87,7 +80,5 @@ $(document).ready(function(){
   });
 });  
 </script>
-    <?php
-  }
-}
+    
 ?>

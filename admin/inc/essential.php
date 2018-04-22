@@ -1,4 +1,10 @@
 <meta charset="utf-8" />
+<?php 
+	 require_once '../core/Mahasiswa.php';
+	 require_once '../core/Admin.php';
+     require_once '../core/Auth.php';
+     $auth->isNotLogin();
+ ?>
 <link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.png" />
 <link rel="icon" type="image/png" href="assets/img/favicon.png" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />

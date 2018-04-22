@@ -3,10 +3,7 @@
 
 	class Admin extends Database
 	{
-		public $nip;
-		public $nama;
-		
-		//set data mahasiswa
+
 		function __construct()
 		{	
 			parent::__construct();
@@ -20,8 +17,11 @@
 				$this->nama		= $row->nama;
 				
 			}
+		}
 
-
+		function lihatMahasiswa()
+		{
+			
 		}
 	}
 
