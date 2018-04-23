@@ -14,6 +14,12 @@
 			$query 	= "SELECT dosen.nama AS nama_pembimbing, mahasiswa.* FROM mahasiswa JOIN dosen WHERE dosen.nip = mahasiswa.nip_pembimbing AND mahasiswa.nim = '$nim'";
 			$result = $this->conn->query($query);
 
+			if($result->current_field == 0){
+				$query 	= "SELECT *, nip_pembimbing AS nama_pembimbing FROM mahasiswa WHERE nim = '$nim'";
+				$result = $this->conn->query($query);
+			}
+			
+
 			while($row = $result->fetch_object())
 			{
 				$this->nim 				= $row->nim;
@@ -49,6 +55,11 @@
 		{	
 			$query 	= "SELECT dosen.nama AS nama_pembimbing, mahasiswa.* FROM mahasiswa JOIN dosen WHERE dosen.nip = mahasiswa.nip_pembimbing AND mahasiswa.nim = '$id'";
 			$result = $this->conn->query($query);
+
+			if($result->current_field == 0){
+				$query 	= "SELECT *, nip_pembimbing AS nama_pembimbing FROM mahasiswa WHERE nim = '$id'";
+				$result = $this->conn->query($query);
+			}
 
 			while($row = $result->fetch_object())
 			{
@@ -90,6 +101,16 @@
 			$query = "INSERT INTO auth(username, password) VALUES ('$nim', '$password')";
 
 			return $this->conn->query($query);
+		}
+
+		function hapusMahasiswa($id)
+		{
+			$query = "DELETE FROM mahasiswa WHERE nim = '$id'";
+			$this->conn->query($query);
+
+			$query = "DELETE FROM auth WHERE username = '$id'";
+			
+			return $this->conn->query($query);			
 		}
 	}
 

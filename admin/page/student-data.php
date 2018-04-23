@@ -3,9 +3,11 @@
   if(!$_POST) {
     echo "error";
   }else{
-    $id = $_POST['id'];
+    $_SESSION['id'] = $_POST['id'];
+    $id = $_SESSION['id'];
     require_once '../../core/Mahasiswa.php';
     $mahasiswa->mahasiswaTerpilih($id);
+
   }
 
 ?>
@@ -59,14 +61,17 @@
     <h5 class="data-type">NIM</h5><h5 class="data-content">: <?= $mahasiswa->nim ?></h5>
     <h5 class="data-type">Program Studi</h5><h5 class="data-content">: <?= $mahasiswa->prodi ?></h5>
     <h5 class="data-type">Fakultas</h5><h5 class="data-content">: <?= $mahasiswa->fakultas ?></h5>
-    <h5 class="data-type">Dosen P.A</h5><h5 class="data-content">: <?= $mahasiswa->nama_pembimbing ?></h5>
+    <h5 class="data-type">Dosen Pembimbing</h5><h5 class="data-content">: <?= $mahasiswa->nama_pembimbing ?></h5>
   </div>
   
 </div>
 <div class="col-md-12">
   <button type='button' class='btn btn-default backbtn'>Kembali</button>
-  <button type='button' nim='<?= $fetch['nim'] ?>' class='btn btn-danger'>Hapus</button>
-  <button type='button' nim='<?= $fetch['nim'] ?>' class='btn btn-info'>Edit</button>
+
+  <a href="../action/hapusMahasiswa.php?id=<?= $id ?>">hapus</a>
+  
+  
+  
 </div>
 
 <script>
@@ -80,5 +85,3 @@ $(document).ready(function(){
   });
 });  
 </script>
-    
-?>

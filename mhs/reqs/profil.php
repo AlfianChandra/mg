@@ -45,6 +45,6 @@
     <h5 class="data-type">NIM</h5><h5 class="data-content">: <?= $mahasiswa->nim ?></h5>
     <h5 class="data-type">Program Studi</h5><h5 class="data-content">: <?= $mahasiswa->prodi ?></h5>
     <h5 class="data-type">Fakultas</h5><h5 class="data-content">: <?= $mahasiswa->fakultas ?></h5>
-    <h5 class="data-type">Dosen P.A</h5><h5 class="data-content">: <?= $mahasiswa->nama_pembimbing ?></h5>
+    <h5 class="data-type">Dosen Pembimbing</h5><h5 class="data-content">: <?= $mahasiswa->nama_pembimbing ?></h5>
   </div>
 </div>
