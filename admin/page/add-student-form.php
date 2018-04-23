@@ -1,4 +1,4 @@
-<form class="std-form" action="../action/tambahMahasiswa.php" method="post" enctype="multipart/form-data">
+<form class="std-form" method="post" enctype="multipart/form-data">
     <div class="col-md-6">
         <h3 style="font-weight:bold;">Data Pribadi</h3>
         <input type="text" required="required" name="nama" maxlength="40" class="form-control i1" placeholder="Nama Lengkap">
@@ -28,75 +28,81 @@
         <input type="text" required="required" name="semester" class="form-control i8" placeholder="Semester">
         <input type="text" required="required" name="sks" class="form-control i9" placeholder="Total SKS">
         <input type="text" required="required" name="ipk" class="form-control i0" placeholder="Indeks Prestasi Kumulatif">
-        <input type="text" required="required" name="telp" class="form-control ii" placeholder="No. Telp">
+        <input type="text" required="required" name="telp" class="form-control ia" placeholder="No. Telp">
+        <input type="number" required="required" name="nip_pembimbing" class="form-control ib" placeholder="NIP Pembimbing">
     </div>
+  
     <div>
-      <input type="submit" name="submit" value="upload">
+      
     </div>
 </form>
 <script>
-    // $(document).ready(function(){
-    //     var ht = new HtRequest();
+     $(document).ready(function(){
+         var ht = new HtRequest();
 
-    //     $(".up-send").click(function(){
-    //         $(".std-form").submit();
-    //     });
+         $(".up-send").click(function(){
+             $(".std-form").submit();
+         });
 
-    //     $(".std-form").submit(function(ev){
-    //         ev.preventDefault();
-    //         var data = $(this).serialize();
-    //         ht.fireForm("post/add-student.php",data);
-    //     });
+         $(".std-form").submit(function(ev){
+             ev.preventDefault();
+             var data = $(this).serialize();
+             ht.fireForm("../action/tambahMahasiswa.php",data);
+         });
         
-    //     setInterval(function(){
-    //       if($.trim($(".i1").val()) === "")
-    //       {
-    //         $(".up-send").fadeOut(400);
-    //       }
-    //       else if($.trim($(".i2").val()) === "")
-    //       {
-    //         $(".up-send").fadeOut(400);
-    //       }
-    //       else if($.trim($(".i3").val()) === "")
-    //       {
-    //         $(".up-send").fadeOut(400);
-    //       }
-    //       else if($.trim($(".i4").val()) === "")
-    //       {
-    //         $(".up-send").fadeOut(400);
-    //       }
-    //       else if($.trim($(".i5").val()) === "")
-    //       {
-    //         $(".up-send").fadeOut(400);
-    //       }
-    //       else if($.trim($(".i6").val()) === "")
-    //       {
-    //         $(".up-send").fadeOut(400);
-    //       }
-    //       else if($.trim($(".i7").val()) === "")
-    //       {
-    //         $(".up-send").fadeOut(400);
-    //       }
-    //       else if($.trim($(".i8").val()) === "")
-    //       {
-    //         $(".up-send").fadeOut(400);
-    //       }
-    //       else if($.trim($(".i9").val()) === "")
-    //       {
-    //         $(".up-send").fadeOut(400);
-    //       }
-    //       else if($.trim($(".i0").val()) === "")
-    //       {
-    //         $(".up-send").fadeOut(400);
-    //       }
-    //       else if($.trim($(".ii").val()) === "")
-    //       {
-    //         $(".up-send").fadeOut(400);
-    //       }          
-    //       else
-    //       {
-    //         $(".up-send").fadeIn(500);
-    //       }
-    //     },0);
-    // });
+         setInterval(function(){
+           if($.trim($(".i1").val()) === "")
+           {
+             $(".up-send").fadeOut(400);
+           }
+           else if($.trim($(".i2").val()) === "")
+           {
+             $(".up-send").fadeOut(400);
+           }
+           else if($.trim($(".i3").val()) === "")
+           {
+             $(".up-send").fadeOut(400);
+           }
+           else if($.trim($(".i4").val()) === "")
+           {
+             $(".up-send").fadeOut(400);
+           }
+           else if($.trim($(".i5").val()) === "")
+           {
+             $(".up-send").fadeOut(400);
+           }
+           else if($.trim($(".i6").val()) === "")
+           {
+             $(".up-send").fadeOut(400);
+           }
+           else if($.trim($(".i7").val()) === "")
+           {
+             $(".up-send").fadeOut(400);
+           }
+           else if($.trim($(".i8").val()) === "")
+           {
+             $(".up-send").fadeOut(400);
+           }
+           else if($.trim($(".i9").val()) === "")
+           {
+             $(".up-send").fadeOut(400);
+           }
+           else if($.trim($(".i0").val()) === "")
+           {
+             $(".up-send").fadeOut(400);
+           }
+           else if($.trim($(".ia").val()) === "")
+           {
+             $(".up-send").fadeOut(400);
+           }
+           else if($.trim($(".ib").val()) === "")
+           {
+             $(".up-send").fadeOut(400);
+           } 
+           else
+           {
+             $(".up-send").fadeIn(500);
+           }
+         },0);
+     });
 </script>
