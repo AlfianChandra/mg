@@ -68,7 +68,7 @@
 <div class="col-md-12">
   <button type='button' class='btn btn-default backbtn'>Kembali</button>
 
-  <a href="../action/hapusMahasiswa.php?id=<?= $id ?>">hapus</a>
+  <a href="../action/hapusMahasiswa.php?id=<?= $id ?>" class="btn btn-danger">hapus</a>
   
   
   

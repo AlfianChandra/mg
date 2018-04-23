@@ -34,7 +34,7 @@
   }
 </style>
 
-<form class='up-form' method='post' enctype="multipart/form-data" action="../action/upload.php">
+<form class='up-form' method='post' enctype="multipart/form-data">
   <div class='col-md-12' style='padding:0px;'>
     <label>File Diunggah Dalam Format PDF*</label>
   </div>
@@ -72,7 +72,7 @@ $(document).ready(function(){
   // $(".up-form").submit(function(rev){
   //   var up = new HtRequest();
   //   rev.preventDefault();
-  //   up.upload("post/post-upload.php",$(this).serialize());
+  //   up.upload("../action/upload.php",$(this).serialize());
   // });
 });
 </script>

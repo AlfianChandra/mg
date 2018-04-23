@@ -94,10 +94,6 @@
            else if($.trim($(".ia").val()) === "")
            {
              $(".up-send").fadeOut(400);
-           }
-           else if($.trim($(".ib").val()) === "")
-           {
-             $(".up-send").fadeOut(400);
            } 
            else
            {
