@@ -23,7 +23,7 @@
               <div class="col-md-3">
                 <button type="button" atr-type="profil" class="btn btn-success ajax-call" style="width:100%;">Ringkasan Profil</button>
                 <button type="button" atr-type="status" class="btn btn-primary ajax-call" style="width:100%;">Status Magang</button>
-                <button type="button" atr-type="sk" class="btn btn-danger ajax-call" style="width:100%;">SK Magang</button>
+                <button type="button" atr-type="sk" class="btn btn-danger ajax-call" style="width:100%;">Syarat & Ketentuan Magang</button>
               </div>
             </div>
           </div>

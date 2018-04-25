@@ -29,7 +29,6 @@
         <input type="text" required="required" name="sks" class="form-control i9" placeholder="Total SKS">
         <input type="text" required="required" name="ipk" class="form-control i0" placeholder="Indeks Prestasi Kumulatif">
         <input type="text" required="required" name="telp" class="form-control ia" placeholder="No. Telp">
-        <input type="number" required="required" name="nip_pembimbing" class="form-control ib" placeholder="NIP Pembimbing">
     </div>
 </form>
 <script>
@@ -88,10 +87,6 @@
              $(".up-send").fadeOut(400);
            }
            else if($.trim($(".ia").val()) === "")
-           {
-             $(".up-send").fadeOut(400);
-           }
-           else if($.trim($(".ib").val()) === "")
            {
              $(".up-send").fadeOut(400);
            } 
