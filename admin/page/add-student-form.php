@@ -1,4 +1,4 @@
-<form class="std-form" method="post" enctype="multipart/form-data">
+<form class="std-form" method="post" enctype="multipart/form-data" style="margin-bottom:50px;float:left;width:100%;">
     <div class="col-md-6">
         <h3 style="font-weight:bold;">Data Pribadi</h3>
         <input type="text" required="required" name="nama" maxlength="40" class="form-control i1" placeholder="Nama Lengkap">
@@ -30,10 +30,6 @@
         <input type="text" required="required" name="ipk" class="form-control i0" placeholder="Indeks Prestasi Kumulatif">
         <input type="text" required="required" name="telp" class="form-control ia" placeholder="No. Telp">
         <input type="number" required="required" name="nip_pembimbing" class="form-control ib" placeholder="NIP Pembimbing">
-    </div>
-  
-    <div>
-      
     </div>
 </form>
 <script>

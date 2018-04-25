@@ -19,12 +19,11 @@
                 <p>Manage Mahasiswa</p>
               </a>
             </li>
-
             <li>
-                <a href="add-dosen.php">
-                    <i class="material-icons">settings</i>
-                    <p>Manage Dosen</p>
-                </a>
+              <a href="instance.php">
+                <i class="material-icons">settings</i>
+                <p>Manage Instansi</p>
+              </a>
             </li>
           </ul>
         </div>
