@@ -1,7 +1,97 @@
+<?php
+$a = 0;
+?>
 <!doctype html>
 <html lang="en">
   <head>
     <?php include 'inc/essential.php'; ?>
+    <style>
+      .guideline
+      {
+        position:absolute;
+        top:-3px;
+        left:0;
+        border-radius:10px;
+        width:100%;
+        padding:8px;
+        background-color:#ccc;
+      }
+      
+      .step
+      {
+        transition:ease-in-out .5s;
+        position:absolute;
+        top:-45px;
+        z-index:9995;
+        background-color:#ccc;
+        width:100px;
+        text-align:center;
+        height:100px;
+        border-radius:50px;
+        cursor:pointer;
+      }
+      
+      .step-1
+      {
+        left:0;
+      }
+      
+      .step-2
+      {
+        left:45%;
+      }
+      
+      .step-3
+      {
+        right:0;
+      }
+      
+      .step-desc
+      {
+        font-size:12px;
+        font-weight:bold;
+        text-transform: uppercase;
+        position:absolute;
+        width:100%;
+        bottom:-60px;
+        color:#aaa;
+        left:0;
+        text-align:center;
+      }
+      
+      .step-list
+      {
+        display:none;
+        z-index:9998;
+        box-shadow: 0px 0px 20px #888;
+        position:absolute;
+        top:-150px;
+        left:-70%;
+        width:240px;
+        padding:10px;
+        background-color:rgb(0,150,255);
+        border-radius:5px;
+        color:#fff;
+        height:120px;
+      }
+      
+      .lst
+      {
+        position:absolute;
+        top:0;
+        width:90%;
+        right:0;
+        padding:20px;
+        margin-bottom:10px;
+        overflow-y:hidden;
+        height:120px;
+      }
+      
+      .lst:hover
+      {
+        overflow-y:auto;
+      }
+    </style>
   </head>
   <body>
     <?php include 'inc/modal.php'; ?>
@@ -14,38 +104,558 @@
           <div class="container-fluid">
             <div class="row">
               <div class="col-md-12">
-                <h2><i class="material-icons">folder</i> Dokumen </h2>
+                <h2><i class="material-icons">clear_all</i> Pendaftaran Magang </h2>
               </div>
             </div>
-            <div class="row">
-              <style>
-                .download-body
+            <div class="row" style="padding:70px;">
+              <?php
+              $status = true;
+              if($status == true)
+              {
+                ?>
+              <div class="col-md-12" style="position:relative;">
+                
+                <?php
+                if($a === 1)
                 {
-                  height:320px;
-                  overflow-y:auto;
-                }
-                .upload-body
-                {
-                  height:300px;
-                  overflow-y:auto;
-                }
-              </style>
-              <div class="col-md-3">
-                <button type="button" style="width:100%" class="btn btn-primary trg-doc" target='.files-download' file='down-file.php' inn-body='.download-body'><i class="material-icons">file_download</i> Unduh Dokumen</button>
-                <button type="button" style="width:100%" class="btn btn-info trg-doc" target='.files-upload' file='up-file.php' inn-body='.upload-body'><i class="material-icons">file_upload</i> Unggah Dokumen</button>
-              </div>
-              <div class="col-md-9 files-download filesdoc" style="border-left:3px solid purple;display:none">
-                <h3 style="background-color:purple;color:#fff;margin:0;padding:10px;font-weight:bold;">Unduh Dokumen</h3>
-                <div class='col-md-12 download-body' style='padding-top:20px;'>
+                  ?>        
+                <div class="step step-1" style='background-color:rgb(30,210,40);'>
+                  <span style='margin-top:19px;color:#fff;font-size:60px;' class="material-icons">control_point</span>
+                  <h4 class='step-desc' style='color:rgb(30,210,40);'> 
+                    <span class='fa fa-check'></span> Pendaftaran Magang
+                  </h4>
                   
+                  <div class='step-list'>
+                    <span style='
+                          font-size:60px;
+                          position:absolute;
+                          top:30px;
+                          color:#fff;
+                          left:22px;
+                          'class='fa fa-envelope'></span>
+                    
+                    <div class='lst'>      
+                      <ul>
+                        <li>Syarat 1</li>
+                        <li>Syarat 2</li>
+                      </ul>
+                    </div>
+                    
+                    <span style='
+                          position:absolute;
+                          box-sizing:border-box;
+                          bottom:-20px;
+                          font-size:30px;
+                          color:rgb(0,150,255);
+                          left:0;
+                          width:100%;
+                          text-align:center;
+                          ' class='fa fa-caret-down'></span>
+                  </div>
+                </div>
+                
+                <div class="step step-2">
+                  <span style='margin-top:19px;color:#fff;font-size:60px;' class="material-icons">next_week</span>
+                  <h4 class='step-desc'>
+                    Pendaftaran Instansi
+                  </h4>
+                  
+                   <div class='step-list'>
+                    <span style='
+                          font-size:60px;
+                          position:absolute;
+                          top:30px;
+                          color:#fff;
+                          left:22px;
+                          'class='fa fa-envelope'></span>
+                    
+                    <div class='lst'>      
+                      <ul>
+                        <li>Syarat 1</li>
+                        <li>Syarat 2</li>
+                        <li>Syarat 3</li>
+                      </ul>
+                    </div>
+                    
+                    <span style='
+                          position:absolute;
+                          box-sizing:border-box;
+                          bottom:-20px;
+                          font-size:30px;
+                          color:rgb(0,150,255);
+                          left:0;
+                          width:100%;
+                          text-align:center;
+                          ' class='fa fa-caret-down'></span>
+                  </div>
+                </div>
+                
+                <div class="step step-3">
+                  <span style='margin-top:19px;color:#fff;font-size:60px;' class="material-icons">verified_user</span>
+                  <h4 class='step-desc'>
+                    Status Pendaftaran
+                  </h4>
+                  
+                   <div class='step-list'>
+                    <span style='
+                          font-size:60px;
+                          position:absolute;
+                          top:30px;
+                          color:#fff;
+                          left:22px;
+                          'class='fa fa-envelope'></span>
+                    
+                    <div class='lst'>      
+                      <ul>
+                        <li>Syarat 1</li>
+                        <li>Syarat 2</li>
+                        <li>Syarat 3</li>
+                        <li>Syarat 3</li>
+                        <li>Syarat 3</li>
+                      </ul>
+                    </div>
+                    
+                    <span style='
+                          position:absolute;
+                          box-sizing:border-box;
+                          bottom:-20px;
+                          font-size:30px;
+                          color:rgb(0,150,255);
+                          left:0;
+                          width:100%;
+                          text-align:center;
+                          ' class='fa fa-caret-down'></span>
+                  </div>
+                </div>    
+                  <?php
+                }
+                else if($a == 2)
+                {
+                  ?>
+                
+                <div class="step step-1" style='background-color:rgb(30,210,40);'>
+                  <span style='margin-top:19px;color:#fff;font-size:60px;' class="material-icons">control_point</span>
+                  <h4 class='step-desc' style='color:rgb(30,210,40);'> 
+                    <span class='fa fa-check'></span> Pendaftaran Magang
+                  </h4>
+                  
+                  <div class='step-list'>
+                    <span style='
+                          font-size:60px;
+                          position:absolute;
+                          top:30px;
+                          color:#fff;
+                          left:22px;
+                          'class='fa fa-envelope'></span>
+                    
+                    <div class='lst'>      
+                      <ul>
+                        <li>Syarat 1</li>
+                        <li>Syarat 2</li>
+                      </ul>
+                    </div>
+                    
+                    <span style='
+                          position:absolute;
+                          box-sizing:border-box;
+                          bottom:-20px;
+                          font-size:30px;
+                          color:rgb(0,150,255);
+                          left:0;
+                          width:100%;
+                          text-align:center;
+                          ' class='fa fa-caret-down'></span>
+                  </div>
+                </div>
+                
+                
+                <div class="step step-2" style='background-color:rgb(30,210,40);'>
+                  <span style='margin-top:19px;color:#fff;font-size:60px;' class="material-icons">next_week</span>
+                  <h4 class='step-desc' style='color:rgb(30,210,40);'>
+                    <span class='fa fa-check'></span> Pendaftaran Instansi
+                  </h4>
+                  
+                   <div class='step-list'>
+                    <span style='
+                          font-size:60px;
+                          position:absolute;
+                          top:30px;
+                          color:#fff;
+                          left:22px;
+                          'class='fa fa-envelope'></span>
+                    
+                    <div class='lst'>      
+                      <ul>
+                        <li>Syarat 1</li>
+                        <li>Syarat 2</li>
+                        <li>Syarat 3</li>
+                      </ul>
+                    </div>
+                    
+                    <span style='
+                          position:absolute;
+                          box-sizing:border-box;
+                          bottom:-20px;
+                          font-size:30px;
+                          color:rgb(0,150,255);
+                          left:0;
+                          width:100%;
+                          text-align:center;
+                          ' class='fa fa-caret-down'></span>
+                  </div>
+                </div>
+                
+                <div class="step step-3">
+                  <span style='margin-top:19px;color:#fff;font-size:60px;' class="material-icons">verified_user</span>
+                  <h4 class='step-desc'>
+                    Status Pendaftaran
+                  </h4>
+                  
+                   <div class='step-list'>
+                    <span style='
+                          font-size:60px;
+                          position:absolute;
+                          top:30px;
+                          color:#fff;
+                          left:22px;
+                          'class='fa fa-envelope'></span>
+                    
+                    <div class='lst'>      
+                      <ul>
+                        <li>Syarat 1</li>
+                        <li>Syarat 2</li>
+                        <li>Syarat 3</li>
+                        <li>Syarat 3</li>
+                        <li>Syarat 3</li>
+                      </ul>
+                    </div>
+                    
+                    <span style='
+                          position:absolute;
+                          box-sizing:border-box;
+                          bottom:-20px;
+                          font-size:30px;
+                          color:rgb(0,150,255);
+                          left:0;
+                          width:100%;
+                          text-align:center;
+                          ' class='fa fa-caret-down'></span>
+                  </div>
+                </div>
+                <?php
+                }
+                else if($a == 0)
+                {
+                  ?>
+                <div class="step step-1">
+                  <span style='margin-top:19px;color:#fff;font-size:60px;' class="material-icons">control_point</span>
+                  <h4 class='step-desc'> 
+                    Pendaftaran Magang
+                  </h4>
+                  
+                  <div class='step-list'>
+                    <span style='
+                          font-size:60px;
+                          position:absolute;
+                          top:30px;
+                          color:#fff;
+                          left:22px;
+                          'class='fa fa-envelope'></span>
+                    
+                    <div class='lst'>      
+                      <ul>
+                        <li>Syarat 1</li>
+                        <li>Syarat 2</li>
+                      </ul>
+                    </div>
+                    
+                    <span style='
+                          position:absolute;
+                          box-sizing:border-box;
+                          bottom:-20px;
+                          font-size:30px;
+                          color:rgb(0,150,255);
+                          left:0;
+                          width:100%;
+                          text-align:center;
+                          ' class='fa fa-caret-down'></span>
+                  </div>
+                </div>
+                
+                
+                <div class="step step-2">
+                  <span style='margin-top:19px;color:#fff;font-size:60px;' class="material-icons">next_week</span>
+                  <h4 class='step-desc'>
+                    Pendaftaran Instansi
+                  </h4>
+                  
+                   <div class='step-list'>
+                    <span style='
+                          font-size:60px;
+                          position:absolute;
+                          top:30px;
+                          color:#fff;
+                          left:22px;
+                          'class='fa fa-envelope'></span>
+                    
+                    <div class='lst'>      
+                      <ul>
+                        <li>Syarat 1</li>
+                        <li>Syarat 2</li>
+                        <li>Syarat 3</li>
+                      </ul>
+                    </div>
+                    
+                    <span style='
+                          position:absolute;
+                          box-sizing:border-box;
+                          bottom:-20px;
+                          font-size:30px;
+                          color:rgb(0,150,255);
+                          left:0;
+                          width:100%;
+                          text-align:center;
+                          ' class='fa fa-caret-down'></span>
+                  </div>
+                </div>
+                
+                <div class="step step-3">
+                  <span style='margin-top:19px;color:#fff;font-size:60px;' class="material-icons">verified_user</span>
+                  <h4 class='step-desc'>
+                    Status Pendaftaran
+                  </h4>
+                  
+                   <div class='step-list'>
+                    <span style='
+                          font-size:60px;
+                          position:absolute;
+                          top:30px;
+                          color:#fff;
+                          left:22px;
+                          'class='fa fa-envelope'></span>
+                    
+                    <div class='lst'>      
+                      <ul>
+                        <li>Syarat 1</li>
+                        <li>Syarat 2</li>
+                        <li>Syarat 3</li>
+                        <li>Syarat 3</li>
+                        <li>Syarat 3</li>
+                      </ul>
+                    </div>
+                    
+                    <span style='
+                          position:absolute;
+                          box-sizing:border-box;
+                          bottom:-20px;
+                          font-size:30px;
+                          color:rgb(0,150,255);
+                          left:0;
+                          width:100%;
+                          text-align:center;
+                          ' class='fa fa-caret-down'></span>
+                  </div>
+                </div>
+                <?php
+                }
+                else
+                {
+                  ?>
+                <div class="step step-1" style='background-color:rgb(30,210,40);'>
+                  <span style='margin-top:19px;color:#fff;font-size:60px;' class="material-icons">control_point</span>
+                  <h4 class='step-desc' style='color:rgb(30,210,40);'> 
+                    <span class='fa fa-check'></span> Pendaftaran Magang
+                  </h4>
+                  
+                  <div class='step-list'>
+                    <span style='
+                          font-size:60px;
+                          position:absolute;
+                          top:30px;
+                          color:#fff;
+                          left:22px;
+                          'class='fa fa-envelope'></span>
+                    
+                    <div class='lst'>      
+                      <ul>
+                        <li>Syarat 1</li>
+                        <li>Syarat 2</li>
+                      </ul>
+                    </div>
+                    
+                    <span style='
+                          position:absolute;
+                          box-sizing:border-box;
+                          bottom:-20px;
+                          font-size:30px;
+                          color:rgb(0,150,255);
+                          left:0;
+                          width:100%;
+                          text-align:center;
+                          ' class='fa fa-caret-down'></span>
+                  </div>
+                </div>
+                
+                
+                <div class="step step-2" style='background-color:rgb(30,210,40);'>
+                  <span style='margin-top:19px;color:#fff;font-size:60px;' class="material-icons">next_week</span>
+                  <h4 class='step-desc' style='color:rgb(30,210,40);'>
+                    <span class='fa fa-check'></span> Pendaftaran Instansi
+                  </h4>
+                  
+                   <div class='step-list'>
+                    <span style='
+                          font-size:60px;
+                          position:absolute;
+                          top:30px;
+                          color:#fff;
+                          left:22px;
+                          'class='fa fa-envelope'></span>
+                    
+                    <div class='lst'>      
+                      <ul>
+                        <li>Syarat 1</li>
+                        <li>Syarat 2</li>
+                        <li>Syarat 3</li>
+                      </ul>
+                    </div>
+                    
+                    <span style='
+                          position:absolute;
+                          box-sizing:border-box;
+                          bottom:-20px;
+                          font-size:30px;
+                          color:rgb(0,150,255);
+                          left:0;
+                          width:100%;
+                          text-align:center;
+                          ' class='fa fa-caret-down'></span>
+                  </div>
+                </div>
+                
+                <div class="step step-3" style='background-color:rgb(30,210,40);'>
+                  <span style='margin-top:19px;color:#fff;font-size:60px;' class="material-icons">verified_user</span>
+                  <h4 class='step-desc' style='color:rgb(30,210,40);'>
+                    <span class='fa fa-check'></span> Status Pendaftaran
+                  </h4>
+                  
+                   <div class='step-list'>
+                    <span style='
+                          font-size:60px;
+                          position:absolute;
+                          top:30px;
+                          color:#fff;
+                          left:22px;
+                          'class='fa fa-envelope'></span>
+                    
+                    <div class='lst'>      
+                      <ul>
+                        <li>Syarat 1</li>
+                        <li>Syarat 2</li>
+                        <li>Syarat 3</li>
+                        <li>Syarat 3</li>
+                        <li>Syarat 3</li>
+                      </ul>
+                    </div>
+                    
+                    <span style='
+                          position:absolute;
+                          box-sizing:border-box;
+                          bottom:-20px;
+                          font-size:30px;
+                          color:rgb(0,150,255);
+                          left:0;
+                          width:100%;
+                          text-align:center;
+                          ' class='fa fa-caret-down'></span>
+                  </div>
+                </div>
+                <?php
+                }
+                ?>
+                
+                <div class="guideline">
+                  <?php
+                  
+                  if($a == 1)
+                  {
+                    ?>
+                  <div class='succ-line line1' style='
+                       padding:10px;
+                       position:absolute;
+                       left:0;
+                       top:0;
+                       padding:8px;
+                       background-color:rgb(30,210,40);
+                       width:50%;
+                       '></div>
+                  <?php
+                  }
+                  else if($a == 2)
+                  {
+                    ?>
+                  <div class='succ-line line1' style='
+                       padding:10px;
+                       position:absolute;
+                       left:0;
+                       top:0;
+                       padding:8px;
+                       background-color:rgb(30,210,40);
+                       width:100%;
+                       '></div>
+                  <?php
+                  }
+                  else if($a == 0)
+                  {
+                    ?>
+                  
+                  <?php
+                  }
+                  else
+                  {
+                    ?>
+                  <div class='succ-line line1' style='
+                       padding:10px;
+                       position:absolute;
+                       left:0;
+                       top:0;
+                       padding:8px;
+                       background-color:rgb(30,210,40);
+                       width:100%;
+                       '></div>
+                  <?php
+                  }
+                  ?>
                 </div>
               </div>
-              
-              <div class="col-md-9 files-upload filesdoc" style="border-left:3px solid rgb(0,170,190);;display:none">
-                <h3 style="background-color:rgb(0,170,190);color:#fff;margin:0;padding:10px;font-weight:bold;">Unggah Dokumen</h3>
-                <div class='col-md-12 upload-body' style='padding-top:20px;'>
-                  
+              <?php
+              }
+              else
+              {
+                ?>
+              <h4 class='alert alert-warning' style='text-align: center;font-weight:bold;'>Anda belum dapat melakukan Pendaftaran Magang. Mohon penuhi Persyaratan terlebih dahulu.</h4>
+              <?php
+              }
+              ?>
+            </div>
+            
+            <div class='row'>
+              <div class='col-md-12' style='padding:40px;'></div>
+            </div>
+            
+            <div class='row'>
+              <div class='col-md-12'>
+                <?php
+                if($a == 0)
+                {
+                  ?>
+                <div class='col-md-4 col-md-offset-4'>
+                  <h5 style='margin:0;text-align: center;text-transform: uppercase;font-weight:bold;font-size:13px;'>Langkah 1 &centerdot; Pendaftaran Magang</h5>
+                  <button target='magang' type='button' class='btn btn-info btn-lg btn-act' style='width:100%;'>Lengkapi Persyaratan</button>
                 </div>
+                <?php
+                }
+                ?>
               </div>
             </div>
           </div>
@@ -83,18 +693,33 @@
   
   <script>
     $(document).ready(function(){
-      //Init classes
-      var http = new HtRequest();
-      $(".trg-doc").click(function(){
+      $(".step-1").click(function(){
+        $(this).children("div").fadeToggle(100);
+      });
+      
+      $(".step-2").click(function(){
+        $(this).children("div").fadeToggle(100);
+      });
+      
+      $(".step-3").click(function(){
+        $(this).children("div").fadeToggle(100);
+      });
+      
+      
+      
+      //ini adalah pembatas :)
+      
+      var ht = new HtRequest();
+      var modal = new Modal();
+      
+      $(".btn-act").click(function(){
         var target = $(this).attr("target");
-        var body = $(this).attr("inn-body");
-        var file = $(this).attr("file");
-    
-        $(".filesdoc").fadeOut(0);
-        $(target).slideDown(500);
         
-        
-        http.htGet("reqs/"+file,body);
+        if(target === "magang")
+        {
+          modal.triggerModal("open","Pendaftaran Magang");
+          ht.htGet("form/magang.php",".md-content");
+        }
       });
     });
   </script>

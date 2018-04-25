@@ -21,8 +21,8 @@
             </li>
             <li>
               <a href="upload.php">
-                <i class="material-icons">folder</i>
-                <p>Dokumen Magang</p>
+                <i class="material-icons">clear_all</i>
+                <p>Pendaftaran Magang</p>
               </a>
             </li>
           </ul>
