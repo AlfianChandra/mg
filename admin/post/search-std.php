@@ -9,7 +9,7 @@
   }
  ?>
 
-<?php if ($mahasiswa->rows == 0): ?> 
+<?php if ($mahasiswa->datas == NULL): ?> 
 <h5 style='margin:0;text-align:center;text-transform: uppercase;font-size:16px;padding:10px;font-weight:bold;'><span class='fa fa-inbox'></span> Tidak ada hasil</h5>
 <?php endif ?>
 

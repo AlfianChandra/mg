@@ -16,7 +16,11 @@
 			{
 				$this->username 		= $row->username;
 				$this->nama_instansi	= $row->nama_instansi;
-				
+				$this->kapasitas	 	= $row->kapasitas;
+				$this->deskripsi 		= $row->deskripsi;
+				$this->syarat 			= $row->syarat;
+				$this->kriteria			= $row->kriteria;
+				$this->alamat_instansi	= $row->alamat_instansi;
 			}
 		}
 
@@ -46,7 +50,8 @@
 				$this->kapasitas		= $row->kapasitas;
 				$this->syarat			= $row->syarat;
 				$this->kriteria			= $row->kriteria;
-				$this->alamat_instansi	= $row->alamat_instansi;		
+				$this->alamat_instansi	= $row->alamat_instansi;
+				
 			}
 		}
 
@@ -78,6 +83,45 @@
 			while ($row = $result->fetch_object()) {
 				$this->tempat_magang = $row->tempat_magang;
 			}
+		}
+
+		function lihatPendaftar()
+		{
+			$username = $_SESSION['username'];
+
+			$query = "SELECT * FROM mahasiswa WHERE tempat_magang='$username'";
+			$result = $this->conn->query($query);
+
+			$this->datas = [];
+			while($row = $result->fetch_object())
+			{
+				$this->datas[] = $row;
+			}
+
+		}
+
+		function pendaftarCari($data)
+		{
+			$username = $_SESSION['username'];
+
+			$query 	= "SELECT * FROM mahasiswa WHERE nim LIKE '%$data%' OR nama LIKE '%$data%' AND tempat_magang = '$username'";
+			$result = $this->conn->query($query);
+
+			$this->datas = [];
+			while($row = $result->fetch_object())
+			{
+				$this->datas[] = $row;
+			}
+		}
+
+		function tambahInstansi($username, $nama_instansi, $kapasitas, $kriteria, $syarat, $alamat, $deskripsi, $password)
+		{
+			$query = "INSERT INTO instansi(username, nama_instansi, kapasitas, deskripsi, syarat, kriteria, alamat_instansi) VALUES ('$username', '$nama_instansi', '$kapasitas', '$deskripsi', '$syarat', '$kriteria', '$alamat')";
+			$this->conn->query($query);
+
+			$query = "INSERT INTO auth(username, password, role) VALUES ('$username', '$password', '3')";
+
+			return $this->conn->query($query);
 		}
 
 	}

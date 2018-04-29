@@ -26,7 +26,7 @@
       <tbody>
         <?php 
             foreach ($instansi->datas as $key) {
-              echo "<tr class='clicker' data-id='$key->username'><td>".$key->nama_instansi."</td><td>".$key->kapasitas."</td><td>".$key->pemagang."</td><td>".$key->pemagang_terdaftar."</td></tr>";
+              echo "<tr class='clicker' data-id='$key->username'><td>".$key->nama_instansi."</td><td>".$key->kapasitas."</td><td>".$key->pemagang_diterima."</td><td>".$key->pemagang_terdaftar."</td></tr>";
             }
          ?>
       </tbody>

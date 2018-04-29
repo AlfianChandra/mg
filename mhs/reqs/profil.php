@@ -32,12 +32,14 @@
   }
 </style>
 <div class="col-md-3">
+
   <h3 class="profile-head">Foto Profil</h3>
   <img src="http://icons.iconarchive.com/icons/webalys/kameleon.pics/512/Student-3-icon.png" class="img-responsive"> 
 </div>
 <div class="col-md-9">
   <h3 class="profile-head">Informasi Profil</h3> <?php require_once '../../core/Mahasiswa.php'; ?>
   <div class="profile-content">
+    
     <h5 class="data-type">Nama</h5><h5 class="data-content"> : <?= $mahasiswa->nama ?></h5>
     <h5 class="data-type">NIM</h5><h5 class="data-content">: <?= $mahasiswa->nim ?></h5>
     <h5 class="data-type">Tempat & Tanggal Lahir</h5><h5 class="data-content">: <?= $mahasiswa->tempat_lahir . ', ' . $mahasiswa->tanggal_lahir ?></h5>

@@ -55,23 +55,22 @@
   <h3 style='font-weight: bold;'>Data Mahasiswa</h3>
   <div class="profile-content">
     <h5 class="data-type">Nama</h5><h5 class="data-content"> : <?= $mahasiswa->nama ?></h5>
-    <h5 class="data-type">Jenis Kelamin</h5><h5 class="data-content">: <?= $mahasiswa->jenis_kelamin ?></h5>
+        <h5 class="data-type">NIM</h5><h5 class="data-content">: <?= $mahasiswa->nim ?></h5>
+    
     <h5 class="data-type">Tempat & Tanggal Lahir</h5><h5 class="data-content">: <?= $mahasiswa->tempat_lahir . ', ' . $mahasiswa->tanggal_lahir ?></h5>
-    <h5 class="data-type">Nomor Telepon</h5><h5 class="data-content">: <?= $mahasiswa->telp ?></h5>
-    <h5 class="data-type">NIM</h5><h5 class="data-content">: <?= $mahasiswa->nim ?></h5>
-    <h5 class="data-type">Program Studi</h5><h5 class="data-content">: <?= $mahasiswa->prodi ?></h5>
+    <h5 class="data-type">Jenis Kelamin</h5><h5 class="data-content">: <?= $mahasiswa->jenis_kelamin ?></h5>
     <h5 class="data-type">Fakultas</h5><h5 class="data-content">: <?= $mahasiswa->fakultas ?></h5>
+    <h5 class="data-type">Program Studi</h5><h5 class="data-content">: <?= $mahasiswa->prodi ?></h5>
+    <h5 class="data-type">Nomor Telepon</h5><h5 class="data-content">: <?= $mahasiswa->telp ?></h5>
     <h5 class="data-type">Dosen Pembimbing</h5><h5 class="data-content">: <?= $mahasiswa->nama_pembimbing ?></h5>
   </div>
   
 </div>
+
 <div class="col-md-12">
   <button type='button' class='btn btn-default backbtn'>Kembali</button>
-  <a href="../action/editMahasiswa.php?id=<?= $id ?>" class="btn btn-success">Edit</a>
+  <button type="button" class="btn btn-success bt-mhs-act" data-id="<?= $mahasiswa->nim ?>">Edit</button>  
   <a href="../action/hapusMahasiswa.php?id=<?= $id ?>" onclick="return confirm('Apakah anda yakin?')" class="btn btn-danger">hapus</a>
-  
-  
-  
 </div>
 
 <script>
@@ -83,5 +82,13 @@ $(document).ready(function(){
     ht.htGet("page/student-list.php",".md-content");
     modal.triggerModal("open","Lihat Mahasiswa");
   });
-});  
+
+  $(".bt-mhs-act").click(function(){
+    var id = $(this).attr("data-id");
+    var data = {"id":id};
+    modal.triggerModal("open","Edit Mahasiswa");
+    ht.htPost("page/edit-student-form.php",data,".md-content");
+  });
+
+});           
 </script>

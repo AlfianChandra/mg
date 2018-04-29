@@ -14,7 +14,8 @@
 			$query 	= "SELECT dosen.nama AS nama_pembimbing, mahasiswa.* FROM mahasiswa JOIN dosen WHERE dosen.nip = mahasiswa.nip_pembimbing AND mahasiswa.nim = '$nim'";
 			$result = $this->conn->query($query);
 
-			if($result->current_field == 0){
+			if($result->num_rows == 0){
+
 				$query 	= "SELECT *, nip_pembimbing AS nama_pembimbing FROM mahasiswa WHERE nim = '$nim'";
 				$result = $this->conn->query($query);
 			}
@@ -56,9 +57,11 @@
 			$query 	= "SELECT dosen.nama AS nama_pembimbing, mahasiswa.* FROM mahasiswa JOIN dosen WHERE dosen.nip = mahasiswa.nip_pembimbing AND mahasiswa.nim = '$id'";
 			$result = $this->conn->query($query);
 
-			if($result->current_field == 0){
+			if($result->num_rows == 0){
+
 				$query 	= "SELECT *, nip_pembimbing AS nama_pembimbing FROM mahasiswa WHERE nim = '$id'";
 				$result = $this->conn->query($query);
+
 			}
 
 			while($row = $result->fetch_object())
@@ -89,7 +92,6 @@
 				$this->datas[] = $row;
 			}
 
-			$this->rows = mysqli_num_rows($result);
 		}
 
 		function tambahMahasiswa($nim, $nama, $tempat_lahir, $tanggal_lahir, $jenis_kelamin, $fakultas, $prodi, $telp, $sks, $ipk, $semester, $password)
@@ -113,9 +115,9 @@
 			return $this->conn->query($query);			
 		}
 
-		function editMahasiswa()
+		function editMahasiswa($nim, $nama, $tempat_lahir, $tanggal_lahir, $jenis_kelamin, $fakultas, $prodi, $telp, $sks, $ipk, $semester)
 		{
-			$query = "UPDATE mahasiswa SET nim='$nim',nama='$nama',tempat_lahir='$tempat_lahir',tanggal_lahir='$tanggal_lahir',fakultas='$fakultas',prodi='$prodi',jenis_kelamin='$jenis_kelamin',telp='$telp',sks='$sks',ipk='$ipk',semester='semester' WHERE nim='$nim'";
+			$query = "UPDATE mahasiswa SET nim='$nim',nama='$nama',tempat_lahir='$tempat_lahir',tanggal_lahir='$tanggal_lahir',fakultas='$fakultas',prodi='$prodi',jenis_kelamin='$jenis_kelamin',telp='$telp',sks='$sks',ipk='$ipk',semester='$semester' WHERE nim='$nim'";
 
 			return $this->conn->query($query);
 

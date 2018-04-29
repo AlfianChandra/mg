@@ -48,6 +48,7 @@ else
     <img src='assets/img/<?= $instansi->username ?>.png' style='float:left; box-sizing:border-box;width:100%;' alt="gambar">
     <h5 style='font-weight:bold;font-size:13px;'><span class='fa fa-user'></span> Kapasitas:  <b style='color:purple;'><?= $instansi->kapasitas ?> Orang</b></h5>
     <h5 style='font-weight:bold;font-size:13px;'><span class='fa fa-road'></span> Alamat:  <b style='color:purple;'><?= $instansi->alamat_instansi ?></b></h5>
+    
   </div>
 </div>
 
