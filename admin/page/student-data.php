@@ -67,8 +67,8 @@
 </div>
 <div class="col-md-12">
   <button type='button' class='btn btn-default backbtn'>Kembali</button>
-
-  <a href="../action/hapusMahasiswa.php?id=<?= $id ?>" class="btn btn-danger">hapus</a>
+  <a href="../action/editMahasiswa.php?id=<?= $id ?>" class="btn btn-success">Edit</a>
+  <a href="../action/hapusMahasiswa.php?id=<?= $id ?>" onclick="return confirm('Apakah anda yakin?')" class="btn btn-danger">hapus</a>
   
   
   

@@ -50,18 +50,23 @@
 			}
 		}
 
-		function milihInstansi()
+		function milihInstansi($tanggal_mulai, $tanggal_selesai)
 		{
-			$username	= $_SESSION['username'];
-			$id 		= $_SESSION['instansi'];
+			$username		= $_SESSION['username'];
+			$instansi_id	= $_SESSION['instansi'];
+					
+			$query 	= "UPDATE mahasiswa SET tempat_magang ='$instansi_id' WHERE nim='$username'";
+
+			$this->conn->query($query);
+
+			$query	= "UPDATE instansi SET pemagang_terdaftar = pemagang_terdaftar + 1 WHERE username ='$instansi_id'";
+
+			$this->conn->query($query);
+
+			$query = "INSERT INTO proses_magang(nim, instansi, tanggal_mulai, tanggal_selesai) VALUES ('$username', '$instansi_id', '$tanggal_mulai', '$tanggal_selesai')";
 			
-			$query 		= "UPDATE mahasiswa SET tempat_magang ='$id' WHERE nim='$username'";
 
-			$this->conn->query($query);
-
-			$query		= "UPDATE instansi SET pemagang_terdaftar = pemagang_terdaftar + 1 WHERE username ='$id'";
-
-			$this->conn->query($query);
+			return $this->conn->query($query);
 		}
 
 		function statusInstansi()

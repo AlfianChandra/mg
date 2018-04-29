@@ -53,30 +53,31 @@
 <div class="col-md-12" style="padding-bottom:50px;">
   <h3 class="status-head">Informasi</h3>
   <ul class="ul-data">
-    <li>MATA KULIAH MAGANG SEBAGAI ALTERNATIF UNTUK MENGGANTIKAN MATA KULIAH KKN DENGAN BOBOT SKS TOTAL 4 SKS DAN DURASI PELAKSANAAN SELAMA 2 BULAN.</li>
-    <li>BAGI MAHASISWA YANG MENGONTRAK MAGANG BERSAMAAN DENGAN MATA KULIAH TATAP MUKA, MAKA MAGANG HARUS DILAKSANAKAN DI LUAR JADWAL PERKULIAHAN (DI AWAL ATAU AKHIR SEMESTER). UNTUK MATA KULIAH TATAP MUKA, MAHASISWA TETAP DIWAJIBKAN HADIR MINIMAL 75% DARI TOTAL KEHADIRAN DOSEN.</li>
-    <li>BAGI MAHASISWA YANG MENGONTRAK MAGANG TIDAK BERSAMAN DENGAN MATA KULIAH TATAP MUKA, MAKA PELAKSANAAN MAGANG DAPAT DILAKSANAKAN SEPANJANG SEMESTER. </li>
-    <li>MAHASISWA DAPAT MENGONTRAK MAGANG DAN SKRIPSI SECARA BERSAMAAN MULAI SEMESTER GANJIL 2015/2016.</li>
-    <li>MAGANG DAPAT DILAKSANAKAN SEBELUM JADWAL PENGISIAN KRS GANJIL 2015/2016.</li>
+    <li>Mata kuliah magang sebagai alternatif untuk menggantikan mata kuliah KKN dengan bobot sks total 4 sks dan durasi pelaksanaan selama 2 bulan.</li>
+    <li>Bagi mahasiswa yang mengontrak magang bersamaan dengan mata kuliah tatap muka, maka magang harus dilaksanakan di luar jadwal perkuliahan (di awal atau akhir semester). Untuk mata kuliah tatap muka, mahasiswa tetap diwajibkan hadir minimal 75% dari total kehadiran dosen.</li>
+    <li>Bagi mahasiswa yang mengontrak magang tidak bersaman dengan mata kuliah tatap muka, maka pelaksanaan magang dapat dilaksanakan sepanjang semester. </li>
+    <li>Mahasiswa dapat mengontrak magang dan skripsi secara bersamaan mulai semester ganjil 2015/2016.</li>
+    <li>Magang dapat dilaksanakan sebelum jadwal pengisian krs ganjil 2015/2016.</li>
   </ul>
   <h3 class="status-head">Prosedur</h3>
   <ul class="ul-data">
-    <li>MAHASISWA MENGHUBUNGI INSTANSI TEMPAT MAGANG SECARA INFORMAL UNTUK MENGETAHUI APAKAH BISA MELAKSANAKAN MAGANG DI INSTANSI TERSEBUT.</li>
-    <li>MAHASISWA MENGURUS PERSYARATAN ADMINISTRASI MAGANG.</li>
-    <li>MAHASISWA MENGIRIMKAN SURAT PENGANTAR MAGANG BESERTA PROPOSAL MAGANG KE INSTANSI/PERUSAHAAN YANG DITUJU.</li>
-    <li>APABILA MAHASISWA DITERIMA MAGANG OLEH INSTANSI YANG DITUJU, MAHASISWA HARUS MELAPORKAN KE TU FAKULTAS DENGAN MENUNJUKKAN SURAT BALASAN PENERIMAAN MAGANG DARI INSTANSI YANG DITUJU.</li>
-    <li>SEBELUM PELAKSANAAN MAGANG, MAHASISWA AKAN MENDAPAT PEMBEKALAN.</li>
-    <li>SELAMA MAGANG MAHASISWA HARUS MENGISI LOGBOOK (FORMULIR DAPAT DIMINTA DI PRODI ATAU TU FAKULTAS).</li>
-    <li>DOSEN PEMBIMBING MAGANG AKAN DITENTUKAN OLEH PRODI.</li>
-    <li>MAHASISWA HARUS MENYERAHKAN LAPORAN MAGANG PADA AKHIR PELAKSANAAN MAGANG UNTUK DISEMINARKAN.</li>
+    <li>Mahasiswa menghubungi instansi tempat magang secara informal untuk mengetahui apakah bisa melaksanakan magang di instansi tersebut.</li>
+    <li>Mahasiswa mengurus persyaratan administrasi magang.</li>
+    <li>Mahasiswa mengirimkan surat pengantar magang beserta proposal magang ke instansi/perusahaan yang dituju.</li>
+    <li>Apabila mahasiswa diterima magang oleh instansi yang dituju, mahasiswa harus melaporkan ke tu fakultas dengan menunjukkan surat balasan penerimaan magang dari instansi yang dituju.</li>
+    <li>Sebelum pelaksanaan magang, mahasiswa akan mendapat pembekalan.</li>
+    <li>Selama magang mahasiswa harus mengisi logbook (formulir dapat diminta di prodi atau tu fakultas).</li>
+    <li>Dosen pembimbing magang akan ditentukan oleh prodi.</li>
+    <li>Mahasiswa harus menyerahkan laporan magang pada akhir pelaksanaan magang untuk diseminarkan.</li>
   </ul>
-  <h3 class="status-head">Syarat Administratif</h3>
+  <h3 class="status-head">Syarat administratif</h3>
   <ul class="ul-data">
-    <li>LULUS MATA KULIAH TATAP MUKA MINIMAL 120 SKS (KATEGORI LULUS ADALAH NILAI C KE ATAS) DENGAN MENYERAHKAN BUKTI BERUPA FOTOKOPI KHS ATAU TRANSKRIP.</li>
-    <li>MEMBUAT PROPOSAL RINGKAS MENGENAI USULAN TOPIK MAGANG.</li>
-    <li>MENGISI FORMULIR MAGANG YANG DISETUJUI OLEH KETUA PRODI (FORMULIR DAPAT DIMINTA DI PRODI ATAU TU FAKULTAS).</li>
-    <li>BERKAS A,B, DAN C YANG TELAH LENGKAP DISERAHKAN KE TU UNTUK DIBUATKAN SURAT PENGANTAR MAGANG DARI FAKULTAS UNTUK DIKIRIMKAN KE INSTANSI/PERUSAHAAN YANG DITUJU.</li>
+    <li>Lulus mata kuliah tatap muka minimal 120 sks (kategori lulus adalah nilai c ke atas) dengan menyerahkan bukti berupa fotokopi KHS atau transkrip.</li>
+    <li>Membuat proposal ringkas mengenai usulan topik magang.</li>
+    <li>Mengisi formulir magang yang disetujui oleh ketua prodi (formulir dapat diminta di prodi atau tu fakultas).</li>
+    <li>Berkas a, b, dan c yang telah lengkap diserahkan ke TU untuk dibuatkan surat pengantar magang dari fakultas untuk dikirimkan ke instansi/perusahaan yang dituju.</li>
+
   </ul>
-  <h3 class="status-head">Sumber</h3>
+  <h3 class="status-head">Sumber :</h3>
   <h5><a class="btn btn-primary" href="http://edisaputra.staff.unja.ac.id/2016/06/08/informasi-magang-dan-skripsi/" target="_blank">Informasi Magang oleh Bapak Edi Saputra</a></h5>
 </div>

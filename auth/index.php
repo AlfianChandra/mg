@@ -37,7 +37,7 @@
         <div class="wrap-login100">
           <form class="login100-form" method="POST" action="../action/login.php">
             <span class="login100-form-title p-b-34">
-            ADMINISTRATOR AUTH
+            LOGIN
             </span>
             <div class="wrap-input100 rs1-wrap-input100 validate-input m-b-20" data-validate="Type user name">
               <input id="first-name" class="input100" type="text" name="username" placeholder="Nama Pengguna">

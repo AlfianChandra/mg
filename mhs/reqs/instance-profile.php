@@ -28,11 +28,7 @@ else
     <?php if ($instansi->tempat_magang !== NULL) : ?>
       <?php if ($instansi->tempat_magang == $instansi->username) : ?>
         <button type="button" class='btn btn-success'>terpilih</button> 
-      <?php else : ?>
-        <a class='btn btn-primary' href="../action/pilih.php">ubah instansi</a>
       <?php endif; ?>
-    <?php else : ?>
-      <a class='btn btn-primary' href="../action/pilih.php">Pilih</a>
     <?php endif; ?>
   <?php endif; ?>
 </div>

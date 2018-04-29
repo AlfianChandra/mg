@@ -92,9 +92,9 @@
 			$this->rows = mysqli_num_rows($result);
 		}
 
-		function tambahMahasiswa($nim, $nama, $tempat_lahir, $tanggal_lahir, $jenis_kelamin, $fakultas, $prodi, $telp, $sks, $ipk, $semester, $pembimbing, $password)
+		function tambahMahasiswa($nim, $nama, $tempat_lahir, $tanggal_lahir, $jenis_kelamin, $fakultas, $prodi, $telp, $sks, $ipk, $semester, $password)
 		{
-			$query 	= "INSERT INTO mahasiswa(nim, nama, tempat_lahir, tanggal_lahir, jenis_kelamin, fakultas, prodi, telp, sks, ipk, nip_pembimbing, semester) VALUES ('$nim', '$nama', '$tempat_lahir', '$tanggal_lahir', '$jenis_kelamin', '$fakultas', '$prodi', '$telp', '$sks', '$ipk','$pembimbing','$semester')";
+			$query 	= "INSERT INTO mahasiswa(nim, nama, tempat_lahir, tanggal_lahir, jenis_kelamin, fakultas, prodi, telp, sks, ipk, semester) VALUES ('$nim', '$nama', '$tempat_lahir', '$tanggal_lahir', '$jenis_kelamin', '$fakultas', '$prodi', '$telp', '$sks', '$ipk', '$semester')";
 
 			$this->conn->query($query);
 
@@ -111,6 +111,19 @@
 			$query = "DELETE FROM auth WHERE username = '$id'";
 			
 			return $this->conn->query($query);			
+		}
+
+		function editMahasiswa()
+		{
+			$query = "UPDATE mahasiswa SET nim='$nim',nama='$nama',tempat_lahir='$tempat_lahir',tanggal_lahir='$tanggal_lahir',fakultas='$fakultas',prodi='$prodi',jenis_kelamin='$jenis_kelamin',telp='$telp',sks='$sks',ipk='$ipk',semester='semester' WHERE nim='$nim'";
+
+			return $this->conn->query($query);
+
+		}
+
+		function magangMahasiswa()
+		{
+
 		}
 	}
 

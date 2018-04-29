@@ -4,7 +4,7 @@
 	if (isset($_GET['id'])) {
 		$id = $_GET['id'];
 		if ($mahasiswa->hapusMahasiswa($id)) {
-			header("Location: /admin");
+			header("Location: ../admin");
 		}else {
 			echo "gagal";
 		}
