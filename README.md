@@ -60,3 +60,18 @@
   <li>Kalo ga ada error, ntar proses Cloning bakal berjalan lancar jaya dan file projek bakal disetor ke Local Path</li>
   <li>Setup kelar, ShutDown kompi lalu tidur :D</li>
 </ul>
+
+<h3>Cara PUSH</h3>
+<ul>
+  <li>Edit file projek ente</li>
+  <li>Commit perubahannya, kasih Summary ama deskripsi</li>
+  <li>Di bagian atas GitHub Desktop, klik Push</li>
+</ul>
+<p>Note: Di panel Kiri ada list file yang ente ubah dan siap di Commit</p>
+
+<h3>Cara PULL</h3>
+<ul>
+  <li>Klik tombol Fetch Origin di Bagian atas kalo repo belum direfresh ama Github Desktop</li>
+  <li>Kalo dah, ntar langsung PULL aja</li>
+  <li>Di panel kiri, buka tab History untuk ngeliat perubahan yang di ubah ama Collabs</li>
+</ul>
