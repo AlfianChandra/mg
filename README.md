@@ -79,8 +79,12 @@
 </ul>
 <p>Note: GitHub Desktop otomatis ngecek perubahan yang terjadi di repo secara berkala (per menit). Kalo mau manual, ya klik aja tombol Fetch Origin biar langsung ngecek perubahan reponya.
 
+<<<<<<< HEAD
 
 
 
 <h1>Dah ah! Ane mau bobo :P</h1>
 
+=======
+<h1>Dah ah! Ane mau bobo :P</h1>
+>>>>>>> 9eb4d2a3c6671f96f168888207130ae06eb383f7
