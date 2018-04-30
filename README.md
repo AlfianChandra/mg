@@ -1,8 +1,8 @@
 <h1>REPONYA DEVELOPER APP MAGANG KELOMPOK 6</h1>
-<img src='https://media.giphy.com/media/xTdAji7Uy0GlCjOv5K/giphy.gif' style='width:100%'>
+<img src='https://media.giphy.com/media/xTdAji7Uy0GlCjOv5K/giphy.gif'  width='100%'>
 <h3>RULE REPO!!!</h3>
 <ul>
-  <li>Kudu COMMIT ke MASTER BRANCH only!!</li>
+  <li>Kudu COMMIT ke MASTER BRANCH only!!!!!! Jangan bikin branch sendiri!!!!</li>
   <li>Kalo COMMIT usahakan sertai Deskripsi anti mainstrim biar otak ga keriting.</li>
   <li>Rajin ngePush biar tugas cepet kelar :V</li>
 </ul>
@@ -27,7 +27,7 @@
 <p>Pull atau "Narik" (Baca:Donlot) fungsinya biar ente bisa ngedonlot semua file yang udah di <b>PUSH</b> ama <b>COLLABORATORS</b> lain. Ntar GitHub secara otomatis bakal nyetor file-file yang dah di <b>PULL</b> ke <b>LOKAL PATH</b> projek.</p>
 
 <h4>Collaborators</h4>
-<p>Adalah para Developers ganteng yang nimbrung di <b>REPO</b>. Mereka yang ngerjain projeknya bareng-bareng.</p>
+<p>Adalah para Developers ganteng yang nongki di <b>REPO</b>. Mereka yang ngerjain projeknya bareng-bareng.</p>
 
 <h4>Branch</h4>
 <p>Branch (Baca:Ranting/Cabang) gunanya biar kerjaan antar <b>COLLABORATORS</b> kaga nabrak/salah kamar. Jadi kode <b>COLLABS</b> lain tetap steril. <code>Master</code> branch artinya semua <b>COLLABS</b> bisa ngubah/nambah semua kode/file di <b>REPO</b> tanpa terkecuali.</p>
