@@ -1,6 +1,7 @@
 <h1>REPONYA DEVELOPER APP MAGANG KELOMPOK 6</h1>
 <img src='https://media.giphy.com/media/xTdAji7Uy0GlCjOv5K/giphy.gif'  width='100%'>
 <h3>RULE REPO!!!</h3>
+<marquee>Anda sopan kami segan, anda tidak sopan, kami lempar kulit dogan.</marquee>
 <ul>
   <li>Kudu COMMIT ke MASTER BRANCH only!!!!!! Jangan bikin branch sendiri!!!!</li>
   <li>Kalo COMMIT usahakan sertai Deskripsi anti mainstrim biar otak ga keriting.</li>
