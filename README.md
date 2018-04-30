@@ -72,6 +72,6 @@
 <h3>Cara PULL</h3>
 <ul>
   <li>Klik tombol Fetch Origin di Bagian atas kalo repo belum direfresh ama Github Desktop</li>
-  <li>Kalo dah, ntar langsung PULL aja</li>
-  <li>Di panel kiri, buka tab History untuk ngeliat perubahan yang di ubah ama Collabs</li>
+  <li>Kalo dah, ntar teks tombolnya berubah jadi "Pull Origin" & Klik aja tombolnya buat ngePULL</li>
+  <li>Di panel kiri, buka tab History untuk ngeliat perubahan yang di ubah ama Collabs serta summary & deskripsi</li>
 </ul>
