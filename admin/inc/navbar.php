@@ -25,6 +25,12 @@
                 <p>Manage Instansi</p>
               </a>
             </li>
+            <li>
+              <a href="list_magang.php">
+                <i class="material-icons">settings</i>
+                <p>Manage Magang</p>
+              </a>
+            </li>
           </ul>
         </div>
       </div>

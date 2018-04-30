@@ -19,9 +19,11 @@
 			}
 		}
 
-		function lihatMahasiswa()
+		function adminUploadPengajuan($id)
 		{
-			
+			$query = "UPDATE proses_magang SET admin_upload = 1 WHERE nim = '$id'";
+
+			return $this->conn->query($query);
 		}
 	}
 

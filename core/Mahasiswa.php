@@ -1,5 +1,6 @@
 <?php 
 	require_once 'Database.php';
+	require_once 'File.php';
 
 	class Mahasiswa extends Database
 	{
@@ -106,7 +107,7 @@
 		}
 
 		function hapusMahasiswa($id)
-		{
+		{	
 			$query = "DELETE FROM mahasiswa WHERE nim = '$id'";
 			$this->conn->query($query);
 
@@ -123,8 +124,28 @@
 
 		}
 
-		function magangMahasiswa()
-		{
+		function lihatMahasiswaMagang()
+		{	
+			$query 	= "SELECT proses_magang.*, mahasiswa.nama AS nama FROM proses_magang JOIN mahasiswa WHERE mahasiswa.nim = proses_magang.nim";
+			$result = $this->conn->query($query);
+
+			$this->datas = [];
+			while($row = $result->fetch_object())
+			{
+				$this->datas[] = $row;
+			}
+		}
+
+		function mahasiswaCariMagang($data)
+		{	
+			$query 	= "SELECT proses_magang.*, mahasiswa.nama AS nama FROM proses_magang JOIN mahasiswa WHERE mahasiswa.nim = proses_magang.nim AND proses_magang.nim LIKE '%$data%' OR nama LIKE '%$data%'";
+			$result = $this->conn->query($query);
+
+			$this->datas = [];
+			while($row = $result->fetch_object())
+			{
+				$this->datas[] = $row;
+			}
 
 		}
 	}
