@@ -51,5 +51,5 @@
   <li>Di Textfield Repository URL, isi URL yang mengarahkan ke Repo ini (URLnya: https://github.com/AlfianChandra/mg).</li>
   <li>Di Textfield Local Path, isi direktori tempat ente bakal nyetor file projek dari Repo. (Ex: C:\xampp\htdocs\namafolder\)</li>
   <li>Kalo ga ada error, ntar proses Cloning bakal berjalan lancar jaya dan file projek bakal disetor ke Local Path</li>
-  <li>Setup kelar, ShutDown kompi :D</li>
+  <li>Setup kelar, ShutDown kompi lalu tidur :D</li>
 </ul>
