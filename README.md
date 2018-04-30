@@ -39,10 +39,17 @@
 
 <h3>How-To: Setup GITHUB in Your Kompi</h3>
 <ul>
-  <li>Niatkan & Baca Bismillah.</li>
+  <li>Niatkan Dengan Kesungguhan Hati & Baca Bismillah.</li>
   <li>Buka GitHub nyak.</li>
   <li>Kalo belon Regis, ya regis dulu. Kalo dah, login ke akun ente.</li>
   <li>Donlot GitHub Desktopnya di https://desktop.github.com. Downlot sesuai architect PC ente.</li>
-  <li>Setup GitHub Desktop ampe kelar terus login dengan akun GitHub ente.</li>
-  <li>Dah login?? Klik <code>FILE</code> di Navbar terus klik <code>Clone Repository...</code></li>
+  <li>Setup GitHub Desktop ampe kelar terus login di Github Desktop pake akun GitHub ente.</li>
+  <li>Kasih tau ane Username ente biar ane invite jadi Collaborator</li>
+  <li>Ntar kalo dah ane invite, buka https://github.com/AlfianChandra/mg/invitations dan terima invitationnya</li>
+  <li>Dah jadi Collab?? Klik <code>FILE</code> di Navbar terus klik <code>Clone Repository...</code></li>
+  <li>Pop-Upnya keluar?? Klik tab <code>URL</code></li>
+  <li>Di Textfield Repository URL, isi URL yang mengarahkan ke Repo ini (URLnya: https://github.com/AlfianChandra/mg).</li>
+  <li>Di Textfield Local Path, isi direktori tempat ente bakal nyetor file projek dari Repo. (Ex: C:\xampp\htdocs\namafolder\)</li>
+  <li>Kalo ga ada error, ntar proses Cloning bakal berjalan lancar jaya dan file projek bakal disetor ke Local Path</li>
+  <li>Setup kelar, ShutDown kompi :D</li>
 </ul>
