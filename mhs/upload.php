@@ -73,14 +73,24 @@ $a = 0;
         border-radius:5px;
         color:#fff;
         height:120px;
+        animation:updown linear infinite 1s;
+      }
+      
+      @keyframes updown
+      {
+        0%{top:-150px}
+        50%{top:-145px}
+        100%{top:-150px}
       }
       
       .lst
       {
         position:absolute;
+        font-size: 10px;
+        text-align:left;
         top:0;
         width:90%;
-        right:0;
+        right:-20px;
         padding:20px;
         margin-bottom:10px;
         overflow-y:hidden;
@@ -136,8 +146,9 @@ $a = 0;
                     
                     <div class='lst'>      
                       <ul>
-                        <li>Syarat 1</li>
-                        <li>Syarat 2</li>
+                        <li>Mengunggah Dokumen Persyaratan</li>
+                        <li>Memilih Instansi</li>
+                        <li>Menentukan Waktu Magang</li>
                       </ul>
                     </div>
                     
@@ -171,9 +182,7 @@ $a = 0;
                     
                     <div class='lst'>      
                       <ul>
-                        <li>Syarat 1</li>
-                        <li>Syarat 2</li>
-                        <li>Syarat 3</li>
+                        <li>Mengunggah Dokumen Persyaratan</li>
                       </ul>
                     </div>
                     
@@ -207,11 +216,7 @@ $a = 0;
                     
                     <div class='lst'>      
                       <ul>
-                        <li>Syarat 1</li>
-                        <li>Syarat 2</li>
-                        <li>Syarat 3</li>
-                        <li>Syarat 3</li>
-                        <li>Syarat 3</li>
+                        <li>Menunggu Respon & Status Diterima Magang</li>
                       </ul>
                     </div>
                     
@@ -655,6 +660,15 @@ $a = 0;
                 </div>
                 <?php
                 }
+                else if($a == 1)
+                {
+                  ?>
+                <div class='col-md-4 col-md-offset-4'>
+                  <h5 style='margin:0;text-align: center;text-transform: uppercase;font-weight:bold;font-size:13px;'>Langkah 2 &centerdot; Pendaftaran Instansi</h5>
+                  <button target='instance' type='button' class='btn btn-info btn-lg btn-act' style='width:100%;'>Lengkapi Persyaratan</button>
+                </div>
+                <?php
+                }
                 ?>
               </div>
             </div>
@@ -719,6 +733,11 @@ $a = 0;
         {
           modal.triggerModal("open","Pendaftaran Magang");
           ht.htGet("form/magang.php",".md-content");
+        }
+        else if(target === "instance")
+        {
+          modal.triggerModal("open","Pendaftaran Instansi");
+          ht.htGet("form/instance.php",".md-content");
         }
       });
     });
