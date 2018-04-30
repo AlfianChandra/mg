@@ -9,5 +9,12 @@
   <li>Branch</li>
   <li>Pull Request</li>
   <li>Repository</li>
-  <li></li>
+  <li>Commit</li>
+  <li>Lokal Path</li>
 </ul>
+
+<h4>Push</h4>
+<p>Push atau biasa disebut "Nge-PUSH" berfungsi untuk "Ngedorong" (Baca:Nguplot) file-file projekan orijinal di direktori lokal projek yang udah ente ubah di teks editor ke Repo</p>
+
+<h4>Pull</h4>
+<p>Pull atau "Narik" (Baca:Donlot) fungsinya biar ente bisa ngedonlot semua file yang udah di <b>PUSH</b> ama <b>COLLABORATORS</b> lain. Ntar GitHub secara otomatis bakal nyetor file-file yang dah di <b>PULL</b> ke <b>LOKAL PATH</b>
