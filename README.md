@@ -7,7 +7,7 @@
   <li>Kalo COMMIT usahakan sertai Deskripsi anti mainstrim biar otak ga keriting.</li>
   <li>Rajin ngePush biar tugas cepet kelar :V</li>
 </ul>
-<p>Anda sopan kami segan, anda tidak sopan, kami lempar kulit dogan.</p>
+<p>Rulenote: Anda sopan kami segan, anda tidak sopan, kami lempar kulit dogan.</p>
 
 <h3>Tata Cara Penggunaan GitHub Yang Bener & Berfaedah</h3>
 <h4>Keywords</h4>
