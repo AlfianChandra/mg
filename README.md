@@ -47,7 +47,7 @@
 <h3>How-To: Setup GITHUB in Your Kompi</h3>
 <ul>
   <li>Niatkan Dengan Kesungguhan Hati & Baca Bismillah.</li>
-  <li>Buka GitHub nyak.</li>
+  <li>Buka GitHub Web nyak.</li>
   <li>Kalo belon Regis, ya regis dulu. Kalo dah, login ke akun ente.</li>
   <li>Donlot GitHub Desktopnya di https://desktop.github.com. Downlot sesuai architect PC ente.</li>
   <li>Setup GitHub Desktop ampe kelar terus login di Github Desktop pake akun GitHub ente.</li>
