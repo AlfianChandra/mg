@@ -55,7 +55,7 @@
   <li>Ntar kalo dah ane invite, buka https://github.com/AlfianChandra/mg/invitations dan terima invitationnya</li>
   <li>Dah jadi Collab?? Klik <code>FILE</code> di Navbar terus klik <code>Clone Repository...</code></li>
   <li>Pop-Upnya keluar?? Klik tab <code>URL</code></li>
-  <li>Di Textfield Repository URL, isi URL yang mengarahkan ke Repo ini (URLnya: https://github.com/AlfianChandra/mg).</li>
+  <li>Di Textfield Repository URL, isi URL yang mengarahkan ke Repo ini (URLnya: https://github.com/AlfianChandra/mg/mg.git).</li>
   <li>Di Textfield Local Path, isi direktori tempat ente bakal nyetor file projek dari Repo. (Ex: C:\xampp\htdocs\namafolder\)</li>
   <li>Kalo ga ada error, ntar proses Cloning bakal berjalan lancar jaya dan file projek bakal disetor ke Local Path</li>
   <li>Setup kelar, ShutDown kompi lalu tidur :D</li>
