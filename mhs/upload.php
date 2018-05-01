@@ -1,5 +1,5 @@
 <?php
-$a = 0;
+$a = 1;
 ?>
 <!doctype html>
 <html lang="en">
@@ -650,26 +650,20 @@ $a = 0;
             
             <div class='row'>
               <div class='col-md-12'>
-                <?php
-                if($a == 0)
-                {
-                  ?>
+                
+                <?php if ($a == 0): ?>                
                 <div class='col-md-4 col-md-offset-4'>
                   <h5 style='margin:0;text-align: center;text-transform: uppercase;font-weight:bold;font-size:13px;'>Langkah 1 &centerdot; Pendaftaran Magang</h5>
                   <button target='magang' type='button' class='btn btn-info btn-lg btn-act' style='width:100%;'>Lengkapi Persyaratan</button>
                 </div>
-                <?php
-                }
-                else if($a == 1)
-                {
-                  ?>
+
+                <?php elseif ($a == 1): ?>
                 <div class='col-md-4 col-md-offset-4'>
                   <h5 style='margin:0;text-align: center;text-transform: uppercase;font-weight:bold;font-size:13px;'>Langkah 2 &centerdot; Pendaftaran Instansi</h5>
                   <button target='instance' type='button' class='btn btn-info btn-lg btn-act' style='width:100%;'>Lengkapi Persyaratan</button>
                 </div>
-                <?php
-                }
-                ?>
+                <?php endif ?>
+
               </div>
             </div>
           </div>
