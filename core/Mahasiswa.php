@@ -148,6 +148,17 @@
 			}
 
 		}
+
+		function uploadPengajuan()
+		{	
+			$nim = $_SESSION['username'];
+
+			$query = "UPDATE proses_magang SET status_pengajuan = 1 WHERE nim = '$nim'";
+
+			return $this->conn->query($query);
+		}
+
+
 	}
 
 	$mahasiswa = new Mahasiswa();
