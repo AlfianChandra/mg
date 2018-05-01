@@ -6,7 +6,7 @@
 		if (isset($_POST['submit'])) {
 
 			$instansi_id			= $_POST['instansi'];
-  			$_SESSION['instansi'] 	= $instansi_id;
+  			$_SESSION['instansi']           = $instansi_id;
   			$tanggal_mulai 			= $_POST['tanggal_mulai'];
   			$tanggal_selesai 		= $_POST['tanggal_selesai'];
 
@@ -25,11 +25,11 @@
 					if ($size < 100000000) {				
 						move_uploaded_file($asal, $namafile);
 					}else{
-						echo 'file terlalu besar';
+						echo 'size';
 					}
 
 				}else{
-					echo 'ada error';
+					echo 'error';
 				}
 
 				$nama 		= "transkrip" . $_SESSION['username'] . ".pdf";
@@ -45,10 +45,10 @@
 					if ($size < 100000000) {				
 						move_uploaded_file($asal, $namafile);
 					}else{
-						echo 'file terlalu besar';
+						echo 'size';
 					}
 				}else{
-					echo 'ada error';
+					echo 'error';
 				}
 
 				$nama 		= "khs" . $_SESSION['username'] . ".pdf";
@@ -63,11 +63,11 @@
 					if ($size < 100000000) {				
 						move_uploaded_file($asal, $namafile);
 					}else{
-						echo 'file terlalu besar';
+						echo 'size';
 					}
 
 				}else{
-					echo 'ada error';
+					echo 'error';
 				}
 
 				$nama 		= "krs" . $_SESSION['username'] . ".pdf";
@@ -82,15 +82,15 @@
 					if ($size < 100000000) {				
 						move_uploaded_file($asal, $namafile);
 					}else{
-						echo 'file terlalu besar';
+						echo 'size';
 					}
 
 				}else{
-					echo 'ada error';
+					echo 'error';
 				}
 			}
 			
 		}
 
-		header("Location: ../mhs");
+		header("Location: ../mhs/upload.php");
  ?>
