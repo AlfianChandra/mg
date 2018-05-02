@@ -101,9 +101,9 @@
 
 			$this->conn->query($query);
 
-			$query = "INSERT INTO auth(username, password) VALUES ('$nim', '$password')";
+			$query2 = "INSERT INTO auth(username, password) VALUES ('$nim', '$password')";
 
-			return $this->conn->query($query);
+			return $this->conn->query($query2);
 		}
 
 		function hapusMahasiswa($id)
@@ -111,9 +111,9 @@
 			$query = "DELETE FROM mahasiswa WHERE nim = '$id'";
 			$this->conn->query($query);
 
-			$query = "DELETE FROM auth WHERE username = '$id'";
+			$query2 = "DELETE FROM auth WHERE username = '$id'";
 			
-			return $this->conn->query($query);			
+			return $this->conn->query($query2);			
 		}
 
 		function editMahasiswa($nim, $nama, $tempat_lahir, $tanggal_lahir, $jenis_kelamin, $fakultas, $prodi, $telp, $sks, $ipk, $semester)

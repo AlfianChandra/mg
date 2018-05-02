@@ -69,14 +69,15 @@
 
 <div class="col-md-12">
   <button type='button' class='btn btn-default backbtn'>Kembali</button>
-  <button type="button" class="btn btn-success bt-mhs-act" data-id="<?= $mahasiswa->nim ?>">Edit</button>  
-  <a href="../action/hapusMahasiswa.php?id=<?= $id ?>" onclick="return confirm('Apakah anda yakin?')" class="btn btn-danger">hapus</a>
+  <button type="button" class="btn btn-success bt-mhs-act" data-id="<?= $mahasiswa->nim ?>">Edit</button>
+  <button type="button" class="btn btn-danger bt-delete" data-id="<?= $mahasiswa->nim ?>">Hapus</button>
 </div>
 
 <script>
 $(document).ready(function(){
   var modal = new Modal();
   var ht = new HtRequest();
+  var pr = new Prompt();
   
   $(".backbtn").click(function(){
     ht.htGet("page/student-list.php",".md-content");
@@ -89,6 +90,16 @@ $(document).ready(function(){
     modal.triggerModal("open","Edit Mahasiswa");
     ht.htPost("page/edit-student-form.php",data,".md-content");
   });
-
+  
+  $(".bt-delete").click(function(){
+    var id = $(this).attr("data-id");
+    var data = {"id":id};
+    pr.triggerPrompt("open","Apaakah Ente Yakin?!",function(){
+      ht.fireForm("../action/hapusMahasiswa.php",data);
+      ht.htGet("page/student-list.php",".md-content");
+      modal.triggerModal("open","Lihat Mahasiswa");
+      $(".pr-overlay").fadeOut(500);
+    });
+  });
 });           
 </script>

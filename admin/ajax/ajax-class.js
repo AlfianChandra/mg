@@ -121,7 +121,7 @@ class HtRequest
             }
             else
             {
-                alert.triggerAlert("open","Data Berhasil Dikirim <br><b>KONTEN: Berhasil mengirim Data ke Server.</b></br>","alert-success","Pengiriman Data");
+                alert.triggerAlert("open","SUKSES <br><b>KONTEN: Perintah berhasil dijalankan.</b></br>","alert-success","Pengiriman Data");
             }
 
         },
@@ -259,6 +259,33 @@ class SideBar
     else
     {
       console.log("Unknown Command");
+    }
+  }
+}
+
+class Prompt
+{
+  triggerPrompt(cmd,message,callback)
+  {
+    var ht = new HtRequest();
+    
+    if(cmd === "open")
+    {
+      $(".pr-content").html(message);
+      
+      $(".pr-overlay").fadeIn(300);
+      
+      $(".pr-dismiss").click(function(){
+        $(".pr-overlay").fadeOut(500);
+      });
+      
+      $(".act1").click(function(){
+        callback();
+      });
+    }
+    else if(cmd === "close")
+    {
+      $(".pr-overlay").fadeOut(500);
     }
   }
 }

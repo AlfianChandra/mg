@@ -121,7 +121,7 @@ class HtRequest
             }
             else
             {
-                alert.triggerAlert("open","Data Berhasil Dikirim!","alert-success","Pengiriman Data");
+                alert.triggerAlert("open","Data Berhasil!","alert-success","Pengiriman Data");
             }
 
         },
@@ -142,6 +142,7 @@ class Modal
     if(cmd === "close")
     {
       $(".md-overlay").fadeOut(500);
+      $(".md-content").html("");
     }
     else if(cmd === "open" && title !== "")
     {

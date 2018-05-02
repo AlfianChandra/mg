@@ -3,7 +3,7 @@
 	require_once '../core/Mahasiswa.php';
 	
 
-	if (isset($_POST['submit'])) {
+	if ($_POST) {
 		$nim 			= $_POST['nim'];
 		$nama 			= $_POST['nama'];
 		
@@ -20,7 +20,7 @@
 
 		if ($mahasiswa->editMahasiswa($nim, $nama, $tempat_lahir, $tanggal_lahir, $jenis_kelamin, $fakultas, $prodi, $telp, $sks, $ipk, $semester)) 
 		{
-			header("Location: ../admin");
+			echo "yes";
 		}else{
 			echo "error";
 		}

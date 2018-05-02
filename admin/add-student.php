@@ -8,6 +8,7 @@
     <?php include 'inc/alert.php'; ?>
     <?php include 'inc/upload.php'; ?>
     <?php include 'inc/sidebar.php'; ?>
+    <?php include 'inc/prompt.php'; ?>
     <div class="wrapper">
       <?php include 'inc/navbar.php' ?>
       
@@ -18,8 +19,8 @@
                 <h2 style="font-weight:bold;"> Manage Mahasiswa</h2>
               </div>
               <div class="col-md-12">
-                <button type="button" at-type="tambah" class="btn btn-primary bt-mhs-act">Tambah Mahasiswa</button>
-                <button type="button" at-type="lihat" class="btn btn-warning bt-mhs-act">Lihat Mahasiswa</button>
+                <button type="button" at-type="tambah" class="btn btn-primary bt-mhs-acts">Tambah Mahasiswa</button>
+                <button type="button" at-type="lihat" class="btn btn-warning bt-mhs-acts">Lihat Mahasiswa</button>
               </div>
             </div>
           </div>
@@ -60,7 +61,7 @@
       var modal = new Modal();
       var up = new UploadSys();
       
-          $(".bt-mhs-act").click(function(){
+          $(".bt-mhs-acts").click(function(){
               var at = $(this).attr("at-type");
               if(at === "tambah")
               {

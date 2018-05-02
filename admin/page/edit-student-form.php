@@ -15,7 +15,7 @@
   }
  ?>
 
-<form class="std-edit-form" action="../action/editMahasiswa.php" method="post" enctype="multipart/form-data" style="margin-bottom:50px;float:left;width:100%;">
+<form class="std-edit-form" method="post" enctype="multipart/form-data" style="margin-bottom:50px;float:left;width:100%;">
     <div class="col-md-6">
 
         <h3 style="font-weight:bold;">Data Pribadi</h3>
@@ -54,10 +54,30 @@
     </div>
 
     <div>
-      <input type="submit" name="submit" value="Simpan">
+      <input type="submit" class="btn btn-primary" name="submit" value="Simpan">
+      <input type="submit" class="btn btn-default cancel" name="submit" value="Batal">
     </div>
   
 </form>
+<script>
+  $(document).ready(function(){
+    var ht = new HtRequest();
+    var modal = new Modal();
+    
+    $(".std-edit-form").submit(function(ev){
+      ev.preventDefault();
+      var data = $(this).serialize();
+      ht.fireForm("../action/editMahasiswa.php",data);
+      ht.htGet("page/student-list.php",".md-content");
+      modal.triggerModal("open","Lihat Mahasiswa");
+    });
+    
+    $(".cancel").click(function(){
+      ht.htGet("page/student-list.php",".md-content");
+      modal.triggerModal("open","Lihat Mahasiswa");
+    });
+  });
+</script>
 <!-- <script>
      $(document).ready(function(){
          var ht = new HtRequest();
