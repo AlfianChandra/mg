@@ -77,15 +77,7 @@
   <li>Kalo dah, ntar teks tombolnya berubah jadi "Pull Origin" & Klik aja tombolnya buat ngePULL</li>
   <li>Di panel kiri, buka tab History untuk ngeliat perubahan yang di ubah ama Collabs serta summary & deskripsi</li>
 </ul>
-<p>Note: GitHub Desktop otomatis ngecek perubahan yang terjadi di repo secara berkala (per menit). Kalo mau manual, ya klik aja tombol Fetch Origin biar langsung ngecek perubahan reponya.
-
-
-
-
-
-<h1>Dah ah! Ane mau bobo :P</h1>
-
-
-<h1>Dah ah! Ane mau bobo :P</h1>
-
-<h1>Gue lum bobo juga nich</h1>
+<p>Note: GitHub Desktop otomatis ngecek perubahan yang terjadi di repo secara berkala (per menit). Kalo mau manual, ya klik aja tombol Fetch Origin biar langsung ngecek perubahan reponya.</p>
+<hr>
+<h3>ATTENTION</h3>
+<p>Kepada Seluruh Anggota Kelompok 6, Harap Install GitHub Desktop di Kompi kalian masing-masing biar bisa pantau dan ngembangin kode bareng bareng!!</p>
