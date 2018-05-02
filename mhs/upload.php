@@ -797,6 +797,11 @@ $a = 4;
                     <span class="fa fa-close"></span> <br>Permohonan Magang Ditolak
                   </button>
                 </div>
+                <div class="col-md-4 col-md-offset-4">
+                  <a href="upload.php" class='btn btn-default btn-act' style='width:100%;'>
+                    Pendaftaran Ulang
+                  </a>
+                </div>
                   <?php endif ?>
 
               </div>
