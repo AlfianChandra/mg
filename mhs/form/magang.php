@@ -70,7 +70,7 @@
     margin:0;
     text-align: center;
     margin-top:50px;
-    color:#ccc;
+    color:#666;
   }
   
   .input-area > input:hover .input-area
@@ -103,7 +103,7 @@
 </div>  
   
 <div class='col-md-12' style='padding:10px;'>
-  <input name="submit" type='submit' class='btn btn-primary btn-lg' value="Simpan & Lanjutkan">
+  <input name="submit" type='submit' class='btn btn-primary' value="Simpan & Lanjutkan">
 </div>
 </form>
 

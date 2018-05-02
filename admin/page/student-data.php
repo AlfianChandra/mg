@@ -94,7 +94,7 @@ $(document).ready(function(){
   $(".bt-delete").click(function(){
     var id = $(this).attr("data-id");
     var data = {"id":id};
-    pr.triggerPrompt("open","Apaakah Ente Yakin?!",function(){
+    pr.triggerPrompt("open","Hapus Akun ini? Tindakan ini tidak dapat dipulihkan.",function(){
       ht.fireForm("../action/hapusMahasiswa.php",data);
       ht.htGet("page/student-list.php",".md-content");
       modal.triggerModal("open","Lihat Mahasiswa");

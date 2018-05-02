@@ -1,5 +1,5 @@
 <?php
-$a = 1;
+$a = 4;
 ?>
 <!doctype html>
 <html lang="en">
@@ -236,8 +236,7 @@ $a = 1;
                 }
                 else if($a == 2)
                 {
-                  ?>
-                
+                  ?>              
                 <div class="step step-1" style='background-color:rgb(30,210,40);'>
                   <span style='margin-top:19px;color:#fff;font-size:60px;' class="material-icons">control_point</span>
                   <h4 class='step-desc' style='color:rgb(30,210,40);'> 
@@ -314,6 +313,120 @@ $a = 1;
                   <span style='margin-top:19px;color:#fff;font-size:60px;' class="material-icons">verified_user</span>
                   <h4 class='step-desc'>
                     Status Pendaftaran
+                  </h4>
+                  
+                   <div class='step-list'>
+                    <span style='
+                          font-size:60px;
+                          position:absolute;
+                          top:30px;
+                          color:#fff;
+                          left:22px;
+                          'class='fa fa-envelope'></span>
+                    
+                    <div class='lst'>      
+                      <ul>
+                        <li>Syarat 1</li>
+                        <li>Syarat 2</li>
+                        <li>Syarat 3</li>
+                        <li>Syarat 3</li>
+                        <li>Syarat 3</li>
+                      </ul>
+                    </div>
+                    
+                    <span style='
+                          position:absolute;
+                          box-sizing:border-box;
+                          bottom:-20px;
+                          font-size:30px;
+                          color:rgb(0,150,255);
+                          left:0;
+                          width:100%;
+                          text-align:center;
+                          ' class='fa fa-caret-down'></span>
+                  </div>
+                </div>
+                <?php
+                }
+                else if($a == 4)
+                {
+                  ?>
+                <div class="step step-1" style='background-color:rgb(30,210,40);'>
+                  <span style='margin-top:19px;color:#fff;font-size:60px;' class="material-icons">control_point</span>
+                  <h4 class='step-desc' style='color:rgb(30,210,40);'> 
+                    <span class='fa fa-check'></span> Pendaftaran Magang
+                  </h4>
+                  
+                  <div class='step-list'>
+                    <span style='
+                          font-size:60px;
+                          position:absolute;
+                          top:30px;
+                          color:#fff;
+                          left:22px;
+                          'class='fa fa-envelope'></span>
+                    
+                    <div class='lst'>      
+                      <ul>
+                        <li>Syarat 1</li>
+                        <li>Syarat 2</li>
+                      </ul>
+                    </div>
+                    
+                    <span style='
+                          position:absolute;
+                          box-sizing:border-box;
+                          bottom:-20px;
+                          font-size:30px;
+                          color:rgb(0,150,255);
+                          left:0;
+                          width:100%;
+                          text-align:center;
+                          ' class='fa fa-caret-down'></span>
+                  </div>
+                </div>
+                
+                
+                <div class="step step-2" style='background-color:rgb(30,210,40);'>
+                  <span style='margin-top:19px;color:#fff;font-size:60px;' class="material-icons">next_week</span>
+                  <h4 class='step-desc' style='color:rgb(30,210,40);'>
+                    <span class='fa fa-check'></span> Pendaftaran Instansi
+                  </h4>
+                  
+                   <div class='step-list'>
+                    <span style='
+                          font-size:60px;
+                          position:absolute;
+                          top:30px;
+                          color:#fff;
+                          left:22px;
+                          'class='fa fa-envelope'></span>
+                    
+                    <div class='lst'>      
+                      <ul>
+                        <li>Syarat 1</li>
+                        <li>Syarat 2</li>
+                        <li>Syarat 3</li>
+                      </ul>
+                    </div>
+                    
+                    <span style='
+                          position:absolute;
+                          box-sizing:border-box;
+                          bottom:-20px;
+                          font-size:30px;
+                          color:rgb(0,150,255);
+                          left:0;
+                          width:100%;
+                          text-align:center;
+                          ' class='fa fa-caret-down'></span>
+                  </div>
+                </div>
+                
+                <div class="step step-3" style="background-color:rgb(255,40,20);">
+                  <span style='margin-top:19px;color:#fff;font-size:60px;' class="material-icons">verified_user</span>
+                  <h4 class='step-desc'style="color:rgb(255,40,20);">
+                    <span class="fa fa-close"></span> Status Pendaftaran
                   </h4>
                   
                    <div class='step-list'>
@@ -662,7 +775,29 @@ $a = 1;
                   <h5 style='margin:0;text-align: center;text-transform: uppercase;font-weight:bold;font-size:13px;'>Langkah 2 &centerdot; Pendaftaran Instansi</h5>
                   <button target='instance' type='button' class='btn btn-info btn-lg btn-act' style='width:100%;'>Lengkapi Persyaratan</button>
                 </div>
-                <?php endif ?>
+                <?php elseif ($a == 2): ?>
+                <div class='col-md-4 col-md-offset-4'>
+                  <h5 style='margin:0;text-align: center;text-transform: uppercase;font-weight:bold;font-size:13px;'>Langkah 3 &centerdot; Status Pendaftaran</h5>
+                  <button target='instance' type='button' disabled class='btn btn-default disabled btn-lg btn-act' style='width:100%;'>
+                    <span class="fa fa-spinner fa-spin"></span> <br>Menunggu Persetujuan
+                  </button>
+                </div>
+                <?php elseif ($a == 3): ?>
+                <div class='col-md-4 col-md-offset-4'>
+                  <h5 style='margin:0;text-align: center;text-transform: uppercase;font-weight:bold;font-size:13px;'>Langkah 3 &centerdot; Status Pendaftaran</h5>
+                  <button target='instance' type='button' class='btn btn-success btn-lg btn-act' style='width:100%;'>
+                    <span class="fa fa-check"></span> <br>Permohonan Magang Disetujui<br>
+                    KLIK UNTUK KONFIRMASI
+                  </button>
+                </div>
+                <?php elseif ($a == 4): ?>
+                <div class='col-md-4 col-md-offset-4'>
+                  <h5 style='margin:0;text-align: center;text-transform: uppercase;font-weight:bold;font-size:13px;'>Langkah 3 &centerdot; Status Pendaftaran</h5>
+                  <button target='none' type='button' class='btn btn-danger btn-lg btn-act' style='width:100%;'>
+                    <span class="fa fa-close"></span> <br>Permohonan Magang Ditolak
+                  </button>
+                </div>
+                  <?php endif ?>
 
               </div>
             </div>
