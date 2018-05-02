@@ -80,4 +80,4 @@
 <p>Note: GitHub Desktop otomatis ngecek perubahan yang terjadi di repo secara berkala (per menit). Kalo mau manual, ya klik aja tombol Fetch Origin biar langsung ngecek perubahan reponya.</p>
 <hr>
 <h3>ATTENTION</h3>
-<p>Kepada Seluruh Anggota Kelompok 6, Harap Install GitHub Desktop di Kompi kalian masing-masing biar bisa pantau dan ngembangin kode bareng bareng!!</p>
+<p>Kepada Seluruh Anggota Kelompok 6, Harap Install GitHub Desktop di Kompi kalian masing-masing biar bisa pantau dan ngembangin kode bareng bareng dan biar kaga perlu Copy code sana sini!</p>
