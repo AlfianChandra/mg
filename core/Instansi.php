@@ -89,7 +89,7 @@
 		{
 			$username = $_SESSION['username'];
 
-			$query = "SELECT * FROM mahasiswa WHERE tempat_magang='$username'";
+			$query = "SELECT mahasiswa.*, proses_magang.status_pengajuan FROM mahasiswa JOIN proses_magang WHERE mahasiswa.nim = proses_magang.nim AND mahasiswa.tempat_magang='$username' AND proses_magang.status_pengajuan = 1";
 			$result = $this->conn->query($query);
 
 			$this->datas = [];
