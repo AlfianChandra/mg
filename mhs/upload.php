@@ -1,6 +1,8 @@
 <?php
-$a = 4;
+  require_once '../core/Mahasiswa.php';
+  $mahasiswa->cekStatusMagang();
 ?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -118,17 +120,15 @@ $a = 4;
               </div>
             </div>
             <div class="row" style="padding:70px;">
-              <?php
-              $status = true;
-              if($status == true)
-              {
-                ?>
+
+
+              <?php if ($mahasiswa->sks >= 120): ?>
+
               <div class="col-md-12" style="position:relative;">
                 
-                <?php
-                if($a === 1)
-                {
-                  ?>        
+                
+                <?php if ($mahasiswa->admin_upload == 1 && $mahasiswa->accepted == 0 && $mahasiswa->status_pengajuan == 0): ?>
+              
                 <div class="step step-1" style='background-color:rgb(30,210,40);'>
                   <span style='margin-top:19px;color:#fff;font-size:60px;' class="material-icons">control_point</span>
                   <h4 class='step-desc' style='color:rgb(30,210,40);'> 
@@ -232,11 +232,10 @@ $a = 4;
                           ' class='fa fa-caret-down'></span>
                   </div>
                 </div>    
-                  <?php
-                }
-                else if($a == 2)
-                {
-                  ?>              
+
+
+                <?php elseif ($mahasiswa->admin_upload == 1 && $mahasiswa->accepted == 0 && $mahasiswa->status_pengajuan == 1): ?>       
+                      
                 <div class="step step-1" style='background-color:rgb(30,210,40);'>
                   <span style='margin-top:19px;color:#fff;font-size:60px;' class="material-icons">control_point</span>
                   <h4 class='step-desc' style='color:rgb(30,210,40);'> 
@@ -346,11 +345,10 @@ $a = 4;
                           ' class='fa fa-caret-down'></span>
                   </div>
                 </div>
-                <?php
-                }
-                else if($a == 4)
-                {
-                  ?>
+
+
+                <?php elseif ($mahasiswa->accepted == 2): ?>
+                
                 <div class="step step-1" style='background-color:rgb(30,210,40);'>
                   <span style='margin-top:19px;color:#fff;font-size:60px;' class="material-icons">control_point</span>
                   <h4 class='step-desc' style='color:rgb(30,210,40);'> 
@@ -460,11 +458,10 @@ $a = 4;
                           ' class='fa fa-caret-down'></span>
                   </div>
                 </div>
-                <?php
-                }
-                else if($a == 0)
-                {
-                  ?>
+
+
+                <?php elseif ($mahasiswa->admin_upload == 0): ?>
+                
                 <div class="step step-1">
                   <span style='margin-top:19px;color:#fff;font-size:60px;' class="material-icons">control_point</span>
                   <h4 class='step-desc'> 
@@ -574,11 +571,10 @@ $a = 4;
                           ' class='fa fa-caret-down'></span>
                   </div>
                 </div>
-                <?php
-                }
-                else
-                {
-                  ?>
+
+
+                <?php elseif($mahasiswa->accepted == 1): ?>
+
                 <div class="step step-1" style='background-color:rgb(30,210,40);'>
                   <span style='margin-top:19px;color:#fff;font-size:60px;' class="material-icons">control_point</span>
                   <h4 class='step-desc' style='color:rgb(30,210,40);'> 
@@ -688,16 +684,13 @@ $a = 4;
                           ' class='fa fa-caret-down'></span>
                   </div>
                 </div>
-                <?php
-                }
-                ?>
-                
+
+                <?php endif ?>
+
+
                 <div class="guideline">
-                  <?php
-                  
-                  if($a == 1)
-                  {
-                    ?>
+
+                  <?php if ($mahasiswa->admin_upload == 1 && $mahasiswa->accepted == 0 && $mahasiswa->status_pengajuan == 0): ?>
                   <div class='succ-line line1' style='
                        padding:10px;
                        position:absolute;
@@ -707,11 +700,8 @@ $a = 4;
                        background-color:rgb(30,210,40);
                        width:50%;
                        '></div>
-                  <?php
-                  }
-                  else if($a == 2)
-                  {
-                    ?>
+
+                  <?php elseif ($mahasiswa->admin_upload == 1 && $mahasiswa->accepted == 0 && $mahasiswa->status_pengajuan == 1): ?>
                   <div class='succ-line line1' style='
                        padding:10px;
                        position:absolute;
@@ -721,17 +711,8 @@ $a = 4;
                        background-color:rgb(30,210,40);
                        width:100%;
                        '></div>
-                  <?php
-                  }
-                  else if($a == 0)
-                  {
-                    ?>
-                  
-                  <?php
-                  }
-                  else
-                  {
-                    ?>
+
+                  <?php elseif($mahasiswa->accepted == 1 || $mahasiswa->accepted == 2): ?>
                   <div class='succ-line line1' style='
                        padding:10px;
                        position:absolute;
@@ -741,20 +722,11 @@ $a = 4;
                        background-color:rgb(30,210,40);
                        width:100%;
                        '></div>
-                  <?php
-                  }
-                  ?>
+                  <?php endif ?>
                 </div>
               </div>
-              <?php
-              }
-              else
-              {
-                ?>
-              <h4 class='alert alert-warning' style='text-align: center;font-weight:bold;'>Anda belum dapat melakukan Pendaftaran Magang. Mohon penuhi Persyaratan terlebih dahulu.</h4>
-              <?php
-              }
-              ?>
+
+              
             </div>
             
             <div class='row'>
@@ -764,25 +736,27 @@ $a = 4;
             <div class='row'>
               <div class='col-md-12'>
                 
-                <?php if ($a == 0): ?>                
+                <?php if ($mahasiswa->admin_upload == 0): ?>                
                 <div class='col-md-4 col-md-offset-4'>
                   <h5 style='margin:0;text-align: center;text-transform: uppercase;font-weight:bold;font-size:13px;'>Langkah 1 &centerdot; Pendaftaran Magang</h5>
                   <button target='magang' type='button' class='btn btn-info btn-lg btn-act' style='width:100%;'>Lengkapi Persyaratan</button>
                 </div>
 
-                <?php elseif ($a == 1): ?>
+                <?php elseif ($mahasiswa->admin_upload == 1 && $mahasiswa->accepted == 0 && $mahasiswa->status_pengajuan == 0): ?>
                 <div class='col-md-4 col-md-offset-4'>
                   <h5 style='margin:0;text-align: center;text-transform: uppercase;font-weight:bold;font-size:13px;'>Langkah 2 &centerdot; Pendaftaran Instansi</h5>
                   <button target='instance' type='button' class='btn btn-info btn-lg btn-act' style='width:100%;'>Lengkapi Persyaratan</button>
                 </div>
-                <?php elseif ($a == 2): ?>
+
+                <?php elseif ($mahasiswa->admin_upload == 1 && $mahasiswa->accepted == 0 && $mahasiswa->status_pengajuan == 1): ?>
                 <div class='col-md-4 col-md-offset-4'>
                   <h5 style='margin:0;text-align: center;text-transform: uppercase;font-weight:bold;font-size:13px;'>Langkah 3 &centerdot; Status Pendaftaran</h5>
                   <button target='instance' type='button' disabled class='btn btn-default disabled btn-lg btn-act' style='width:100%;'>
                     <span class="fa fa-spinner fa-spin"></span> <br>Menunggu Persetujuan
                   </button>
                 </div>
-                <?php elseif ($a == 3): ?>
+
+                <?php elseif ($mahasiswa->accepted == 1): ?>
                 <div class='col-md-4 col-md-offset-4'>
                   <h5 style='margin:0;text-align: center;text-transform: uppercase;font-weight:bold;font-size:13px;'>Langkah 3 &centerdot; Status Pendaftaran</h5>
                   <button target='instance' type='button' class='btn btn-success btn-lg btn-act' style='width:100%;'>
@@ -790,7 +764,8 @@ $a = 4;
                     KLIK UNTUK KONFIRMASI
                   </button>
                 </div>
-                <?php elseif ($a == 4): ?>
+
+                <?php elseif ($mahasiswa->accepted == 2): ?>
                 <div class='col-md-4 col-md-offset-4'>
                   <h5 style='margin:0;text-align: center;text-transform: uppercase;font-weight:bold;font-size:13px;'>Langkah 3 &centerdot; Status Pendaftaran</h5>
                   <button target='none' type='button' class='btn btn-danger btn-lg btn-act' style='width:100%;'>
@@ -802,10 +777,15 @@ $a = 4;
                     Pendaftaran Ulang
                   </a>
                 </div>
-                  <?php endif ?>
+              <?php endif ?>
 
               </div>
             </div>
+
+            <?php else: ?>
+              <h4 class='alert alert-warning' style='text-align: center;font-weight:bold;'>Anda belum dapat melakukan Pendaftaran Magang. Mohon penuhi Persyaratan terlebih dahulu.</h4>
+            <?php endif ?>
+
           </div>
         </div>
         <?php

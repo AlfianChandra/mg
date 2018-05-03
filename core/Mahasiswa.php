@@ -158,6 +158,22 @@
 			return $this->conn->query($query);
 		}
 
+		function cekStatusMagang()
+		{
+			$nim 	= $_SESSION['username'];
+
+			$query 	= "SELECT * FROM proses_magang WHERE nim = '$nim'";
+			$result = $this->conn->query($query);
+
+			while($row = $result->fetch_object())
+			{
+				$this->nim 				= $row->nim;
+				$this->admin_upload 	= $row->admin_upload;
+				$this->status_pengajuan = $row->status_pengajuan;
+				$this->accepted 		= $row->accepted;
+			}
+		}
+
 
 	}
 

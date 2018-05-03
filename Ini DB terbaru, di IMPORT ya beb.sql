@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 29 Apr 2018 pada 18.34
+-- Generation Time: 03 Mei 2018 pada 19.11
 -- Versi Server: 10.1.10-MariaDB
 -- PHP Version: 5.6.19
 
@@ -106,9 +106,9 @@ CREATE TABLE `instansi` (
 --
 
 INSERT INTO `instansi` (`username`, `nama_instansi`, `kapasitas`, `deskripsi`, `syarat`, `kriteria`, `alamat_instansi`, `pemagang_diterima`, `pemagang_terdaftar`) VALUES
-('alpa', 'alfamart', 4, 'ini alpamart', 'manajemen A', 'penampilan menarik', 'karya maju', 2, 2),
-('BI', 'Bank Indonesia', 2, 'ini bank', 'rajin dan berbakat', 'IQ tinggi', 'telanai', 0, 0),
-('telkom', 'telkom jambi', 3, 'ini adalah telkom jambi', 'matkul jaringan harus A', 'pekerja keras', 'sipin', 1, 8);
+('alpa', 'alfamart', 4, 'ini alpamart', 'manajemen A', 'penampilan menarik', 'karya maju', 2, 9),
+('BI', 'Bank Indonesia', 2, 'ini bank', 'rajin dan berbakat', 'IQ tinggi', 'telanai', 0, 10),
+('telkom', 'telkom jambi', 3, 'ini adalah telkom jambi', 'matkul jaringan harus A', 'pekerja keras', 'sipin', 1, 11);
 
 -- --------------------------------------------------------
 
@@ -125,7 +125,7 @@ CREATE TABLE `mahasiswa` (
   `prodi` varchar(70) NOT NULL,
   `jenis_kelamin` tinyint(4) NOT NULL,
   `telp` varchar(12) NOT NULL,
-  `sks` int(3) NOT NULL,
+  `sks` tinyint(4) NOT NULL,
   `ipk` double NOT NULL,
   `semester` tinyint(4) NOT NULL,
   `nip_pembimbing` varchar(20) NOT NULL,
@@ -137,9 +137,9 @@ CREATE TABLE `mahasiswa` (
 --
 
 INSERT INTO `mahasiswa` (`nim`, `nama`, `tempat_lahir`, `tanggal_lahir`, `fakultas`, `prodi`, `jenis_kelamin`, `telp`, `sks`, `ipk`, `semester`, `nip_pembimbing`, `tempat_magang`) VALUES
-('11', 'lucy', 'jambi', '2018-04-02', 'feb', 'manajemen', 0, '081686372', 120, 3.2, 7, '', 'alpa'),
+('11', 'lucy', 'jambi', '2018-04-02', 'feb', 'manajemen', 0, '081686372', 120, 3.2, 7, '', 'BI'),
 ('111', 'baru lagi', 'jambi', '2018-04-03', 'fkip', 'fisika', 1, '08954567', 120, 3, 10, '2020', NULL),
-('15', 'bro', 'kota jambi', '1997-10-01', 'fkip', 'kimia', 1, '0808', 125, 3.4, 7, '2020', 'telkom'),
+('15', 'bro', 'kota jambi', '1997-10-01', 'fkip', 'kimia', 1, '0808', 124, 3.4, 7, '2020', 'telkom'),
 ('f1e115015', 'yulia oktaviani', 'jambi', '2018-04-17', 'sains dan teknologi', 'sistem informasi', 0, '082289680251', 110, 3.8, 6, '2020', NULL),
 ('jkj', 'jkjkj', 'jkjk', '2018-04-25', 'jkjk', 'jkj', 1, '12', 12, 12, 8, '', NULL);
 
@@ -153,15 +153,18 @@ CREATE TABLE `proses_magang` (
   `nim` varchar(20) NOT NULL,
   `instansi` varchar(20) NOT NULL,
   `tanggal_mulai` date NOT NULL,
-  `tanggal_selesai` date NOT NULL
+  `tanggal_selesai` date NOT NULL,
+  `admin_upload` tinyint(4) NOT NULL,
+  `status_pengajuan` tinyint(4) NOT NULL,
+  `accepted` tinyint(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `proses_magang`
 --
 
-INSERT INTO `proses_magang` (`nim`, `instansi`, `tanggal_mulai`, `tanggal_selesai`) VALUES
-('15', 'telkom', '2018-04-01', '2018-04-08');
+INSERT INTO `proses_magang` (`nim`, `instansi`, `tanggal_mulai`, `tanggal_selesai`, `admin_upload`, `status_pengajuan`, `accepted`) VALUES
+('15', 'telkom', '2018-04-01', '2018-04-08', 0, 0, 0);
 
 --
 -- Indexes for dumped tables
