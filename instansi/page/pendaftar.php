@@ -55,6 +55,7 @@
     </thead>
 
     <tbody>
+
       <?php 
         foreach ($instansi->datas as $key) {
           echo "<tr style='color:purple;font-weight:bold;text-transform: uppercase;' class='data-row' id='$key->nim'><td>".$key->nim."</td><td>".$key->nama."</td></tr>";
@@ -63,6 +64,9 @@
 
     </tbody>
   </table>  
+  <?php if($instansi->datas == NULL):  ?>
+   <h5 style='margin:0;text-align:center;text-transform: uppercase;font-size:16px;padding:10px;font-weight:bold;'><span class='fa fa-inbox'></span> Tidak ada hasil</h5>
+  <?php endif ?>
 </div>
 <script>
 $(document).ready(function(){
