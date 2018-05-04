@@ -55,11 +55,10 @@
     </thead>
 
     <tbody>
-      <?php 
-        foreach ($mahasiswa->datas as $key) {
-          echo "<tr style='color:purple;font-weight:bold;text-transform: uppercase;' class='data-row' id='$key->nim'><td>".$key->nim."</td><td>".$key->nama."</td></tr>";
-        }
-      ?>
+      
+      <?php foreach ($mahasiswa->datas as $key) : ?>
+          <tr style='color:purple;font-weight:bold;text-transform: uppercase;' class='data-row' id='<?= $key->nim ?>'><td><?= $key->nim ?></td><td><?= $key->nama ?></td></tr>
+      <?php endforeach ?>
 
     </tbody>
   </table>  

@@ -36,6 +36,7 @@
 				$this->sks 				= $row->sks;
 				$this->ipk 				= $row->ipk;
 				$this->semester 		= $row->semester;
+				$this->tempat_magang	= $row->tempat_magang;
 			}
 		}
 
@@ -164,10 +165,10 @@
 
 			$query 	= "SELECT * FROM proses_magang WHERE nim = '$nim'";
 			$result = $this->conn->query($query);
-
 			while($row = $result->fetch_object())
 			{
 				$this->nim 				= $row->nim;
+				$this->upload_syarat	= $row->upload_syarat;
 				$this->admin_upload 	= $row->admin_upload;
 				$this->status_pengajuan = $row->status_pengajuan;
 				$this->accepted 		= $row->accepted;

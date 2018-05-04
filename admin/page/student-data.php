@@ -1,7 +1,7 @@
 <?php
 
   if(!$_POST) {
-    echo "error";
+    die("error");
   }else{
     $_SESSION['id'] = $_POST['id'];
     $id = $_SESSION['id'];

@@ -61,9 +61,11 @@
       
           $(".bt-mhs-act").click(function(){
               var at = $(this).attr("at-type");
+              
               if(at === "pendaftar")
               {
-                  up.triggerSys("open","Pendaftar","page/pendaftar.php",".up-body-content");
+                  ht.htGet("page/pendaftar-list.php",".md-content");
+                  modal.triggerModal("open","Lihat Pendaftar");
               }
           });
       });

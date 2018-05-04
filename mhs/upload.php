@@ -1,6 +1,7 @@
 <?php
   require_once '../core/Mahasiswa.php';
   $mahasiswa->cekStatusMagang();
+
 ?>
 
 <!doctype html>
@@ -123,12 +124,475 @@
 
 
               <?php if ($mahasiswa->sks >= 120): ?>
-
+                
               <div class="col-md-12" style="position:relative;">
+        
+                <?php if ($mahasiswa->tempat_magang == NULL): ?>
+
+                  <div class="step step-1">
+                  <span style='margin-top:19px;color:#fff;font-size:60px;' class="material-icons">control_point</span>
+                  <h4 class='step-desc'> 
+                    Pendaftaran Magang
+                  </h4>
+                  
+                  <div class='step-list'>
+                    <span style='
+                          font-size:60px;
+                          position:absolute;
+                          top:30px;
+                          color:#fff;
+                          left:22px;
+                          'class='fa fa-envelope'></span>
+                    
+                    <div class='lst'>      
+                      <ul>
+                        <li>Syarat 1</li>
+                        <li>Syarat 2</li>
+                      </ul>
+                    </div>
+                    
+                    <span style='
+                          position:absolute;
+                          box-sizing:border-box;
+                          bottom:-20px;
+                          font-size:30px;
+                          color:rgb(0,150,255);
+                          left:0;
+                          width:100%;
+                          text-align:center;
+                          ' class='fa fa-caret-down'></span>
+                  </div>
+                </div>
                 
                 
-                <?php if ($mahasiswa->admin_upload == 1 && $mahasiswa->accepted == 0 && $mahasiswa->status_pengajuan == 0): ?>
+                <div class="step step-2">
+                  <span style='margin-top:19px;color:#fff;font-size:60px;' class="material-icons">next_week</span>
+                  <h4 class='step-desc'>
+                    Pendaftaran Instansi
+                  </h4>
+                  
+                   <div class='step-list'>
+                    <span style='
+                          font-size:60px;
+                          position:absolute;
+                          top:30px;
+                          color:#fff;
+                          left:22px;
+                          'class='fa fa-envelope'></span>
+                    
+                    <div class='lst'>      
+                      <ul>
+                        <li>Syarat 1</li>
+                        <li>Syarat 2</li>
+                        <li>Syarat 3</li>
+                      </ul>
+                    </div>
+                    
+                    <span style='
+                          position:absolute;
+                          box-sizing:border-box;
+                          bottom:-20px;
+                          font-size:30px;
+                          color:rgb(0,150,255);
+                          left:0;
+                          width:100%;
+                          text-align:center;
+                          ' class='fa fa-caret-down'></span>
+                  </div>
+                </div>
+                
+                <div class="step step-3">
+                  <span style='margin-top:19px;color:#fff;font-size:60px;' class="material-icons">verified_user</span>
+                  <h4 class='step-desc'>
+                    Status Pendaftaran
+                  </h4>
+                  
+                   <div class='step-list'>
+                    <span style='
+                          font-size:60px;
+                          position:absolute;
+                          top:30px;
+                          color:#fff;
+                          left:22px;
+                          'class='fa fa-envelope'></span>
+                    
+                    <div class='lst'>      
+                      <ul>
+                        <li>Syarat 1</li>
+                        <li>Syarat 2</li>
+                        <li>Syarat 3</li>
+                        <li>Syarat 3</li>
+                        <li>Syarat 3</li>
+                      </ul>
+                    </div>
+                    
+                    <span style='
+                          position:absolute;
+                          box-sizing:border-box;
+                          bottom:-20px;
+                          font-size:30px;
+                          color:rgb(0,150,255);
+                          left:0;
+                          width:100%;
+                          text-align:center;
+                          ' class='fa fa-caret-down'></span>
+                  </div>
+                </div>
+                  <div class="guideline">
+                            
+                  </div>
+
+            <div class='row'>
+              <div class='col-md-12' style='padding:80px;'></div>
+            </div>
+
+            <div class='row'>
+              <div class='col-md-12'>
+                <div class='col-md-4 col-md-offset-4'>
+                  <h5 style='margin:0;text-align: center;text-transform: uppercase;font-weight:bold;font-size:13px;'>Langkah 1 &centerdot; Pendaftaran Magang</h5>
+                  <button target='magang' type='button' class='btn btn-info btn-lg btn-act' style='width:100%;'>Lengkapi Persyaratan</button>
+                </div>
+              </div>
+            </div>
+
+                  
+                
+                <?php else: ?>
+                <?php if ($mahasiswa->upload_syarat == 1 && $mahasiswa->admin_upload == 1 && $mahasiswa->accepted == 0 && $mahasiswa->status_pengajuan == 0): ?>
               
+                <div class="step step-1" style='background-color:rgb(30,210,40);'>
+                  <span style='margin-top:19px;color:#fff;font-size:60px;' class="material-icons">control_point</span>
+                  <h4 class='step-desc' style='color:rgb(30,210,40);'> 
+                    <span class='fa fa-check'></span> Pendaftaran Magang
+                  </h4>
+                  
+                  <div class='step-list'>
+                    <span style='
+                          font-size:60px;
+                          position:absolute;
+                          top:30px;
+                          color:#fff;
+                          left:22px;
+                          'class='fa fa-envelope'></span>
+                    
+                    <div class='lst'>      
+                      <ul>
+                        <li>Mengunggah Dokumen Persyaratan</li>
+                        <li>Memilih Instansi</li>
+                        <li>Menentukan Waktu Magang</li>
+                      </ul>
+                    </div>
+                    
+                    <span style='
+                          position:absolute;
+                          box-sizing:border-box;
+                          bottom:-20px;
+                          font-size:30px;
+                          color:rgb(0,150,255);
+                          left:0;
+                          width:100%;
+                          text-align:center;
+                          ' class='fa fa-caret-down'></span>
+                  </div>
+                </div>
+                
+                <div class="step step-2">
+                  <span style='margin-top:19px;color:#fff;font-size:60px;' class="material-icons">next_week</span>
+                  <h4 class='step-desc'>
+                    Pendaftaran Instansi
+                  </h4>
+                  
+                   <div class='step-list'>
+                    <span style='
+                          font-size:60px;
+                          position:absolute;
+                          top:30px;
+                          color:#fff;
+                          left:22px;
+                          'class='fa fa-envelope'></span>
+                    
+                    <div class='lst'>      
+                      <ul>
+                        <li>Mengunggah Dokumen Persyaratan</li>
+                      </ul>
+                    </div>
+                    
+                    <span style='
+                          position:absolute;
+                          box-sizing:border-box;
+                          bottom:-20px;
+                          font-size:30px;
+                          color:rgb(0,150,255);
+                          left:0;
+                          width:100%;
+                          text-align:center;
+                          ' class='fa fa-caret-down'></span>
+                  </div>
+                </div>
+                
+                <div class="step step-3">
+                  <span style='margin-top:19px;color:#fff;font-size:60px;' class="material-icons">verified_user</span>
+                  <h4 class='step-desc'>
+                    Status Pendaftaran
+                  </h4>
+                  
+                   <div class='step-list'>
+                    <span style='
+                          font-size:60px;
+                          position:absolute;
+                          top:30px;
+                          color:#fff;
+                          left:22px;
+                          'class='fa fa-envelope'></span>
+                    
+                    <div class='lst'>      
+                      <ul>
+                        <li>Menunggu Respon & Status Diterima Magang</li>
+                      </ul>
+                    </div>
+                    
+                    <span style='
+                          position:absolute;
+                          box-sizing:border-box;
+                          bottom:-20px;
+                          font-size:30px;
+                          color:rgb(0,150,255);
+                          left:0;
+                          width:100%;
+                          text-align:center;
+                          ' class='fa fa-caret-down'></span>
+                  </div>
+                </div>    
+              <?php else: ?>
+
+
+                <?php if ($mahasiswa->admin_upload == 1 && $mahasiswa->accepted == 0 && $mahasiswa->status_pengajuan == 1): ?>       
+                      
+                <div class="step step-1" style='background-color:rgb(30,210,40);'>
+                  <span style='margin-top:19px;color:#fff;font-size:60px;' class="material-icons">control_point</span>
+                  <h4 class='step-desc' style='color:rgb(30,210,40);'> 
+                    <span class='fa fa-check'></span> Pendaftaran Magang
+                  </h4>
+                  
+                  <div class='step-list'>
+                    <span style='
+                          font-size:60px;
+                          position:absolute;
+                          top:30px;
+                          color:#fff;
+                          left:22px;
+                          'class='fa fa-envelope'></span>
+                    
+                    <div class='lst'>      
+                      <ul>
+                        <li>Syarat 1</li>
+                        <li>Syarat 2</li>
+                      </ul>
+                    </div>
+                    
+                    <span style='
+                          position:absolute;
+                          box-sizing:border-box;
+                          bottom:-20px;
+                          font-size:30px;
+                          color:rgb(0,150,255);
+                          left:0;
+                          width:100%;
+                          text-align:center;
+                          ' class='fa fa-caret-down'></span>
+                  </div>
+                </div>
+                
+                
+                <div class="step step-2" style='background-color:rgb(30,210,40);'>
+                  <span style='margin-top:19px;color:#fff;font-size:60px;' class="material-icons">next_week</span>
+                  <h4 class='step-desc' style='color:rgb(30,210,40);'>
+                    <span class='fa fa-check'></span> Pendaftaran Instansi
+                  </h4>
+                  
+                   <div class='step-list'>
+                    <span style='
+                          font-size:60px;
+                          position:absolute;
+                          top:30px;
+                          color:#fff;
+                          left:22px;
+                          'class='fa fa-envelope'></span>
+                    
+                    <div class='lst'>      
+                      <ul>
+                        <li>Syarat 1</li>
+                        <li>Syarat 2</li>
+                        <li>Syarat 3</li>
+                      </ul>
+                    </div>
+                    
+                    <span style='
+                          position:absolute;
+                          box-sizing:border-box;
+                          bottom:-20px;
+                          font-size:30px;
+                          color:rgb(0,150,255);
+                          left:0;
+                          width:100%;
+                          text-align:center;
+                          ' class='fa fa-caret-down'></span>
+                  </div>
+                </div>
+                
+                <div class="step step-3">
+                  <span style='margin-top:19px;color:#fff;font-size:60px;' class="material-icons">verified_user</span>
+                  <h4 class='step-desc'>
+                    Status Pendaftaran
+                  </h4>
+                  
+                   <div class='step-list'>
+                    <span style='
+                          font-size:60px;
+                          position:absolute;
+                          top:30px;
+                          color:#fff;
+                          left:22px;
+                          'class='fa fa-envelope'></span>
+                    
+                    <div class='lst'>      
+                      <ul>
+                        <li>Syarat 1</li>
+                        <li>Syarat 2</li>
+                        <li>Syarat 3</li>
+                        <li>Syarat 3</li>
+                        <li>Syarat 3</li>
+                      </ul>
+                    </div>
+                    
+                    <span style='
+                          position:absolute;
+                          box-sizing:border-box;
+                          bottom:-20px;
+                          font-size:30px;
+                          color:rgb(0,150,255);
+                          left:0;
+                          width:100%;
+                          text-align:center;
+                          ' class='fa fa-caret-down'></span>
+                  </div>
+                </div>
+
+
+                <?php elseif ($mahasiswa->accepted == 2): ?>
+                
+                <div class="step step-1" style='background-color:rgb(30,210,40);'>
+                  <span style='margin-top:19px;color:#fff;font-size:60px;' class="material-icons">control_point</span>
+                  <h4 class='step-desc' style='color:rgb(30,210,40);'> 
+                    <span class='fa fa-check'></span> Pendaftaran Magang
+                  </h4>
+                  
+                  <div class='step-list'>
+                    <span style='
+                          font-size:60px;
+                          position:absolute;
+                          top:30px;
+                          color:#fff;
+                          left:22px;
+                          'class='fa fa-envelope'></span>
+                    
+                    <div class='lst'>      
+                      <ul>
+                        <li>Syarat 1</li>
+                        <li>Syarat 2</li>
+                      </ul>
+                    </div>
+                    
+                    <span style='
+                          position:absolute;
+                          box-sizing:border-box;
+                          bottom:-20px;
+                          font-size:30px;
+                          color:rgb(0,150,255);
+                          left:0;
+                          width:100%;
+                          text-align:center;
+                          ' class='fa fa-caret-down'></span>
+                  </div>
+                </div>
+                
+                
+                <div class="step step-2" style='background-color:rgb(30,210,40);'>
+                  <span style='margin-top:19px;color:#fff;font-size:60px;' class="material-icons">next_week</span>
+                  <h4 class='step-desc' style='color:rgb(30,210,40);'>
+                    <span class='fa fa-check'></span> Pendaftaran Instansi
+                  </h4>
+                  
+                   <div class='step-list'>
+                    <span style='
+                          font-size:60px;
+                          position:absolute;
+                          top:30px;
+                          color:#fff;
+                          left:22px;
+                          'class='fa fa-envelope'></span>
+                    
+                    <div class='lst'>      
+                      <ul>
+                        <li>Syarat 1</li>
+                        <li>Syarat 2</li>
+                        <li>Syarat 3</li>
+                      </ul>
+                    </div>
+                    
+                    <span style='
+                          position:absolute;
+                          box-sizing:border-box;
+                          bottom:-20px;
+                          font-size:30px;
+                          color:rgb(0,150,255);
+                          left:0;
+                          width:100%;
+                          text-align:center;
+                          ' class='fa fa-caret-down'></span>
+                  </div>
+                </div>
+                
+                <div class="step step-3" style="background-color:rgb(255,40,20);">
+                  <span style='margin-top:19px;color:#fff;font-size:60px;' class="material-icons">verified_user</span>
+                  <h4 class='step-desc'style="color:rgb(255,40,20);">
+                    <span class="fa fa-close"></span> Status Pendaftaran
+                  </h4>
+                  
+                   <div class='step-list'>
+                    <span style='
+                          font-size:60px;
+                          position:absolute;
+                          top:30px;
+                          color:#fff;
+                          left:22px;
+                          'class='fa fa-envelope'></span>
+                    
+                    <div class='lst'>      
+                      <ul>
+                        <li>Syarat 1</li>
+                        <li>Syarat 2</li>
+                        <li>Syarat 3</li>
+                        <li>Syarat 3</li>
+                        <li>Syarat 3</li>
+                      </ul>
+                    </div>
+                    
+                    <span style='
+                          position:absolute;
+                          box-sizing:border-box;
+                          bottom:-20px;
+                          font-size:30px;
+                          color:rgb(0,150,255);
+                          left:0;
+                          width:100%;
+                          text-align:center;
+                          ' class='fa fa-caret-down'></span>
+                  </div>
+                </div>
+
+                  <?php elseif ($mahasiswa->upload_syarat == 1 && $mahasiswa->admin_upload == 0 && $mahasiswa->accepted == 0 && $mahasiswa->status_pengajuan == 0): ?>
+                <!-- letak sini php nya ya -->
                 <div class="step step-1" style='background-color:rgb(30,210,40);'>
                   <span style='margin-top:19px;color:#fff;font-size:60px;' class="material-icons">control_point</span>
                   <h4 class='step-desc' style='color:rgb(30,210,40);'> 
@@ -460,7 +924,7 @@
                 </div>
 
 
-                <?php elseif ($mahasiswa->admin_upload == 0): ?>
+                <?php elseif ($mahasiswa->upload_syarat == 0 && $mahasiswa->admin_upload == 0): ?>
                 
                 <div class="step step-1">
                   <span style='margin-top:19px;color:#fff;font-size:60px;' class="material-icons">control_point</span>
@@ -736,10 +1200,19 @@
             <div class='row'>
               <div class='col-md-12'>
                 
-                <?php if ($mahasiswa->admin_upload == 0): ?>                
+                <?php if ($mahasiswa->upload_syarat == 0 && $mahasiswa->admin_upload == 0): ?>                
                 <div class='col-md-4 col-md-offset-4'>
                   <h5 style='margin:0;text-align: center;text-transform: uppercase;font-weight:bold;font-size:13px;'>Langkah 1 &centerdot; Pendaftaran Magang</h5>
                   <button target='magang' type='button' class='btn btn-info btn-lg btn-act' style='width:100%;'>Lengkapi Persyaratan</button>
+                </div>
+
+
+                <?php elseif ($mahasiswa->upload_syarat == 1 && $mahasiswa->admin_upload == 0 && $mahasiswa->accepted == 0 && $mahasiswa->status_pengajuan == 0): ?>
+                <div class='col-md-4 col-md-offset-4'>
+                  <h5 style='margin:0;text-align: center;text-transform: uppercase;font-weight:bold;font-size:13px;'>Langkah 3 &centerdot; Status Pendaftaran</h5>
+                  <button target='instance' type='button' disabled class='btn btn-default disabled btn-lg btn-act' style='width:100%;'>
+                    <span class="fa fa-spinner fa-spin"></span> <br>Menunggu Persetujuan
+                  </button>
                 </div>
 
                 <?php elseif ($mahasiswa->admin_upload == 1 && $mahasiswa->accepted == 0 && $mahasiswa->status_pengajuan == 0): ?>
@@ -778,10 +1251,10 @@
                   </a>
                 </div>
               <?php endif ?>
-
+                <?php endif ?>
               </div>
             </div>
-
+            <?php endif ?>
             <?php else: ?>
               <h4 class='alert alert-warning' style='text-align: center;font-weight:bold;'>Anda belum dapat melakukan Pendaftaran Magang. Mohon penuhi Persyaratan terlebih dahulu.</h4>
             <?php endif ?>

@@ -55,12 +55,10 @@
     </thead>
 
     <tbody>
-
-      <?php 
-        foreach ($instansi->datas as $key) {
-          echo "<tr style='color:purple;font-weight:bold;text-transform: uppercase;' class='data-row' id='$key->nim'><td>".$key->nim."</td><td>".$key->nama."</td></tr>";
-        }
-      ?>
+      
+      <?php foreach ($instansi->datas as $key) : ?>
+          <tr style='color:purple;font-weight:bold;text-transform: uppercase;' class='data-row' id='<?= $key->nim ?>'><td><?= $key->nim ?></td><td><?= $key->nama ?></td></tr>
+      <?php endforeach ?>
 
     </tbody>
   </table>  
@@ -77,7 +75,7 @@ $(document).ready(function(){
   $(".data-row").click(function(){
     var id = $(this).attr("id");
     var data = {"id":id};
-    ht.htPost("page/student-data.php",data,".md-content");
+    ht.htPost("page/pendaftar-data.php",data,".md-content");
     modal.triggerModal("open","Data Mahasiswa");
   });
   

@@ -1,7 +1,7 @@
 <?php
 
   if(!$_POST) {
-    echo "error";
+    die("error");
   }else{
     $_SESSION['id'] = $_POST['id'];
     $id = $_SESSION['id'];
@@ -65,13 +65,9 @@
   </div>
   
 </div>
+
 <div class="col-md-12">
   <button type='button' class='btn btn-default backbtn'>Kembali</button>
-
-  <a href="../action/hapusMahasiswa.php?id=<?= $id ?>" class="btn btn-danger">hapus</a>
-  
-  
-  
 </div>
 
 <script>
@@ -80,7 +76,7 @@ $(document).ready(function(){
   var ht = new HtRequest();
   
   $(".backbtn").click(function(){
-    ht.htGet("page/student-list.php",".md-content");
+    ht.htGet("page/pendaftar-list.php",".md-content");
     modal.triggerModal("open","Lihat Mahasiswa");
   });
 });  
