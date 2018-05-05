@@ -127,7 +127,7 @@
 
 		function lihatMahasiswaMagang()
 		{	
-			$query 	= "SELECT proses_magang.*, mahasiswa.nama AS nama FROM proses_magang JOIN mahasiswa WHERE mahasiswa.nim = proses_magang.nim";
+			$query 	= "SELECT proses_magang.*, mahasiswa.nama AS nama FROM proses_magang JOIN mahasiswa WHERE mahasiswa.nim = proses_magang.nim AND proses_magang.upload_syarat = 1 AND proses_magang.admin_upload = 0";
 			$result = $this->conn->query($query);
 
 			$this->datas = [];
@@ -139,7 +139,7 @@
 
 		function mahasiswaCariMagang($data)
 		{	
-			$query 	= "SELECT proses_magang.*, mahasiswa.nama AS nama FROM proses_magang JOIN mahasiswa WHERE mahasiswa.nim = proses_magang.nim AND proses_magang.nim LIKE '%$data%' OR nama LIKE '%$data%'";
+			$query 	= "SELECT proses_magang.*, mahasiswa.nama AS nama FROM proses_magang JOIN mahasiswa WHERE mahasiswa.nim = proses_magang.nim AND proses_magang.upload_syarat = 1 AND proses_magang.admin_upload = 0 AND proses_magang.nim LIKE '%$data%' OR nama LIKE '%$data%'";
 			$result = $this->conn->query($query);
 
 			$this->datas = [];
@@ -173,6 +173,18 @@
 				$this->status_pengajuan = $row->status_pengajuan;
 				$this->accepted 		= $row->accepted;
 			}
+		}
+
+		function daftarUlangMagang()
+		{
+			$id = $_SESSION['username'];
+
+			$query = "UPDATE mahasiswa SET tempat_magang = NULL WHERE nim = '$id'";
+			$this->conn->query($query);
+
+			$query2 = "DELETE FROM proses_magang WHERE nim = '$id'";
+
+			return $this->conn->query($query2);
 		}
 
 

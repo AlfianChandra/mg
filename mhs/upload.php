@@ -258,6 +258,7 @@
                   
                 
                 <?php else: ?>
+
                 <?php if ($mahasiswa->upload_syarat == 1 && $mahasiswa->admin_upload == 1 && $mahasiswa->accepted == 0 && $mahasiswa->status_pengajuan == 0): ?>
               
                 <div class="step step-1" style='background-color:rgb(30,210,40);'>
@@ -363,10 +364,10 @@
                           ' class='fa fa-caret-down'></span>
                   </div>
                 </div>    
-              <?php else: ?>
+              
 
 
-                <?php if ($mahasiswa->admin_upload == 1 && $mahasiswa->accepted == 0 && $mahasiswa->status_pengajuan == 1): ?>       
+                <?php elseif ($mahasiswa->admin_upload == 1 && $mahasiswa->accepted == 0 && $mahasiswa->status_pengajuan == 1): ?>       
                       
                 <div class="step step-1" style='background-color:rgb(30,210,40);'>
                   <span style='margin-top:19px;color:#fff;font-size:60px;' class="material-icons">control_point</span>
@@ -1154,7 +1155,7 @@
 
                 <div class="guideline">
 
-                  <?php if ($mahasiswa->admin_upload == 1 && $mahasiswa->accepted == 0 && $mahasiswa->status_pengajuan == 0): ?>
+                  <?php if ($mahasiswa->upload_syarat == 1 && $mahasiswa->admin_upload == 1 && $mahasiswa->status_pengajuan == 0): ?>
                   <div class='succ-line line1' style='
                        padding:10px;
                        position:absolute;
@@ -1209,13 +1210,13 @@
 
                 <?php elseif ($mahasiswa->upload_syarat == 1 && $mahasiswa->admin_upload == 0 && $mahasiswa->accepted == 0 && $mahasiswa->status_pengajuan == 0): ?>
                 <div class='col-md-4 col-md-offset-4'>
-                  <h5 style='margin:0;text-align: center;text-transform: uppercase;font-weight:bold;font-size:13px;'>Langkah 3 &centerdot; Status Pendaftaran</h5>
+                  <h5 style='margin:0;text-align: center;text-transform: uppercase;font-weight:bold;font-size:13px;'>Langkah 1 &centerdot; Status Pendaftaran</h5>
                   <button target='instance' type='button' disabled class='btn btn-default disabled btn-lg btn-act' style='width:100%;'>
-                    <span class="fa fa-spinner fa-spin"></span> <br>Menunggu Persetujuan
+                    <span class="fa fa-spinner fa-spin"></span> <br>Menunggu Persetujuan Akademik
                   </button>
                 </div>
 
-                <?php elseif ($mahasiswa->admin_upload == 1 && $mahasiswa->accepted == 0 && $mahasiswa->status_pengajuan == 0): ?>
+                <?php elseif ($mahasiswa->upload_syarat == 1 && $mahasiswa->admin_upload == 1 && $mahasiswa->accepted == 0 && $mahasiswa->status_pengajuan == 0): ?>
                 <div class='col-md-4 col-md-offset-4'>
                   <h5 style='margin:0;text-align: center;text-transform: uppercase;font-weight:bold;font-size:13px;'>Langkah 2 &centerdot; Pendaftaran Instansi</h5>
                   <button target='instance' type='button' class='btn btn-info btn-lg btn-act' style='width:100%;'>Lengkapi Persyaratan</button>
@@ -1225,7 +1226,7 @@
                 <div class='col-md-4 col-md-offset-4'>
                   <h5 style='margin:0;text-align: center;text-transform: uppercase;font-weight:bold;font-size:13px;'>Langkah 3 &centerdot; Status Pendaftaran</h5>
                   <button target='instance' type='button' disabled class='btn btn-default disabled btn-lg btn-act' style='width:100%;'>
-                    <span class="fa fa-spinner fa-spin"></span> <br>Menunggu Persetujuan
+                    <span class="fa fa-spinner fa-spin"></span> <br>Menunggu Persetujuan Instansi
                   </button>
                 </div>
 
@@ -1245,16 +1246,19 @@
                     <span class="fa fa-close"></span> <br>Permohonan Magang Ditolak
                   </button>
                 </div>
+
                 <div class="col-md-4 col-md-offset-4">
-                  <a href="upload.php" class='btn btn-default btn-act' style='width:100%;'>
-                    Pendaftaran Ulang
-                  </a>
+
+                  <form action="../action/daftarUlangMagang.php" method="post" enctype="multipart/form-data" >
+                    <input type="submit" name="submit" onclick="return confirm('apakah anda yakin?')" class="btn" value="Pendaftaran Ulang" style='width:100%;' >
+                  </form>
+
                 </div>
               <?php endif ?>
                 <?php endif ?>
               </div>
             </div>
-            <?php endif ?>
+            
             <?php else: ?>
               <h4 class='alert alert-warning' style='text-align: center;font-weight:bold;'>Anda belum dapat melakukan Pendaftaran Magang. Mohon penuhi Persyaratan terlebih dahulu.</h4>
             <?php endif ?>

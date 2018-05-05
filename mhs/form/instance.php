@@ -44,12 +44,13 @@
   <div class="col-md-12">
     <h4 style='font-weight: bold;'>Dokumen Pendukung (Optional)</h4>
     <div class="input-area">
-      <input type="file" accept=".pdf, .doc, .docx" name="permohonan" class='inputs1'>
-      <h5 class='h51'><i class='material-icons'>file_upload</i> <br> Proposal Magang <br> (Seret File / Klik Area Ini)</h5>
+      <input type="file" accept=".pdf" name="proposal" class='inputs1'>
+      <h5 class='h51'><i class='material-icons'>file_upload</i> <br> Dokumen Proposal Magang <br> (Seret File / Klik Area Ini)</h5>
     </div>
+
     <div class="input-area">
-      <input type="file" accept=".pdf, .doc, .docx" name="permohonan" class='inputs1'>
-      <h5 class='h51'><i class='material-icons'>file_upload</i> <br> CV <br> (Seret File / Klik Area Ini)</h5>
+      <input type="file" accept=".pdf" name="cv" class='inputs2'>
+      <h5 class='h52'><i class='material-icons'>file_upload</i> <br> Dokumen CV <br> (Seret File / Klik Area Ini)</h5>
     </div>
   </div>
   <div class="col-md-12" style="padding:25px 25px 0px 25px;">
@@ -66,10 +67,17 @@ $(document).ready(function(){
   setInterval(function(){
     
     var in1 = $(".inputs1");
+    var in2 = $(".inputs2");
+    
     
     if($.trim(in1.val()) !== "")
     {
       $(".h51").html("<i class='material-icons'>file_upload</i> <br>"+ in1.val()).css("font-weight","bold").css("color","purple");
+    }
+    
+    if($.trim(in2.val()) !== "")
+    {
+      $(".h52").html("<i class='material-icons'>file_upload</i> <br>"+ in2.val()).css("font-weight","bold").css("color","purple");;
     }
   },100);
 });

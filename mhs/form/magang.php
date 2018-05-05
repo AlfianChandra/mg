@@ -77,12 +77,12 @@
   </div>
   
   <div class="input-area">
-    <input type="file" required="required" accept=".pdf" name="KHS" class='inputs3'>
+    <input type="file" required="required" accept=".pdf" name="khs" class='inputs3'>
     <h5 class='h53'><i class='material-icons'>file_upload</i> <br> Dokumen KHS <br> (Seret File / Klik Area Ini)</h5>
   </div>
   
   <div class="input-area">
-    <input type="file" required="required" accept=".pdf" name="KRS" class='inputs4'>
+    <input type="file" required="required" accept=".pdf" name="krs" class='inputs4'>
     <h5 class='h54'><i class='material-icons'>file_upload</i> <br> Dokumen KRS <br> (Seret File / Klik Area Ini)</h5>
   </div>
 </div>  

@@ -8,6 +8,7 @@
 		$_SESSION['username'] = $id;
 		
 		$doc_type = array_keys($_FILES)[0];
+		
 		if ($admin->adminUploadPengajuan($id)) {
 			$file->uploadFile($_FILES['pengajuan'], $doc_type);
 		}

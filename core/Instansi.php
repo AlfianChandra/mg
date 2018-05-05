@@ -68,7 +68,7 @@
 
 			$this->conn->query($query);
 
-			$query = "INSERT INTO proses_magang(nim, instansi, tanggal_mulai, tanggal_selesai) VALUES ('$username', '$instansi_id', '$tanggal_mulai', '$tanggal_selesai')";
+			$query = "INSERT INTO proses_magang(nim, instansi, tanggal_mulai, tanggal_selesai, upload_syarat) VALUES ('$username', '$instansi_id', '$tanggal_mulai', '$tanggal_selesai', 1)";
 			
 
 			return $this->conn->query($query);
@@ -89,7 +89,7 @@
 		{
 			$username = $_SESSION['username'];
 
-			$query = "SELECT mahasiswa.*, proses_magang.status_pengajuan FROM mahasiswa JOIN proses_magang WHERE mahasiswa.nim = proses_magang.nim AND mahasiswa.tempat_magang='$username' AND proses_magang.status_pengajuan = 1";
+			$query = "SELECT mahasiswa.*, proses_magang.status_pengajuan FROM mahasiswa JOIN proses_magang WHERE mahasiswa.nim = proses_magang.nim AND mahasiswa.tempat_magang='$username' AND proses_magang.status_pengajuan = 1 AND proses_magang.accepted = 0";
 			$result = $this->conn->query($query);
 
 			$this->datas = [];
@@ -122,6 +122,31 @@
 			$query = "INSERT INTO auth(username, password, role) VALUES ('$username', '$password', '3')";
 
 			return $this->conn->query($query);
+		}
+
+		function terimaPendaftar($id)
+		{
+			$username = $_SESSION['username'];
+
+			$query = "UPDATE proses_magang SET accepted = 1 WHERE nim = '$id'";
+
+			return $this->conn->query($query);
+			
+			$query2 = "UPDATE instansi SET pemagang_diterima = pemagang_diterima + 1, pemagang_terdaftar = pemagang_terdaftar - 1 WHERE username = '$username'";
+		
+			return $this->conn->query($query2);
+				
+		}
+
+		function tolakPendaftar($id)
+		{
+			$username = $_SESSION['username'];
+
+			$query = "UPDATE proses_magang SET accepted = 2 WHERE nim = '$id'";
+			$this->conn->query($query);
+
+			$query2 = "UPDATE instansi SET pemagang_terdaftar - 1 WHERE username = '$username'";
+			$this->conn->query($query2);
 		}
 
 	}

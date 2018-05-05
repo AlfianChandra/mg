@@ -61,23 +61,37 @@
     <h5 class="data-type">NIM</h5><h5 class="data-content">: <?= $mahasiswa->nim ?></h5>
     <h5 class="data-type">Program Studi</h5><h5 class="data-content">: <?= $mahasiswa->prodi ?></h5>
     <h5 class="data-type">Fakultas</h5><h5 class="data-content">: <?= $mahasiswa->fakultas ?></h5>
-    <h5 class="data-type">Dosen Pembimbing</h5><h5 class="data-content">: <?= $mahasiswa->nama_pembimbing ?></h5>
+
   </div>
   
 </div>
 
 <div class="col-md-12">
-  <button type='button' class='btn btn-default backbtn'>Kembali</button>
+  
+
+  <form action="../action/penerimaanMagang.php" class="col-md-9" method="post" enctype="multipart/form-data"">
+    <button type='button' class='btn btn-default backbtn col-md-3'>Kembali</button>
+    file surat balasan
+    <input type="file" name="surat_balasan" required>
+    <input type="radio" name="penerimaan" value="1">terima
+    <input type="radio" name="penerimaan" value="2">tolak
+    <input type="text" name="nim" value="<?= $mahasiswa->nim ?>" hidden>
+    <input type="submit" name="submit" value="kirim">
+  </form>
 </div>
+
 
 <script>
 $(document).ready(function(){
   var modal = new Modal();
   var ht = new HtRequest();
   
+  
   $(".backbtn").click(function(){
     ht.htGet("page/pendaftar-list.php",".md-content");
     modal.triggerModal("open","Lihat Mahasiswa");
   });
+
+  
 });  
 </script>

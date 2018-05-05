@@ -6,7 +6,7 @@
 		if ($mahasiswa->hapusMahasiswa($id)) {
 			echo "yes";
 		}else {
-			echo "gagal";
+			die("gagal");
 		}
 	}
 ?>
