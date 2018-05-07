@@ -62,16 +62,21 @@
 					
 			$query 	= "UPDATE mahasiswa SET tempat_magang ='$instansi_id' WHERE nim='$username'";
 
-			$this->conn->query($query);
+			if($this->conn->query($query) == true){
 
-			$query	= "UPDATE instansi SET pemagang_terdaftar = pemagang_terdaftar + 1 WHERE username ='$instansi_id'";
+				$query2	= "UPDATE instansi SET pemagang_terdaftar = pemagang_terdaftar + 1 WHERE username ='$instansi_id'";
 
-			$this->conn->query($query);
+				if($this->conn->query($query2) == true){
 
-			$query = "INSERT INTO proses_magang(nim, instansi, tanggal_mulai, tanggal_selesai, upload_syarat) VALUES ('$username', '$instansi_id', '$tanggal_mulai', '$tanggal_selesai', 1)";
-			
-
-			return $this->conn->query($query);
+					$query3 = "INSERT INTO proses_magang(nim, instansi, tanggal_mulai, tanggal_selesai, upload_syarat) VALUES ('$username', '$instansi_id', '$tanggal_mulai', '$tanggal_selesai', 1)";
+					
+					return $this->conn->query($query3);
+				}else{
+					return false;
+				}
+			}else{
+				return false;
+			}
 		}
 
 		function statusInstansi()
@@ -117,11 +122,14 @@
 		function tambahInstansi($username, $nama_instansi, $kapasitas, $kriteria, $syarat, $alamat, $deskripsi, $password)
 		{
 			$query = "INSERT INTO instansi(username, nama_instansi, kapasitas, deskripsi, syarat, kriteria, alamat_instansi) VALUES ('$username', '$nama_instansi', '$kapasitas', '$deskripsi', '$syarat', '$kriteria', '$alamat')";
-			$this->conn->query($query);
+			if($this->conn->query($query) == true){
 
-			$query = "INSERT INTO auth(username, password, role) VALUES ('$username', '$password', '3')";
+				$query = "INSERT INTO auth(username, password, role) VALUES ('$username', '$password', '3')";
 
-			return $this->conn->query($query);
+				return $this->conn->query($query);
+			}else{
+				return false;
+			}
 		}
 
 		function terimaPendaftar($id)
@@ -130,11 +138,14 @@
 
 			$query = "UPDATE proses_magang SET accepted = 1 WHERE nim = '$id'";
 
-			return $this->conn->query($query);
+			if ($this->conn->query($query) == true){
 			
-			$query2 = "UPDATE instansi SET pemagang_diterima = pemagang_diterima + 1, pemagang_terdaftar = pemagang_terdaftar - 1 WHERE username = '$username'";
-		
-			return $this->conn->query($query2);
+				$query2 = "UPDATE instansi SET pemagang_diterima = pemagang_diterima + 1, pemagang_terdaftar = pemagang_terdaftar - 1 WHERE username = '$username'";
+			
+				return $this->conn->query($query2);
+			}else{
+				return false;
+			}
 				
 		}
 
@@ -143,11 +154,16 @@
 			$username = $_SESSION['username'];
 
 			$query = "UPDATE proses_magang SET accepted = 2 WHERE nim = '$id'";
-			$this->conn->query($query);
+			if($this->conn->query($query) == true){
 
-			$query2 = "UPDATE instansi SET pemagang_terdaftar - 1 WHERE username = '$username'";
-			$this->conn->query($query2);
+				$query2 = "UPDATE instansi SET pemagang_terdaftar - 1 WHERE username = '$username'";
+				$this->conn->query($query2);
+			}else{
+				return false;
+			}
+
 		}
+			
 
 	}
 

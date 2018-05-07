@@ -45,6 +45,9 @@
 					case '3' : 
 						header("Location: ../instansi/");
 						break;
+					case '4' :
+						header("Location: ../kaprodi/");
+						break;
 				}
 			}
 		}

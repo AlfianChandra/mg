@@ -10,7 +10,7 @@
 		if($status == 1){
 
 			if($instansi->terimaPendaftar($id)){	
-				die("teheeheheh");
+				
 				$file->uploadFileBalasan($_FILES['surat_balasan'], $id);
 				header("Location: ../instansi");
 			}else{
