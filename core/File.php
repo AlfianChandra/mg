@@ -17,7 +17,7 @@
 			
 			if ($error == 0) {
 					
-				if ($size < 100000000) {				
+				if ($size < 2000000) {				
 					move_uploaded_file($asal, $namafile);
 				}else{
 					die("Ukuran file terlalu besar");
@@ -42,7 +42,7 @@
 			
 			if ($error == 0) {
 					
-				if ($size < 100000000) {				
+				if ($size < 2000000) {				
 					move_uploaded_file($asal, $namafile);
 				}else{
 					die("Ukuran file terlalu besar");
