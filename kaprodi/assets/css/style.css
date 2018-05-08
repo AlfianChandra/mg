@@ -1,0 +1,9 @@
+.pp_image
+{
+  height:330px;
+  object-fit:cover;
+  float:left;
+  box-sizing:border-box;
+  width:100%;
+}
+

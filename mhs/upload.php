@@ -1,7 +1,11 @@
 <?php
+<<<<<<< HEAD
+$a = 0;
+=======
   require_once '../core/Mahasiswa.php';
   $mahasiswa->cekStatusMagang();
 
+>>>>>>> 739c94a6aebe039eefbac2d1eae3c79f0230c3aa
 ?>
 
 <!doctype html>
@@ -1233,7 +1237,7 @@
                 <?php elseif ($mahasiswa->accepted == 1): ?>
                 <div class='col-md-4 col-md-offset-4'>
                   <h5 style='margin:0;text-align: center;text-transform: uppercase;font-weight:bold;font-size:13px;'>Langkah 3 &centerdot; Status Pendaftaran</h5>
-                  <button target='instance' type='button' class='btn btn-success btn-lg btn-act' style='width:100%;'>
+                  <button target='konfirmasi' type='button' class='btn btn-success btn-lg btn-act' style='width:100%;'>
                     <span class="fa fa-check"></span> <br>Permohonan Magang Disetujui<br>
                     KLIK UNTUK KONFIRMASI
                   </button>
@@ -1329,6 +1333,11 @@
         {
           modal.triggerModal("open","Pendaftaran Instansi");
           ht.htGet("form/instance.php",".md-content");
+        }
+        else if(target === "konfirmasi")
+        {
+          modal.triggerModal("open","Konfirmasi Magang");
+          ht.htGet("form/konfirmasi.php",".md-content");
         }
       });
     });

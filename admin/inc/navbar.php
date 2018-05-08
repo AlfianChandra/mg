@@ -20,6 +20,12 @@
               </a>
             </li>
             <li>
+              <a href="dosen.php">
+                <i class="material-icons">settings</i>
+                <p>Manage Dosen</p>
+              </a>
+            </li>
+            <li>
               <a href="instance.php">
                 <i class="material-icons">settings</i>
                 <p>Manage Instansi</p>

@@ -23,7 +23,7 @@ $(document).ready(function(){
     var data = $(this).attr("atr-id");
     var id = {"id":data};
     modal.triggerModal("open","Data Mahasiswa");
-    ht.htPost("page/student-data.php",id,".md-content");
+    ht.htPost("page/pendaftar-data.php",id,".md-content");
   });
 });
 </script>

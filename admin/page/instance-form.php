@@ -7,7 +7,7 @@
   <div class='col-md-3'>
     <h3 style='font-weight:bold;'>Informasi Instansi</h3>
     <input type='text' class='form-control i3' placeholder="Nama Instansi" required='required' name='nama_instansi'>
-    <input type='text' class='form-control i4' placeholder="Kapasitas Pemagang" required='required' name='kapasitas'>
+    <input type='number' class='form-control i4' placeholder="Kapasitas Pemagang" required='required' name='kapasitas'>
     <input type='text' class='form-control i5' placeholder="Kriteria Pemagang" required='required' name='kriteria'>
     <input type='text' class='form-control i6' placeholder="Syarat" required='required' name='syarat'>
   </div>
