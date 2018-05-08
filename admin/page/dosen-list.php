@@ -40,7 +40,7 @@
   <button type='button' class='clear-search'><span class='fa fa-close'></span></button>
 
   
-    <input type="text" required="required" name="search" class="form-control search" placeholder="Cari Mahasiswa (NIM/Nama)">
+    <input type="text" required="required" name="search" class="form-control search" placeholder="Cari Dosen (NIP/Nama)">
   
 
 </div>
@@ -101,7 +101,7 @@ $(document).ready(function(){
   $(".search").on("keyup",function(){
     var searchkey = $(this).val();
     var data = {"data":searchkey};
-    ht.htPost("post/search-std.php",data,".cntn");
+    ht.htPost("post/search-dosen.php",data,".cntn");
   });
 });
 </script>

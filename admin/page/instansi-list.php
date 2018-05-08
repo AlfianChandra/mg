@@ -36,11 +36,11 @@
   ?>
 </div>
 
-<div class="col-md-3" style='position:relative;'>
+<div class="col-md-4" style='position:relative;'>
   <button type='button' class='clear-search'><span class='fa fa-close'></span></button>
 
   
-    <input type="text" required="required" name="search" class="form-control search" placeholder="Cari Mahasiswa (NIM/Nama)">
+    <input type="text" required="required" name="search" class="form-control search" placeholder="Cari Instansi (Username / Nama instansi)">
   
 
 </div>
@@ -100,7 +100,7 @@ $(document).ready(function(){
   $(".search").on("keyup",function(){
     var searchkey = $(this).val();
     var data = {"data":searchkey};
-    ht.htPost("post/search-std.php",data,".cntn");
+    ht.htPost("post/search-instansi.php",data,".cntn");
   });
 });
 </script>

@@ -109,7 +109,7 @@
 		{
 			$username = $_SESSION['username'];
 
-			$query 	= "SELECT mahasiswa.*, proses_magang.status_pengajuan FROM mahasiswa JOIN proses_magang WHERE mahasiswa.nim = proses_magang.nim AND mahasiswa.tempat_magang='$username' AND proses_magang.status_pengajuan = 1 AND mahasiswa.nim LIKE '%$data%' OR mahasiswa.nama LIKE '%$data%' AND tempat_magang = '$username'";
+			$query 	= "SELECT mahasiswa.*, proses_magang.status_pengajuan FROM mahasiswa JOIN proses_magang WHERE mahasiswa.nim = proses_magang.nim AND mahasiswa.tempat_magang='$username' AND proses_magang.status_pengajuan = 1 AND proses_magang.accepted = 0 AND mahasiswa.nim LIKE '%$data%' OR mahasiswa.nama LIKE '%$data%' AND tempat_magang = '$username'";
 			$result = $this->conn->query($query);
 
 			$this->datas = [];
@@ -181,6 +181,19 @@
 				$this->conn->query($query2);
 			}else{
 				return false;
+			}
+
+		}
+
+		function instansiCari($data)
+		{	
+			$query 	= "SELECT * FROM instansi WHERE username LIKE '%$data%' OR nama_instansi LIKE '%$data%'";
+			$result = $this->conn->query($query);
+
+			$this->datas = [];
+			while($row = $result->fetch_object())
+			{
+				$this->datas[] = $row;
 			}
 
 		}

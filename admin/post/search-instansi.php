@@ -2,12 +2,12 @@
 
   require_once '../../core/Instansi.php';  
   $data = $_POST['data'];
-  $instansi->pendaftarCari($data);
-  ?>
+  $instansi->instansiCari($data);
 
- <?php  foreach ($instansi->datas as $key): ?>
-    <a class='userdata' href='javascript:void(0)' atr-id='<?= $key->nim?>' style='text-transform: uppercase;width:100%;float:left;box-sizing:border-box;font-size:17px;padding:10px;font-weight:bold;'> <?= $key->nim?> &nbsp;&CenterDot;&nbsp; <?= $key->nama?></a>
-  <?php endforeach ?>
+ ?>
+<?php  foreach ($instansi->datas as $key): ?>
+    <a class='userdata' href='javascript:void(0)' atr-id='<?= $key->username?>' style='text-transform: uppercase;width:100%;float:left;box-sizing:border-box;font-size:17px;padding:10px;font-weight:bold;'> <?= $key->username ?> &nbsp;&CenterDot;&nbsp; <?= $key->nama_instansi?></a>
+<?php endforeach ?>
  
 
 <?php if ($instansi->datas == NULL): ?> 
@@ -22,8 +22,8 @@ $(document).ready(function(){
   $(".userdata").click(function(){
     var data = $(this).attr("atr-id");
     var id = {"id":data};
-    modal.triggerModal("open","Data Mahasiswa");
-    ht.htPost("page/pendaftar-data.php",id,".md-content");
+    modal.triggerModal("open","Data Instansi");
+    ht.htPost("page/instansi-data.php",id,".md-content");
   });
 });
 </script>

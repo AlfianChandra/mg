@@ -254,6 +254,34 @@
 			}
 		}
 
+		function konfirmasiCari($data)
+		{
+			$prodi = $_SESSION['prodi'];
+
+			$query 	= "SELECT mahasiswa.*, proses_magang.konfirmasi_magang FROM mahasiswa JOIN proses_magang WHERE mahasiswa.nim = proses_magang.nim AND mahasiswa.prodi = '$prodi' AND proses_magang.konfirmasi_magang = 1 AND pilih_pembimbing = 0 AND mahasiswa.nim LIKE '%$data%' OR mahasiswa.nama LIKE '%$data%'";
+			$result = $this->conn->query($query);
+
+			$this->datas = [];
+			while($row = $result->fetch_object())
+			{
+				$this->datas[] = $row;
+			}
+		}
+
+		function bimbinganCari($data)
+		{
+			$prodi = $_SESSION['prodi'];
+
+			$query 	= "SELECT mahasiswa.* FROM mahasiswa JOIN proses_magang WHERE mahasiswa.nim = proses_magang.nim AND mahasiswa.prodi = '$prodi' AND pilih_pembimbing = 1 AND mahasiswa.nim LIKE '%$data%' OR mahasiswa.nama LIKE '%$data%'";
+			$result = $this->conn->query($query);
+
+			$this->datas = [];
+			while($row = $result->fetch_object())
+			{
+				$this->datas[] = $row;
+			}
+		}
+
 
 	}
 

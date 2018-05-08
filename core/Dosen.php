@@ -88,6 +88,19 @@
 			}
 		}
 
+		function dosenCari($data)
+		{	
+			$query 	= "SELECT * FROM dosen WHERE nip LIKE '%$data%' OR nama LIKE '%$data%'";
+			$result = $this->conn->query($query);
+
+			$this->datas = [];
+			while($row = $result->fetch_object())
+			{
+				$this->datas[] = $row;
+			}
+
+		}
+
 		function pilihPembimbing()
 		{
 			$pembimbing = $_SESSION['pembimbing'];
