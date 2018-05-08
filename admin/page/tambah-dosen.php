@@ -10,6 +10,19 @@
         <h3 style="font-weight:bold;">Data Akademik</h3>
         <input type="text" required="required" name="prodi" class="form-control i4" placeholder="Program Studi">
         <input type="text" required="required" name="telp" class="form-control i5" placeholder="No. Telp">
+        <div class="col-md-12" style="padding:0px;margin-bottom:25px;border-bottom:1px solid #ccc;">
+            <label style="width:100%;margin-top:15px;float:left;">Jabatan</label>
+            
+            <label style="float:left;box-sizing:border-box;width:auto;">
+
+                <input type="radio" name="jabatan" value="4"> Ketua Prodi
+            </label>
+            
+            <label style="float:left;box-sizing:border-box;width:auto;margin-left:30px;">
+                <input type="radio" name="jabatan" value='2'> Dosen
+            </label>
+            
+        </div>
     </div>
 </form>
 <script>

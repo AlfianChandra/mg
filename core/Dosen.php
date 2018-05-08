@@ -74,13 +74,13 @@
 
 		}
 
-		function tambahDosen($nip, $nama, $prodi, $telp, $password)
+		function tambahDosen($nip, $nama, $prodi, $telp, $password, $role)
 		{
 			$query 	= "INSERT INTO dosen(nip, nama, prodi, telp) VALUES ('$nip', '$nama', '$prodi', '$telp')";
 
 			if($this->conn->query($query) == true){
 
-				$query2 = "INSERT INTO auth(username, password) VALUES ('$nip', '$password')";
+				$query2 = "INSERT INTO auth(username, password, role) VALUES ('$nip', '$password','$role')";
 
 				return $this->conn->query($query2);
 			}else{

@@ -2,8 +2,8 @@
 	require_once '../core/Instansi.php';
 
 	if ($_POST) {
-		$id = $_POST['id'];
-		if ($instansi->hapusInstansi($id)) {
+		
+		if ($instansi->hapusInstansi()) {
 			echo "yes";
 		}else {
 			die("gagal");

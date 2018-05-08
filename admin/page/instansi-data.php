@@ -8,8 +8,7 @@
     $id = $_POST['id'];
     $instansi->instansiTerpilih($id);
 
-    $_SESSION['instansi'] = $id;
-    
+    $_SESSION['instansi'] = $id;    
   }
 
 ?>
@@ -78,8 +77,8 @@
 
 <div class="col-md-12">
   <button type='button' class='btn btn-default backbtn'>Kembali</button>
-  <button type="button" class="btn btn-success bt-mhs-act" data-id="<?= $dosen->nip ?>">Edit</button>
-  <button type="button" class="btn btn-danger bt-delete" data-id="<?= $dosen->nip ?>">Hapus</button>
+  <button type="button" class="btn btn-success bt-mhs-act" data-id="<?= $instansi->username ?>">Edit</button>
+  <button type="button" class="btn btn-danger bt-delete" data-id="<?= $instansi->username ?>">Hapus</button>
 </div>
 
 <script>

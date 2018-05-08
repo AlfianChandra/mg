@@ -9,8 +9,9 @@
 		$password 		= $_POST['password'];
 		$prodi 			= $_POST['prodi'];
 		$telp 			= $_POST['telp'];
+		$role 			= $_POST['jabatan'];
 		
-		if ($dosen->tambahDosen($nip, $nama, $prodi, $telp, $password)) 
+		if ($dosen->tambahDosen($nip, $nama, $prodi, $telp, $password, $role)) 
 		{
 			echo "success";
 		}else{
