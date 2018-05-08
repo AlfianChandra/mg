@@ -1,6 +1,6 @@
 <meta charset="utf-8" />
 <?php 
-	 require_once '../core/Kaprodi.php';
+	 require_once '../core/Dosen.php';
      require_once '../core/Auth.php';
      $auth->isNotLogin();
  ?>

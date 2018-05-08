@@ -16,11 +16,11 @@
           <div class="container-fluid">
             <div class="row">
               <div class="col-md-12">
-                <h2 style="font-weight:bold;"> Manage Instansi</h2>
+                <h2 style="font-weight:bold;"> Manage Dosen</h2>
               </div>
               <div class="col-md-12">
-                <button type="button" at-type="tambah" class="btn btn-primary bt-ins">Tambah Instansi</button>
-                <button type="button" at-type="lihat" class="btn btn-warning bt-ins">lihat instansi</button>
+                <button type="button" at-type="tambah" class="btn btn-primary bt-mhs-acts">Tambah dosen</button>
+                <button type="button" at-type="lihat" class="btn btn-warning bt-mhs-acts">Lihat dosen</button>
               </div>
             </div>
           </div>
@@ -57,25 +57,22 @@
     </script>
     <script>
       $(document).ready(function(){
-        var ht = new HtRequest();
-        var modal = new Modal();
-        var up = new UploadSys();
-        
-        $(".bt-ins").click(function(){
-          var at = $(this).attr("at-type");
-
-          if(at === "tambah")
-          {
-            up.triggerSys("open","Tambah Instansi","page/instance-form.php",".up-body-content");
-          }
-          else if(at === "lihat")
-          {
-            ht.htGet("page/instansi-list.php",".md-content");
-            modal.triggerModal("open","Lihat Instansi");
-          }
-
-        });
-
+      var ht = new HtRequest();
+      var modal = new Modal();
+      var up = new UploadSys();
+      
+          $(".bt-mhs-acts").click(function(){
+              var at = $(this).attr("at-type");
+              if(at === "tambah")
+              {
+                  up.triggerSys("open","Tambah Dosen","page/tambah-dosen.php",".up-body-content");
+              }
+              else if(at === "lihat")
+              {
+                  ht.htGet("page/dosen-list.php",".md-content");
+                  modal.triggerModal("open","Lihat Dosen");
+              }
+          });
       });
     </script>  
 </html>

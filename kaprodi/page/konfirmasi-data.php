@@ -7,12 +7,9 @@
     $id = $_SESSION['id'];
 
     require_once '../../core/Mahasiswa.php';
-    require_once '../../core/Dosen.php';
-    $mahasiswa->mahasiswaTerpilih($id);
-    $dosen->lihatDosenPembimbing();
-
+      
+    $mahasiswa->bimbinganDetail($id);
     $_SESSION['nim'] = $id;
-    $_SESSION['prodi'] = $mahasiswa->prodi;
   }
 
 ?>
@@ -59,35 +56,26 @@
 <div class='col-md-9'>
   <h3 style='font-weight: bold;'>Data Mahasiswa</h3>
   <div class="profile-content">
+    <h5 class="data-type">NIM</h5><h5 class="data-content">: <?= $mahasiswa->nim ?></h5>
     <h5 class="data-type">Nama</h5><h5 class="data-content"> : <?= $mahasiswa->nama ?></h5>
     <h5 class="data-type">Jenis Kelamin</h5><h5 class="data-content">: <?= $mahasiswa->jenis_kelamin ?></h5>
     <h5 class="data-type">Tempat & Tanggal Lahir</h5><h5 class="data-content">: <?= $mahasiswa->tempat_lahir . ', ' . $mahasiswa->tanggal_lahir ?></h5>
+    <h5 class="data-type">Pelaksanaan Magang</h5><h5 class="data-content">: <?= $mahasiswa->tanggal_mulai ?> - <?= $mahasiswa->tanggal_selesai ?></h5>   
+    <h5 class="data-type">Instansi Magang</h5><h5 class="data-content">: <?= $mahasiswa->nama_instansi ?></h5>
     <h5 class="data-type">Nomor Telepon</h5><h5 class="data-content">: <?= $mahasiswa->telp ?></h5>
-    <h5 class="data-type">NIM</h5><h5 class="data-content">: <?= $mahasiswa->nim ?></h5>
-    <h5 class="data-type">Program Studi</h5><h5 class="data-content">: <?= $mahasiswa->prodi ?></h5>
-    <h5 class="data-type">Fakultas</h5><h5 class="data-content">: <?= $mahasiswa->fakultas ?></h5>
+
 
   </div>
+  
+</div>
   
 </div>
 
 <div class="col-md-12">
   
+  <button type='button' class='btn btn-default backbtn col-md-2'>Kembali</button>
+  <button type='button' class='btn btn-success pilih col-md-3'>pilih pembimbing magang</button>
 
-  <form action="../action/pilihPembimbing.php" class="col-md-9" method="post" enctype="multipart/form-data"">
-    <button type='button' class='btn btn-default backbtn col-md-3'>Kembali</button>
-    <select style="text-transform: capitalize;" name="pembimbing">
-      <option>Pilih Pembimbing Magang</option>
-
-      <?php foreach ($dosen->datas as $key): ?>  
-        <option style="text-transform: capitalize;" value='<?= $key->nip ?>' ><?= $key->nama ?></option>
-      <?php endforeach ?>
-
-    </select>
-    <input type="text" name="nim" value="<?= $mahasiswa->nim ?>" hidden>
-    
-    <input type="submit" name="submit" value="kirim">
-  </form>
 </div>
 
 
@@ -98,10 +86,16 @@ $(document).ready(function(){
   
   
   $(".backbtn").click(function(){
-    ht.htGet("page/pendaftar-list.php",".md-content");
+    ht.htGet("page/konfirmasi-list.php",".md-content");
     modal.triggerModal("open","Lihat Mahasiswa");
   });
 
+  $(".pilih").click(function(){
+    ht.htGet("reqs/pilih-pembimbing.php",".md-content");
+    modal.triggerModal("open","Lihat Mahasiswa");
+  });
+
+  
   
 });  
 </script>

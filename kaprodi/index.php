@@ -13,7 +13,7 @@
           <div class="container-fluid">
             <div class="row">
               <div class="col-md-12">
-                <h2><i class="material-icons">pan_tool</i> Selamat Datang, <b style="color:purple; text-transform: capitalize;"><?= $kaprodi->nama ?></b></h2>
+                <h2><i class="material-icons">pan_tool</i> Selamat Datang, <b style="color:purple; text-transform: capitalize;"><?= $dosen->nama ?></b></h2>
               </div>
               <div class="col-md-4">
                 <img src="https://www.coolheadtech.com/hs-fs/hub/189007/file-526634248-png/google-apps-admin-panel-icon.png?t=1522945830559&width=237&name=google-apps-admin-panel-icon.png" class="img-responsive pp_image">

@@ -3,10 +3,10 @@
 	require_once '../core/File.php';
 
 	if (isset($_POST['submit'])) {
-		
-    	$status 				= $_POST['penerimaan'];
-    	$id 					= $_POST['nim'];
- 		
+
+		$id			= ($_SESSION['id']);
+    	$status 	= $_POST['penerimaan'];
+    	  		
 		if($status == 1){
 
 			if($instansi->terimaPendaftar($id)){	

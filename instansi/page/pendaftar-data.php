@@ -3,11 +3,12 @@
   if(!$_POST) {
     die("error");
   }else{
-    $_SESSION['id'] = $_POST['id'];
-    $id = $_SESSION['id'];
+    
+    $id = $_POST['id'];
     require_once '../../core/Mahasiswa.php';
     $mahasiswa->mahasiswaTerpilih($id);
 
+    $_SESSION['id'] = $id;
   }
 
 ?>
@@ -67,17 +68,8 @@
 </div>
 
 <div class="col-md-12">
-  
-
-  <form action="../action/penerimaanMagang.php" class="col-md-9" method="post" enctype="multipart/form-data"">
-    <button type='button' class='btn btn-default backbtn col-md-3'>Kembali</button>
-    file surat balasan
-    <input type="file" name="surat_balasan" required>
-    <input type="radio" name="penerimaan" value="1">terima
-    <input type="radio" name="penerimaan" value="2">tolak
-    <input type="text" name="nim" value="<?= $mahasiswa->nim ?>" hidden>
-    <input type="submit" name="submit" value="kirim">
-  </form>
+    <button type='button' class='btn btn-default backbtn col-md-3'>Kembali</button>  
+    <button type='button' class='btn btn-success balasan col-md-3'>tindak lanjuti</button>
 </div>
 
 
@@ -89,6 +81,11 @@ $(document).ready(function(){
   
   $(".backbtn").click(function(){
     ht.htGet("page/pendaftar-list.php",".md-content");
+    modal.triggerModal("open","Lihat Mahasiswa");
+  });
+
+  $(".balasan").click(function(){
+    ht.htGet("reqs/balasan-magang.php",".md-content");
     modal.triggerModal("open","Lihat Mahasiswa");
   });
 

@@ -1,10 +1,10 @@
 <?php 
-	require_once '../core/Kaprodi.php';
+	require_once '../core/Dosen.php';
 
 	if (isset($_POST['submit'])) {
 		$_SESSION['pembimbing'] = $_POST['pembimbing'];
 
-		if ($kaprodi->pilihPembimbing()) {
+		if ($dosen->pilihPembimbing()) {
 			header("Location: ../kaprodi");
 		}else {
 			die("gagal");

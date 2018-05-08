@@ -71,7 +71,6 @@
 
 <div class="col-md-12">
   
-
    <button type='button' class='btn btn-default backbtn col-md-3'>Kembali</button>
 
 </div>
@@ -84,10 +83,9 @@ $(document).ready(function(){
   
   
   $(".backbtn").click(function(){
-    ht.htGet("page/pendaftar-list.php",".md-content");
+    ht.htGet("page/bimbingan-list.php",".md-content");
     modal.triggerModal("open","Lihat Mahasiswa");
   });
-
   
 });  
 </script>

@@ -36,10 +36,11 @@
   <img src="http://icons.iconarchive.com/icons/webalys/kameleon.pics/512/Student-3-icon.png" class="img-responsive"> 
 </div>
 <div class="col-md-9">
-  <h3 class="profile-head">Informasi Profil</h3> <?php require_once '../../core/Kaprodi.php'; ?>
+  <h3 class="profile-head">Informasi Profil</h3> <?php require_once '../../core/Dosen.php'; ?>
   <div class="profile-content">
-    <h5 class="data-type">NIP</h5><h5 class="data-content"> : <?= $kaprodi->nip ?></h5>
-    <h5 class="data-type">Nama</h5><h5 class="data-content">: <?= $kaprodi->nama ?></h5>
-    <h5 class="data-type">Program Studi</h5><h5 class="data-content">: <?= $kaprodi->prodi ?></h5>
+    <h5 class="data-type">NIP</h5><h5 class="data-content"> : <?= $dosen->nip ?></h5>
+    <h5 class="data-type">Nama</h5><h5 class="data-content">: <?= $dosen->nama ?></h5>
+    <h5 class="data-type">Program Studi</h5><h5 class="data-content">: <?= $dosen->prodi ?></h5>
+    <h5 class="data-type">Nomor Telepon</h5><h5 class="data-content">: <?= $dosen->telp ?></h5>
   </div>
 </div>

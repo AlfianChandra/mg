@@ -132,6 +132,21 @@
 			}
 		}
 
+		function hapusInstansi()
+		{	
+			$id 	= $_SESSION['instansi'];
+
+			$query 	= "DELETE FROM instansi WHERE username = '$id'";
+			if($this->conn->query($query) == true){
+
+				$query2 = "DELETE FROM auth WHERE username = '$id'";
+				
+				return $this->conn->query($query2);			
+			}else{
+				return false;
+			}
+		}
+
 		function terimaPendaftar($id)
 		{
 			$username = $_SESSION['username'];
