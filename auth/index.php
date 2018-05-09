@@ -160,7 +160,13 @@
       }
     </style>
   </head>
-
+  <body style="background-color:#ccc;">
+    
+    <div class="alr-wrapper">
+      <div class="container">
+        <h4 class="alr-content" style="font-size:18px;margin:0;color:#fff;text-transform: uppercase;font-weight: bold;"></h4>
+      </div>
+    </div>
     
     <div class="lg-wrapper">
       <div class="lg-heading">UNJA Internship Application &nbsp;&nbsp; &centerdot; &nbsp;&nbsp; System Gateway</div>
@@ -205,18 +211,18 @@
               $("input").val("");
               $("input").attr("disabled");
               
-              $(".alr-content").html("<span class='fa fa-spinner fa-spin'></span> Login berhasil! Mohon tunggu")
+              $(".alr-content").html("<span class='fa fa-spinner fa-spin'></span> Login berhasil! Mohon tunggu");
               
-              $(".alr-wrapper").slideDown(300);
+              $(".alr-wrapper").slideDown(30);
               var time1 = 5;
               var int1 = setInterval(function(){
                 time1--;
                 if(time1 === 0)
                 {
-                  $(".alr-wrapper").slideUp(500);
+                  $(".alr-wrapper").slideUp(50);
                   clearInterval(int1);
                 }
-              },1000);
+              },100);
   
   
               var time = 3;
@@ -227,7 +233,7 @@
                   location = "index.php";
                   clearInterval(interval);
                 }
-              },1000); 
+              },100); 
             }
             else if(res === "bad")
             {
