@@ -24,6 +24,10 @@
                 <button type="button" atr-type="profil" class="btn btn-success ajax-call" style="width:100%;">Ringkasan Profil</button>
                 <button type="button" atr-type="status" class="btn btn-primary ajax-call" style="width:100%;">Status Magang</button>
                 <button type="button" atr-type="sk" class="btn btn-danger ajax-call" style="width:100%;">Syarat & Ketentuan Magang</button>
+
+                <?php if ($mahasiswa->nama_pembimbing !== NULL): ?>
+                  <button type="button" atr-type="pembimbing" class="btn btn-info ajax-call" style="width:100%;">Kontak pembimbing</button>
+                <?php endif ?>
               </div>
             </div>
           </div>
@@ -89,6 +93,12 @@
         else if(call === "instansi")
         {
           http.htGet("reqs/instance.php",".md-content");
+          modal.triggerModal("close");
+          modal.triggerModal("open","INSTANSI");
+        }
+        else if(call === "pembimbing")
+        {
+          http.htGet("reqs/pembimbing.php",".md-content");
           modal.triggerModal("close");
           modal.triggerModal("open","INSTANSI");
         }

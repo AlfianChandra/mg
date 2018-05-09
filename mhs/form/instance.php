@@ -1,6 +1,6 @@
 <?php 
-  require_once '../../core/Instansi.php';
-  $instansi->lihatInstansi();
+  require_once '../../core/Mahasiswa.php';
+  // $instansi->lihatInstansi();
   
  ?>
 <style>
@@ -42,25 +42,42 @@
 </style>
 <form action='../action/uploadPengajuanMahasiswa.php' method='post' enctype='multipart/form-data'>
   <div class="col-md-12">
-    <h4 style='font-weight: bold;'>Dokumen</h4>
+    <h4 style='font-weight: bold;'>Dokumen Pendukung (Optional)</h4>
     <div class="input-area">
-      <input type="file" required="required" accept=".pdf, .doc, .docx" name="permohonan" class='inputs1'>
-      <h5 class='h51'><i class='material-icons'>file_upload</i> <br> Dokumen Pengajuan <br> (Seret File / Klik Area Ini)</h5>
+      <input type="file" accept=".pdf" name="proposal" class='inputs1'>
+      <h5 class='h51'><i class='material-icons'>file_upload</i> <br> Dokumen Proposal Magang <br> (Seret File / Klik Area Ini)</h5>
+    </div>
+
+    <div class="input-area">
+      <input type="file" accept=".pdf" name="cv" class='inputs2'>
+      <h5 class='h52'><i class='material-icons'>file_upload</i> <br> Dokumen CV <br> (Seret File / Klik Area Ini)</h5>
     </div>
   </div>
-  <div class="col-md-12" style="padding:25px;">
-    <button type="submit" class="btn btn-primary">Unggah & Lanjutkan</button>
+  <div class="col-md-12" style="padding:25px 25px 0px 25px;">
+    <input type="submit" name="submit" class="btn btn-primary" value="Unggah & Lanjutkan">
   </div>
 </form>
+
+  <div class="col-md-12" style="padding: 0px 25px;">
+    <a class="btn" href="file/pengajuan_<?= $mahasiswa->nim ?>.pdf" >Download dokumen pengajuan</a>
+  </div>
+
 <script>
 $(document).ready(function(){
   setInterval(function(){
     
     var in1 = $(".inputs1");
+    var in2 = $(".inputs2");
+    
     
     if($.trim(in1.val()) !== "")
     {
       $(".h51").html("<i class='material-icons'>file_upload</i> <br>"+ in1.val()).css("font-weight","bold").css("color","purple");
+    }
+    
+    if($.trim(in2.val()) !== "")
+    {
+      $(".h52").html("<i class='material-icons'>file_upload</i> <br>"+ in2.val()).css("font-weight","bold").css("color","purple");;
     }
   },100);
 });

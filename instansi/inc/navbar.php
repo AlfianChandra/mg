@@ -14,7 +14,7 @@
                 </a>
             </li>            
             <li>
-              <a href="list_pendaftar.php">
+              <a href="pendaftar-list.php">
                 <i class="material-icons">settings</i>
                 <p>Pendaftar</p>
               </a>
