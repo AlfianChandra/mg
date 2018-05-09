@@ -23,8 +23,13 @@
 				$_SESSION["username"] = $username;
 				$_SESSION["role"]     = $role;
 
-				$this->isLogin();
-			} else header("Location: ../auth/");
+				echo "good";
+                        } else {
+                          
+                          echo "bad";
+                        
+                          
+                        }
 		}
 
 		function isLogin()
