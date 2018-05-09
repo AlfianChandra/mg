@@ -9,6 +9,12 @@
     $mahasiswa->mahasiswaTerpilih($id);
 
     $_SESSION['id'] = $id;
+
+    $proposalPath = ($_SERVER['DOCUMENT_ROOT']."/magang2/mg/mhs/file/proposal_".$_SESSION['id'].".pdf");
+    $cvPath = ($_SERVER['DOCUMENT_ROOT']."/magang2/mg/mhs/file/cv_".$_SESSION['id'].".pdf");
+
+    $proposal = "../mhs/file/proposal_".$_SESSION['id'].".pdf";
+    $cv = "../mhs/file/cv_".$_SESSION['id'].".pdf";
   }
 
 ?>
@@ -70,7 +76,16 @@
 <div class="col-md-12">
     <button type='button' class='btn btn-default backbtn col-md-3'>Kembali</button>  
     <button type='button' class='btn btn-success balasan col-md-3'>tindak lanjuti</button>
+
+    <?php if (file_exists($proposalPath)): ?>
+    <a href="<?= $proposal ?>" class='btn btn-info'>download proposal magang</a>
+    <?php endif ?>  
+
+    <?php if (file_exists($cvPath)): ?>
+    <a href="<?= $cv ?>" class='btn btn-info'>download cv magang</a>
+    <?php endif ?>  
 </div>
+  
 
 
 <script>

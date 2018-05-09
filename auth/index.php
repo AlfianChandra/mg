@@ -35,6 +35,7 @@
     <div class="limiter">
       <div class="container-login100" style='height:100px;'>
         <div class="wrap-login100">
+
           <form class="login100-form" method="POST" action="../action/login.php">
             <span class="login100-form-title p-b-34">
             LOGIN
@@ -51,6 +52,7 @@
               <input type="submit" class="login100-form-btn" value="Sign in">
             </div>
           </form>
+          
           <div class="login100-more">
             <img src='https://siakadlama.unja.ac.id/foto/F1E115015.JPG' style='height:100%;width:16.666%;object-fit: cover;float:left;'>
             <img src='https://siakadlama.unja.ac.id/foto/F1E115010.JPG' style='height:100%;width:16.666%;object-fit: cover;float:left;'>

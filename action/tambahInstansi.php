@@ -8,6 +8,7 @@
 		$username 			= $_POST['username'];
 		$nama_instansi 		= $_POST['nama_instansi'];
 		$password 			= $_POST['password'];
+		$password			= md5($password);
 		$kapasitas   		= $_POST['kapasitas'];
 		$kriteria  			= $_POST['kriteria'];
 		$syarat  			= $_POST['syarat'];

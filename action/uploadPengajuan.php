@@ -3,15 +3,12 @@
 	require_once '../core/File.php';
 
 	if (isset($_POST['submit'])) {
-
-		$id = $_POST['id'];
-		$_SESSION['username'] = $id;
+		$_SESSION['file'] = $_SESSION['nim_pengajuan'];
 		
-		$doc_type = array_keys($_FILES)[0];
-		
-		if ($admin->adminUploadPengajuan($id)) {
-			$file->uploadFile($_FILES['pengajuan'], $doc_type);
+		if ($admin->adminUploadPengajuan()) {
+			$file->uploadFile($_FILES['pengajuan'], "pengajuan");
+			header("Location: ../admin");
 		}
-	header("Location: ../admin");
+	
 	}
  ?>

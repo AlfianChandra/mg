@@ -13,6 +13,7 @@
 ?>
 
 <style>
+
   .profile-head
   {
     font-weight:bold;
@@ -68,16 +69,12 @@
 </div>
 
 <div class="col-md-12">
-  <button type='button' class='btn btn-default backbtn col-md-2'>Kembali</button>
-
-  <form action="../action/uploadPengajuan.php" method="post" enctype="multipart/form-data">
-    <input type="text" name="id" value="<?= $mahasiswa->nim ?>" hidden>
-    <label class="btn btn-success btn-file">
-        Pilih file.. <input type="file" name="pengajuan">
-    </label>
-    <input type="submit" class="btn btn-primary bt-mhs-act" name="submit" value="Kirim">
-  </form>
-
+  <button type='button' class='btn btn-default backbtn'>Kembali</button>
+  <button type="button" class="btn btn-success bt-mhs-act" data-id="<?= $mahasiswa->nim ?>">Kirim Surat Pengajuan</button>
+  <a href="../mhs/file/permohonan_<?= $id ?>.pdf" class='btn btn-info'><i class="material-icons" style="margin: 0 10px 0 0;">cloud_download</i>permohonan magang</a>
+  <a href="../mhs/file/khs_<?= $id ?>.pdf" class='btn btn-info'><i class="material-icons" style="margin: 0 10px 0 0;">cloud_download</i>khs</a>
+  <a href="../mhs/file/krs_<?= $id ?>.pdf" class='btn btn-info'><i class="material-icons" style="margin: 0 10px 0 0;">cloud_download</i>krs</a>
+  <a href="../mhs/file/transkrip_<?= $id ?>.pdf" class='btn btn-info'><i class="material-icons" style="margin: 0 10px 0 0;">cloud_download</i>transkrip nilai</a>
 </div>
 </form>
 <script>
@@ -88,6 +85,13 @@ $(document).ready(function(){
   $(".backbtn").click(function(){
     ht.htGet("page/student-list-magang.php",".md-content");
     modal.triggerModal("open","Lihat Mahasiswa");
+  });
+
+  $(".bt-mhs-act").click(function(){
+    var id = $(this).attr("data-id");
+    var data = {"id":id};
+    modal.triggerModal("open","Lihat Mahasiswa");
+    ht.htPost("reqs/surat-pengajuan-mahasiswa.php",data,".md-content");
   });
 
 });           

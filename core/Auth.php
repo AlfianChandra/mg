@@ -7,6 +7,7 @@
 		
 		function login($username, $password)
 		{
+			$password = md5($password);
 
 			$query 	= $this->conn->prepare("SELECT username, role FROM auth WHERE username = ? AND password = ?");
 

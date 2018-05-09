@@ -1,12 +1,15 @@
 <?php 
 	require_once '../core/Instansi.php';
 	require_once '../core/File.php';
+	require_once '../core/Mahasiswa.php';
 		
 	if (isset($_POST['submit'])) {
 
 
 		$instansi_id			= $_POST['instansi'];
   		$_SESSION['instansi']   = $instansi_id;
+  		$_SESSION['file']		= $mahasiswa->nim;
+  	
   		$tanggal_mulai 			= $_POST['tanggal_mulai'];
   		$tanggal_selesai 		= $_POST['tanggal_selesai'];
 

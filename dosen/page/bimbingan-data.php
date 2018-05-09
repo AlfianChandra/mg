@@ -72,6 +72,7 @@
 <div class="col-md-12">
   
    <button type='button' class='btn btn-default backbtn col-md-3'>Kembali</button>
+   <a href="../mhs/file/pengajuan_<?= $mahasiswa->nim ?>.pdf" class="btn btn-success">download sk penunjukkan pembimbing</a>
 
 </div>
 
