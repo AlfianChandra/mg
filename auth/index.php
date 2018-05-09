@@ -240,16 +240,16 @@
               $("input").val("");
               
               $(".alr-content").html("<span class='fa fa-warning'></span> Login gagal! &nbsp;&nbsp; &centerdot; &nbsp;&nbsp; Nama Pengguna & Kata Sandi salah!");
-              $(".alr-wrapper").slideDown(300);
+              $(".alr-wrapper").slideDown(150);
               var time = 5;
               var int = setInterval(function(){
                 time--;
                 if(time === 0)
                 {
-                  $(".alr-wrapper").slideUp(500);
+                  $(".alr-wrapper").slideUp(250);
                   clearInterval(int);
                 }
-              },1000);
+              },500);
             }
           }
         });
