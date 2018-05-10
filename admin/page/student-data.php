@@ -7,6 +7,7 @@
     $id = $_SESSION['id'];
     require_once '../../core/Mahasiswa.php';
     $mahasiswa->mahasiswaTerpilih($id);
+    
 
   }
 

@@ -147,9 +147,10 @@
 			}
 		}
 
-		function editInstansi($username, $nama_instansi, $kapasitas, $kriteria, $syarat, $alamat_instansi, $deskripsi)
+		function editInstansi($nama_instansi, $kapasitas, $kriteria, $syarat, $alamat_instansi, $deskripsi)
 		{
-			$query = "UPDATE instansi SET username='$username', nama_instansi='$nama_instansi',kapasitas='$kapasitas',deskripsi='$deskripsi',syarat='$syarat',kriteria='$kriteria',alamat_instansi='$alamat_instansi' WHERE username = '$username'";
+			$username = $_SESSION['instansi_username'];
+			$query = "UPDATE instansi SET nama_instansi='$nama_instansi',kapasitas='$kapasitas',deskripsi='$deskripsi',syarat='$syarat',kriteria='$kriteria',alamat_instansi='$alamat_instansi' WHERE username = '$username'";
 			return $this->conn->query($query);
 		}
 
