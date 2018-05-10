@@ -153,9 +153,10 @@
 			return $this->conn->query($query);
 		}
 
-		function terimaPendaftar($id)
-		{
-			$username = $_SESSION['username'];
+		function terimaPendaftar()
+		{	
+			$id 		= $_SESSION['file'];
+			$username 	= $_SESSION['username'];
 
 			$query = "UPDATE proses_magang SET accepted = 1 WHERE nim = '$id'";
 
@@ -170,9 +171,10 @@
 				
 		}
 
-		function tolakPendaftar($id)
+		function tolakPendaftar()
 		{
-			$username = $_SESSION['username'];
+			$id 		= $_SESSION['file'];
+			$username 	= $_SESSION['username'];
 
 			$query = "UPDATE proses_magang SET accepted = 2 WHERE nim = '$id'";
 			if($this->conn->query($query) == true){

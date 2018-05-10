@@ -47,6 +47,5 @@
     <h5 class="data-type">Fakultas</h5><h5 class="data-content">: <?= $mahasiswa->fakultas ?></h5>   
     <h5 class="data-type">Program Studi</h5><h5 class="data-content">: <?= $mahasiswa->prodi ?></h5>
     <h5 class="data-type">Nomor Telepon</h5><h5 class="data-content">: <?= $mahasiswa->telp ?></h5>
-    <h5 class="data-type">Dosen Pembimbing</h5><h5 class="data-content">: <?= $mahasiswa->nama_pembimbing ?></h5>
   </div>
 </div>

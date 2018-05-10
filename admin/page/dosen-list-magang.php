@@ -27,7 +27,7 @@
     }
 </style>
 <div class='col-md-12'>
-  <h3 style='font-weight:bold;'>Dosen</h3>
+  <h3 style='font-weight:bold;'>Dosen Pembimbing Magang</h3>
   <?php 
     require_once '../../core/Dosen.php'; 
     
@@ -36,14 +36,6 @@
   ?>
 </div>
 
-<div class="col-md-3" style='position:relative;'>
-  <button type='button' class='clear-search'><span class='fa fa-close'></span></button>
-
-  
-    <input type="text" required="required" name="search" class="form-control search" placeholder="Cari Dosen (NIP/Nama)">
-  
-
-</div>
 
 <div class='col-md-12'>
   <table class='table table-responsive table-striped table-hover'>
@@ -51,17 +43,23 @@
       <tr>
         <th>NIP</th>
         <th>Nama Dosen</th>
+        <th>NIM Mahasiswa Bimbingan</th>
+        <th>Nama Mahasiswa Bimbingan</th>
       </tr>
     </thead>
 
     <tbody>
 
       <?php foreach ($dosen->datas as $key) : ?>
-          <tr style='color:purple;font-weight:bold;text-transform: uppercase;' class='data-row' id='<?= $key->nip ?>'><td><?= $key->nip ?></td><td><?= $key->nama ?></td></tr>
+          <tr style='color:purple;font-weight:bold;text-transform: uppercase;' class='data-row' id='<?= $key->nip ?>'><td><?= $key->nip ?></td><td><?= $key->nama ?></td><td><?= $key->nim ?></td><td><?= $key->nama_mhs ?></td></tr>
       <?php endforeach ?>
 
     </tbody>
   </table>  
+
+  <?php if($dosen->datas == NULL):  ?>
+   <h5 style='margin:0;text-align:center;text-transform: uppercase;font-size:16px;padding:10px;font-weight:bold;'><span class='fa fa-inbox'></span> Tidak ada hasil</h5>
+  <?php endif ?>
 </div>
 <script>
 $(document).ready(function(){
@@ -75,32 +73,6 @@ $(document).ready(function(){
     ht.htPost("page/dosen-data-magang.php",data,".md-content");
     modal.triggerModal("open","Data Dosen");
   });
-  
-  setInterval(function(){
-    if($.trim($(".search").val()) !== "")
-    {
-      $(".clear-search").fadeIn(200);
-      side.playSidebar("open","Hasil Pencarian Untuk: &nbsp;&nbsp;&nbsp '<span style='color:orange'> "+ $(".search").val()+"</span> '");
-    }
-    else
-    {
-      $(".clear-search").fadeOut(200);
-      side.playSidebar("close");
-    }
-  },0);
-  
-  $(".side-dismiss").click(function(){
-    $(".search").val("");
-  });
-  
-  $(".clear-search").click(function(){
-    $(".search").val("");
-  });
-  
-  $(".search").on("keyup",function(){
-    var searchkey = $(this).val();
-    var data = {"data":searchkey};
-    ht.htPost("post/search-std-magang.php",data,".cntn");
-  });
+ 
 });
 </script>

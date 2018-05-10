@@ -1,16 +1,24 @@
 <?php
 
+<<<<<<< HEAD
 $a = 0;
 
   require_once '../core/Mahasiswa.php';
   $mahasiswa->cekStatusMagang();
 
+=======
+  require_once '../core/Mahasiswa.php';
+  $mahasiswa->cekStatusMagang();
+
+
+>>>>>>> 3327a93a95cbacd4c7226c017d2e5eaad3e099fa
 ?>
 
 <!doctype html>
 <html lang="en">
   <head>
     <?php include 'inc/essential.php'; ?>
+    <?php include 'inc/prompt.php'; ?>
     <style>
       .guideline
       {
@@ -1233,7 +1241,7 @@ $a = 0;
                   </button>
                 </div>
 
-                <?php elseif ($mahasiswa->accepted == 1): ?>
+                <?php elseif ($mahasiswa->accepted == 1 && $mahasiswa->konfirmasi_magang == 0): ?>
                 <div class='col-md-4 col-md-offset-4'>
                   <h5 style='margin:0;text-align: center;text-transform: uppercase;font-weight:bold;font-size:13px;'>Langkah 3 &centerdot; Status Pendaftaran</h5>
                   <button target='konfirmasi' type='button' class='btn btn-success btn-lg btn-act' style='width:100%;'>
@@ -1245,18 +1253,25 @@ $a = 0;
                 <?php elseif ($mahasiswa->accepted == 2): ?>
                 <div class='col-md-4 col-md-offset-4'>
                   <h5 style='margin:0;text-align: center;text-transform: uppercase;font-weight:bold;font-size:13px;'>Langkah 3 &centerdot; Status Pendaftaran</h5>
-                  <button target='none' type='button' class='btn btn-danger btn-lg btn-act' style='width:100%;'>
-                    <span class="fa fa-close"></span> <br>Permohonan Magang Ditolak
+                  <button target='gagal' type='button' class='btn btn-danger btn-lg btn-act' style='width:100%;'>
+                    <span class="fa fa-close"></span> <br>Permohonan Magang Ditolak <br>Klik untuk lebih lanjut
                   </button>
                 </div>
 
-                <div class="col-md-4 col-md-offset-4">
 
-                  <form action="../action/daftarUlangMagang.php" method="post" enctype="multipart/form-data" >
-                    <input type="submit" name="submit" onclick="return confirm('apakah anda yakin?')" class="btn" value="Pendaftaran Ulang" style='width:100%;' >
-                  </form>
 
+                <?php elseif ($mahasiswa->konfirmasi_magang == 1 && $mahasiswa->pilih_pembimbing == 0): ?>
+                <div class='col-md-4 col-md-offset-4'>
+                  <h5 style='margin:0;text-align: center;text-transform: uppercase;font-weight:bold;font-size:13px;'>Langkah 3 &centerdot; Status Pendaftaran</h5>
+                  <button target='instance' type='button' disabled class='btn btn-default disabled btn-lg btn-act' style='width:100%;'>
+                    <span class="fa fa-spinner fa-spin"></span> <br>Menunggu Penunjukkan pembimbing
+                  </button>
                 </div>
+
+                <?php elseif($mahasiswa->pilih_pembimbing == 1): ?>
+                <h4 class='alert alert-success' style='text-align: center;font-weight:bold;'>proses pendaftaran telah selesai, Anda sudah diperkenankan magang pada tanggal <?= $mulai= date_format(date_create($mahasiswa->tanggal_mulai), "j F Y"); ?> - <?= $selesai = date_format(date_create($mahasiswa->tanggal_selesai), "j F Y"); ?> di <?= $mahasiswa->nama_instansi ?></h4>
+                
+
               <?php endif ?>
                 <?php endif ?>
               </div>
@@ -1337,6 +1352,11 @@ $a = 0;
         {
           modal.triggerModal("open","Konfirmasi Magang");
           ht.htGet("form/konfirmasi.php",".md-content");
+        }
+        else if(target === "gagal")
+        {
+          modal.triggerModal("open","Konfirmasi Magang");
+          ht.htGet("form/daftar-ulang.php",".md-content");
         }
       });
     });

@@ -24,13 +24,13 @@ else
 </style>
 <div class='col-md-12'>
   <button type='button' class='btn btn-default back'>Kembali</button>
-  <?php if($mahasiswa->sks >= 120) : ?>
-    <?php if ($instansi->tempat_magang !== NULL) : ?>
-      <?php if ($instansi->tempat_magang == $instansi->username) : ?>
+  
+  
+      <?php if ($mahasiswa->tempat_magang == $instansi->username) : ?>
         <button type="button" class='btn btn-success'>terpilih</button> 
       <?php endif; ?>
-    <?php endif; ?>
-  <?php endif; ?>
+  
+  
 </div>
 <div class='col-md-12'>
   <h3 class='prof-title'><?= $instansi->nama_instansi ?></h3>

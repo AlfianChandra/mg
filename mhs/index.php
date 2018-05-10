@@ -25,8 +25,14 @@
                 <button type="button" atr-type="status" class="btn btn-primary ajax-call" style="width:100%;">Status Magang</button>
                 <button type="button" atr-type="sk" class="btn btn-danger ajax-call" style="width:100%;">Syarat & Ketentuan Magang</button>
 
+<<<<<<< HEAD
 
                 <?php if ($mahasiswa->nama_pembimbing !== ""): ?>
+=======
+                
+                <?php 
+                if ($mahasiswa->nama_pembimbing !== ""): ?>
+>>>>>>> 3327a93a95cbacd4c7226c017d2e5eaad3e099fa
                   <button type="button" atr-type="pembimbing" class="btn btn-info ajax-call" style="width:100%;">Kontak pembimbing</button>
                 <?php endif ?>
               </div>
