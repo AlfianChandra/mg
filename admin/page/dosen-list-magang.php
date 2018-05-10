@@ -57,7 +57,7 @@
     </tbody>
   </table>  
 
-  <?php if($instansi->datas == NULL):  ?>
+  <?php if($dosen->datas == NULL):  ?>
    <h5 style='margin:0;text-align:center;text-transform: uppercase;font-size:16px;padding:10px;font-weight:bold;'><span class='fa fa-inbox'></span> Tidak ada hasil</h5>
   <?php endif ?>
 </div>

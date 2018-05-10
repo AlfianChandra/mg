@@ -9,7 +9,7 @@
     	
 		if($status == 1){
 
-			if($instansi->terimaPendaftar($id)){	
+			if($instansi->terimaPendaftar()){	
 				
 				$file->uploadFile($_FILES['surat_balasan'], "surat_balasan");
 				header("Location: ../instansi");
@@ -19,7 +19,7 @@
 			}
 
 		}elseif($status == 2){
-			if($instansi->tolakPendaftar($id)){
+			if($instansi->tolakPendaftar()){
 
 				$file->uploadFile($_FILES['surat_balasan'], "surat_balasan");
 				header("Location: ../instansi");

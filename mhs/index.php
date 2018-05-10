@@ -26,7 +26,8 @@
                 <button type="button" atr-type="sk" class="btn btn-danger ajax-call" style="width:100%;">Syarat & Ketentuan Magang</button>
 
                 
-                <?php if ($mahasiswa->nama_pembimbing !== ""): ?>
+                <?php 
+                if ($mahasiswa->nama_pembimbing !== ""): ?>
                   <button type="button" atr-type="pembimbing" class="btn btn-info ajax-call" style="width:100%;">Kontak pembimbing</button>
                 <?php endif ?>
               </div>

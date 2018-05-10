@@ -157,17 +157,22 @@
 		{
 			$nim 	= $_SESSION['username'];
 
-			$query 	= "SELECT * FROM proses_magang WHERE nim = '$nim'";
+			$query 	= "SELECT proses_magang.*, instansi.nama_instansi FROM proses_magang JOIN instansi WHERE proses_magang.instansi = instansi.username AND proses_magang.nim = '$nim'";
 			$result = $this->conn->query($query);
 			
 			while($row = $result->fetch_object())
 			{
 				$this->nim 					= $row->nim;
+				$this->nama_instansi 		= $row->nama_instansi;
 				$this->upload_syarat		= $row->upload_syarat;
+				$this->tanggal_mulai		= $row->tanggal_mulai;
+				$this->tanggal_selesai		= $row->tanggal_selesai;
 				$this->admin_upload 		= $row->admin_upload;
 				$this->status_pengajuan 	= $row->status_pengajuan;
 				$this->accepted 			= $row->accepted;
 				$this->konfirmasi_magang 	= $row->konfirmasi_magang;
+				$this->pilih_pembimbing 	= $row->pilih_pembimbing;
+
 			}
 		}
 
@@ -245,7 +250,7 @@
 		{
 			$prodi = $_SESSION['prodi'];
 
-			$query 	= "SELECT mahasiswa.*, proses_magang.konfirmasi_magang FROM mahasiswa JOIN proses_magang WHERE mahasiswa.nim = proses_magang.nim AND mahasiswa.prodi = '$prodi' AND proses_magang.konfirmasi_magang = 1 AND pilih_pembimbing = 0 AND mahasiswa.nim LIKE '%$data%' OR mahasiswa.nama LIKE '%$data%'";
+			$query 	= "SELECT mahasiswa.*, proses_magang.konfirmasi_magang FROM mahasiswa JOIN proses_magang WHERE mahasiswa.nim = proses_magang.nim AND mahasiswa.prodi = '$prodi' AND proses_magang.konfirmasi_magang = 1 AND proses_magang.pilih_pembimbing = 0 AND mahasiswa.nim LIKE '%$data%' OR mahasiswa.nama LIKE '%$data%'";
 			$result = $this->conn->query($query);
 
 			$this->datas = [];
