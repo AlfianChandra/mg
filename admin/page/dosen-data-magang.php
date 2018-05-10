@@ -7,7 +7,7 @@
     require_once '../../core/Dosen.php';
     $_SESSION['nip'] = $_POST['id'];
 
-    $dosen->dosenDetail();
+    $dosen->dosenDetailSk();
   }
 
 ?>
@@ -52,12 +52,14 @@
 </div>
 
 <div class='col-md-9'>
-  <h3 style='font-weight: bold;'>Data Dosen</h3>
+  <h3 style='font-weight: bold;'>Data Dosen Pembimbing Magang</h3>
   <div class="profile-content">
     <h5 class="data-type">NIP</h5><h5 class="data-content"> : <?= $dosen->nip ?></h5>
     <h5 class="data-type">Nama</h5><h5 class="data-content">: <?= $dosen->nama ?></h5>
     <h5 class="data-type">Program Studi</h5><h5 class="data-content">: <?= $dosen->prodi ?></h5>
     <h5 class="data-type">Nomor Telepon</h5><h5 class="data-content">: <?= $dosen->telp ?></h5>
+    <h5 class="data-type">Mahasiswa Bimbingan</h5><h5 class="data-content">: <?= $dosen->nama_mhs ?></h5>
+    <h5 class="data-type">NIM Mahasiswa Bimbingan</h5><h5 class="data-content">: <?= $dosen->nim ?></h5>
   </div>
   
 </div>

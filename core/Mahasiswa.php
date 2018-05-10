@@ -144,19 +144,6 @@
 			}
 		}
 
-		function mahasiswaCariMagang($data)
-		{	
-			$query 	= "SELECT proses_magang.*, mahasiswa.nama AS nama FROM proses_magang JOIN mahasiswa WHERE mahasiswa.nim = proses_magang.nim AND proses_magang.upload_syarat = 1 AND proses_magang.admin_upload = 0 AND proses_magang.nim LIKE '%$data%' OR nama LIKE '%$data%'";
-			$result = $this->conn->query($query);
-
-			$this->datas = [];
-			while($row = $result->fetch_object())
-			{
-				$this->datas[] = $row;
-			}
-
-		}
-
 		function uploadPengajuan()
 		{	
 			$nim = $_SESSION['username'];
