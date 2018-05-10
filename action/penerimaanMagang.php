@@ -4,14 +4,14 @@
 
 	if (isset($_POST['submit'])) {
 
-		$id			= ($_SESSION['id']);
-    	$status 	= $_POST['penerimaan'];
-    	  		
+		$_SESSION['file'] 	= $_SESSION['id'];
+    	$status 			= $_POST['penerimaan'];
+    	
 		if($status == 1){
 
 			if($instansi->terimaPendaftar($id)){	
 				
-				$file->uploadFileBalasan($_FILES['surat_balasan'], $id);
+				$file->uploadFile($_FILES['surat_balasan'], "surat_balasan");
 				header("Location: ../instansi");
 			}else{
 				
@@ -21,7 +21,7 @@
 		}elseif($status == 2){
 			if($instansi->tolakPendaftar($id)){
 
-				$file->uploadFileBalasan($_FILES['surat_balasan'], $id);
+				$file->uploadFile($_FILES['surat_balasan'], "surat_balasan");
 				header("Location: ../instansi");
 			}else{
 				die("ada kesalahan tehe");

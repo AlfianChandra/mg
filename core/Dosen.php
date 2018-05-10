@@ -146,6 +146,62 @@
 				$this->telp 	= $row->telp;
 			}	
 		}
+
+		function skPembimbingList()
+		{				
+			$query 	= "SELECT dosen.* FROM dosen JOIN proses_magang JOIN mahasiswa WHERE mahasiswa.nim = proses_magang.nim AND dosen.nip = mahasiswa.nip_pembimbing AND proses_magang.sk_pembimbing = 0";
+			$result = $this->conn->query($query);
+
+			$this->datas = [];
+			while($row = $result->fetch_object())
+			{
+				$this->datas[] = $row;
+			}
+		}
+
+		function dosenDetailSk()
+		{	
+			$nip 	= $_SESSION['nip'];
+
+			$query 	= "SELECT * FROM dosen WHERE nip = '$nip'";
+			$result = $this->conn->query($query);
+
+			while($row = $result->fetch_object())
+			{
+				$this->nip 		= $row->nip;
+				$this->nama		= $row->nama;
+				$this->prodi	= $row->prodi;
+				$this->telp 	= $row->telp;
+			}
+		}
+
+		function skPembimbing()
+		{
+			$nip = $_SESSION['nip_sk'];
+			
+			$query 	= "SELECT dosen.*, mahasiswa.nim FROM dosen JOIN mahasiswa JOIN proses_magang WHERE proses_magang.nim = mahasiswa.nim AND mahasiswa.nip_pembimbing = dosen.nip AND proses_magang.pilih_pembimbing = 1 AND proses_magang.sk_pembimbing = 0 AND dosen.nip = '$nip'";
+
+			$result = $this->conn->query($query);
+			
+			while($row = $result->fetch_object())
+			{
+				$this->nip 		= $row->nip;
+				$this->nim 		= $row->nim;
+				$this->nama		= $row->nama;
+				$this->prodi	= $row->prodi;
+				$this->telp 	= $row->telp;
+			}	
+		}
+
+		function kirimSkPembimbing()
+		{
+			$nim = $_SESSION['file'];
+			
+			$query = "UPDATE proses_magang SET sk_pembimbing = 1 WHERE nim = '$nim'";
+			return $this->conn->query($query);
+		}
+
+
 	}
 
 	$dosen = new Dosen();

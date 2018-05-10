@@ -18,7 +18,8 @@
                 <h2 style="font-weight:bold;"> Manage Magang</h2>
               </div>
               <div class="col-md-12">
-                <button type="button" at-type="lihat" class="btn btn-warning bt-mhs-act">Lihat Mahasiswa</button>
+                <button type="button" at-type="lihat-mhs" class="btn btn-warning bt-mhs-act">Lihat Mahasiswa</button>
+                <button type="button" at-type="lihat-dosen" class="btn btn-primary bt-mhs-act">Lihat dosen</button>
               </div>
             </div>
           </div>
@@ -62,11 +63,17 @@
           $(".bt-mhs-act").click(function(){
               var at = $(this).attr("at-type");
               
-              if(at === "lihat")
+              if(at === "lihat-mhs")
               {
                   ht.htGet("page/student-list-magang.php",".md-content");
                   modal.triggerModal("open","Lihat Mahasiswa");
               }
+              else if(at === "lihat-dosen")
+              {
+                  ht.htGet("page/dosen-list-magang.php",".md-content");
+                  modal.triggerModal("open","Lihat Dosen");
+              }
+
           });
       });
     </script>  

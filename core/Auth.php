@@ -7,6 +7,7 @@
 		
 		function login($username, $password)
 		{
+			$password = md5($password);
 
 			$query 	= $this->conn->prepare("SELECT username, role FROM auth WHERE username = ? AND password = ?");
 
@@ -23,8 +24,13 @@
 				$_SESSION["username"] = $username;
 				$_SESSION["role"]     = $role;
 
-				$this->isLogin();
-			} else header("Location: ../auth/");
+				echo "good";
+                        } else {
+                          
+                          echo "bad";
+                        
+                          
+                        }
 		}
 
 		function isLogin()

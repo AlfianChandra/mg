@@ -7,6 +7,7 @@
 		$nim 			= $_POST['nim'];
 		$nama 			= $_POST['nama'];
 		$password 		= $_POST['password'];
+		$password		= md5($password);
 		$tempat_lahir   = $_POST['tempat_lahir'];
 		$tanggal_lahir  = $_POST['tanggal_lahir'];
 		$jenis_kelamin  = $_POST['jenis_kelamin'];

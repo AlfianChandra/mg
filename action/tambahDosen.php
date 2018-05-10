@@ -7,6 +7,7 @@
 		$nip 			= $_POST['nip'];
 		$nama 			= $_POST['nama'];
 		$password 		= $_POST['password'];
+		$password		= md5($password);
 		$prodi 			= $_POST['prodi'];
 		$telp 			= $_POST['telp'];
 		$role 			= $_POST['jabatan'];

@@ -62,7 +62,7 @@
   </div>
 
 
-  <div class='col-md-12' style='padding:10px;'>
+  <div class='col-md-4' style='padding:25px;'>
     <input name="submit" type='submit' class='btn btn-primary' value="Simpan & Lanjutkan">
   </div>
 

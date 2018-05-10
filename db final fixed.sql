@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 08 Mei 2018 pada 08.39
+-- Generation Time: 09 Mei 2018 pada 12.16
 -- Versi Server: 10.1.10-MariaDB
 -- PHP Version: 5.6.19
 
@@ -56,21 +56,21 @@ CREATE TABLE `auth` (
 --
 
 INSERT INTO `auth` (`id`, `username`, `password`, `role`) VALUES
-(1, '15', 'ah', 0),
-(2, 'Kami-sama', '123', 1),
-(3, '2020', '123123', 2),
-(4, 'telkom', '12345', 3),
-(5, 'f1e115015', '111', 0),
-(13, '11', '11', 0),
-(15, 'BI', '1212', 3),
-(17, '198312172008011003', '333', 4),
-(18, '1221', '666', 2),
-(19, '9090', '000', 4),
-(20, '0000', '00', 0),
-(21, 'taspen', '555', 3),
-(22, '12', '12', 3),
-(23, '112', '121212', 3),
-(24, 'donat daniel', 'daniel', 3);
+(1, '15', '3cf4046014cbdfaa7ea8e6904ab04608 ', 0),
+(2, 'Kami-sama', '202cb962ac59075b964b07152d234b70 ', 1),
+(3, '2020', '4297f44b13955235245b2497399d7a93', 2),
+(4, 'telkom', '827ccb0eea8a706c4c34a16891f84e7b', 3),
+(5, 'f1e115015', '698d51a19d8a121ce581499d7b701668', 0),
+(13, '11', '6512bd43d9caa6e02c990b0a82652dca', 0),
+(15, 'BI', 'a01610228fe998f515a72dd730294d87', 3),
+(17, '198312172008011003', '310dcbbf4cce62f762a2aaa148d556bd', 4),
+(18, '1221', 'fae0b27c451c728867a567e8c1bb4e53', 2),
+(19, '9090', 'c6f057b86584942e415435ffb1fa93d4', 4),
+(20, '0000', 'b4b147bc522828731f1a016bfa72c073', 2),
+(21, 'taspen', '15de21c670ae7c3f6f3f1f37029303c9', 3),
+(24, 'donat daniel', 'aa47f8215c6f30a0dcdb2a36a9f4168e', 3),
+(25, '777', 'f1c1592588411002af340cbaedd6fc33', 4),
+(26, '55555', 'b53b3a3d6ab90ce0268229151c9bde11', 2);
 
 -- --------------------------------------------------------
 
@@ -93,6 +93,8 @@ INSERT INTO `dosen` (`nip`, `nama`, `prodi`, `telp`) VALUES
 ('0000', 'pepper, s. sc., m. sc., p. hd.', 'fisika', '00987654'),
 ('1221', 'loki odinson, s. e., m. si.', 'manajemen', '086735178099'),
 ('2020', 'tri suratno, s.kom., m.kom.', 'sistem informasi', '08323451'),
+('55555', 'de la vega, s. sc., m.sc.', 'bahasa inggris', '082345678'),
+('777', 'chevalier de rio., s.sc., m.sc., p.hd', 'artificial inteligence', '08456788'),
 ('9090', 'bruce ackerman, s. e., m. sc.', 'manajemen', '07897567');
 
 -- --------------------------------------------------------
@@ -118,8 +120,6 @@ CREATE TABLE `instansi` (
 --
 
 INSERT INTO `instansi` (`username`, `nama_instansi`, `kapasitas`, `deskripsi`, `syarat`, `kriteria`, `alamat_instansi`, `pemagang_diterima`, `pemagang_terdaftar`) VALUES
-('112', 'klk', 1, 'jkj', 'jkj', 'kk', 'jkj', 0, 0),
-('12', '12', 12, '121', '12', '12', '121', 0, 0),
 ('alpa', 'alfamart', 4, 'ini alpamart', 'manajemen A', 'penampilan menarik', 'karya maju', 2, 9),
 ('BI', 'Bank Indonesia', 2, 'ini bank', 'rajin dan berbakat', 'IQ tinggi', 'telanai', 2, -1),
 ('donat daniel', 'dunkin daniel', 2, 'ini donat daniel', 'luar biasa dalam bekerja', 'cerdas', 'selincah', 0, 0),
@@ -173,16 +173,17 @@ CREATE TABLE `proses_magang` (
   `status_pengajuan` tinyint(4) NOT NULL,
   `accepted` tinyint(4) NOT NULL,
   `konfirmasi_magang` tinyint(4) NOT NULL,
-  `pilih_pembimbing` tinyint(4) NOT NULL
+  `pilih_pembimbing` tinyint(4) NOT NULL,
+  `sk_pembimbing` tinyint(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `proses_magang`
 --
 
-INSERT INTO `proses_magang` (`nim`, `instansi`, `tanggal_mulai`, `tanggal_selesai`, `upload_syarat`, `admin_upload`, `status_pengajuan`, `accepted`, `konfirmasi_magang`, `pilih_pembimbing`) VALUES
-('11', 'BI', '2018-05-06', '2018-05-14', 1, 1, 1, 1, 1, 1),
-('15', 'telkom', '2018-04-01', '2018-04-08', 0, 0, 0, 0, 0, 0);
+INSERT INTO `proses_magang` (`nim`, `instansi`, `tanggal_mulai`, `tanggal_selesai`, `upload_syarat`, `admin_upload`, `status_pengajuan`, `accepted`, `konfirmasi_magang`, `pilih_pembimbing`, `sk_pembimbing`) VALUES
+('11', 'BI', '2018-05-06', '2018-05-14', 1, 0, 1, 0, 1, 1, 1),
+('15', 'telkom', '2018-04-01', '2018-04-08', 0, 0, 0, 0, 0, 0, 0);
 
 --
 -- Indexes for dumped tables
@@ -232,7 +233,7 @@ ALTER TABLE `proses_magang`
 -- AUTO_INCREMENT for table `auth`
 --
 ALTER TABLE `auth`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

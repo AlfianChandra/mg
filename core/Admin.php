@@ -19,8 +19,9 @@
 			}
 		}
 
-		function adminUploadPengajuan($id)
+		function adminUploadPengajuan()
 		{
+			$id = $_SESSION['nim_pengajuan'];
 			$query = "UPDATE proses_magang SET admin_upload = 1 WHERE nim = '$id'";
 
 			return $this->conn->query($query);
