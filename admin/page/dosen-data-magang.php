@@ -5,7 +5,7 @@
   }else{
     
     require_once '../../core/Dosen.php';
-    $_SESSION['nip'] = $_POST['id'];
+    $_SESSION['nim'] = $_POST['id'];
 
     $dosen->dosenDetailSk();
   }

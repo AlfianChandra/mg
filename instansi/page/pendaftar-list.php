@@ -36,15 +36,6 @@
   ?>
 </div>
 
-<div class="col-md-3" style='position:relative;'>
-  <button type='button' class='clear-search'><span class='fa fa-close'></span></button>
-
-  
-    <input type="text" required="required" name="search" class="form-control search" placeholder="Cari Mahasiswa (NIM/Nama)">
-  
-
-</div>
-
 <div class='col-md-12'>
   <table class='table table-responsive table-striped table-hover'>
     <thead>
@@ -79,31 +70,5 @@ $(document).ready(function(){
     modal.triggerModal("open","Data Mahasiswa");
   });
   
-  setInterval(function(){
-    if($.trim($(".search").val()) !== "")
-    {
-      $(".clear-search").fadeIn(200);
-      side.playSidebar("open","Hasil Pencarian Untuk: &nbsp;&nbsp;&nbsp '<span style='color:orange'> "+ $(".search").val()+"</span> '");
-    }
-    else
-    {
-      $(".clear-search").fadeOut(200);
-      side.playSidebar("close");
-    }
-  },0);
-  
-  $(".side-dismiss").click(function(){
-    $(".search").val("");
-  });
-  
-  $(".clear-search").click(function(){
-    $(".search").val("");
-  });
-  
-  $(".search").on("keyup",function(){
-    var searchkey = $(this).val();
-    var data = {"data":searchkey};
-    ht.htPost("post/search-std.php",data,".cntn");
-  });
 });
 </script>

@@ -161,9 +161,9 @@
 
 		function dosenDetailSk()
 		{	
-			$nip 	= $_SESSION['nip'];
+			$nim 	= $_SESSION['nim'];
 
-			$query 	= "SELECT dosen.*, mahasiswa.nim ,mahasiswa.nama AS nama_mhs FROM dosen JOIN mahasiswa JOIN proses_magang WHERE proses_magang.nim = mahasiswa.nim AND mahasiswa.nip_pembimbing = dosen.nip AND proses_magang.pilih_pembimbing = 1 AND proses_magang.sk_pembimbing = 0 AND dosen.nip = '$nip'";
+			$query 	= "SELECT dosen.*, mahasiswa.nim ,mahasiswa.nama AS nama_mhs FROM dosen JOIN mahasiswa JOIN proses_magang WHERE proses_magang.nim = mahasiswa.nim AND mahasiswa.nip_pembimbing = dosen.nip AND proses_magang.pilih_pembimbing = 1 AND proses_magang.sk_pembimbing = 0 AND mahasiswa.nim = '$nim'";
 			$result = $this->conn->query($query);
 
 			while($row = $result->fetch_object())
