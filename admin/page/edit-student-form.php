@@ -11,7 +11,7 @@
     
     $tgl_lahir = strtotime($mahasiswa->tanggal_lahir);
     $tanggal_kelahiran = date('Y-m-d', $tgl_lahir);
-    
+    $_SESSION['nim_edit'] = $id;
   }
  ?>
 
@@ -43,7 +43,6 @@
 
     <div class="col-md-6">
         <h3 style="font-weight:bold;">Data Akademik</h3>
-        <input type="text" required="required" name="nim" maxlength="10" class="form-control i5" placeholder="Nomor Induk Mahasiswa" value="<?= $mahasiswa->nim ?>">
         
         <input type="text" required="required" name="fakultas" class="form-control i6" placeholder="Fakultas" value="<?= $mahasiswa->fakultas ?>">
         <input type="text" required="required" name="prodi" class="form-control i7" placeholder="Program Studi" value="<?= $mahasiswa->prodi ?>">
@@ -78,66 +77,3 @@
     });
   });
 </script>
-<!-- <script>
-     $(document).ready(function(){
-         var ht = new HtRequest();
-
-         $(".up-send").click(function(){
-             $(".std-edit-form").submit();
-         });
-
-         $(".std-edit-form").submit(function(ev){
-             ev.preventDefault();
-             var data = $(this).serialize();
-             ht.fireForm("../action/editMahasiswa.php",data);
-         });
-        
-         setInterval(function(){
-           if($.trim($(".i1").val()) === "")
-           {
-             $(".up-send").fadeOut(400);
-           }
-           else if($.trim($(".i2").val()) === "")
-           {
-             $(".up-send").fadeOut(400);
-           }
-           else if($.trim($(".i3").val()) === "")
-           {
-             $(".up-send").fadeOut(400);
-           }
-           else if($.trim($(".i4").val()) === "")
-           {
-             $(".up-send").fadeOut(400);
-           }
-           else if($.trim($(".i5").val()) === "")
-           {
-             $(".up-send").fadeOut(400);
-           }
-           else if($.trim($(".i6").val()) === "")
-           {
-             $(".up-send").fadeOut(400);
-           }
-           else if($.trim($(".i7").val()) === "")
-           {
-             $(".up-send").fadeOut(400);
-           }
-           else if($.trim($(".i8").val()) === "")
-           {
-             $(".up-send").fadeOut(400);
-           }
-           else if($.trim($(".i9").val()) === "")
-           {
-             $(".up-send").fadeOut(400);
-           }
-           else if($.trim($(".i0").val()) === "")
-           {
-             $(".up-send").fadeOut(400);
-           }
-           
-           else
-           {
-             $(".up-send").fadeIn(500);
-           }
-         },0);
-     });
-</script> -->

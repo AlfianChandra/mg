@@ -4,7 +4,7 @@
 	
 
 	if ($_POST) {
-		$nim 			= $_POST['nim'];
+
 		$nama 			= $_POST['nama'];
 		
 		$tempat_lahir   = $_POST['tempat_lahir'];
@@ -18,7 +18,7 @@
 		$semester		= $_POST['semester'];
 		
 
-		if ($mahasiswa->editMahasiswa($nim, $nama, $tempat_lahir, $tanggal_lahir, $jenis_kelamin, $fakultas, $prodi, $telp, $sks, $ipk, $semester)) 
+		if ($mahasiswa->editMahasiswa($nama, $tempat_lahir, $tanggal_lahir, $jenis_kelamin, $fakultas, $prodi, $telp, $sks, $ipk, $semester)) 
 		{
 			echo "yes";
 		}else{

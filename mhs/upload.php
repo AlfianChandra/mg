@@ -1,17 +1,8 @@
 <?php
 
-<<<<<<< HEAD
-$a = 0;
-
   require_once '../core/Mahasiswa.php';
   $mahasiswa->cekStatusMagang();
 
-=======
-  require_once '../core/Mahasiswa.php';
-  $mahasiswa->cekStatusMagang();
-
-
->>>>>>> 3327a93a95cbacd4c7226c017d2e5eaad3e099fa
 ?>
 
 <!doctype html>

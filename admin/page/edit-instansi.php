@@ -9,15 +9,12 @@
     $id = $_POST['id'];
 
     $instansi->instansiTerpilih($id);
-        
+    $_SESSION['instansi_username'] = $id;
+
   }
  ?>
-<form class="ins-form" method="post" enctype="multipart/form-data">
-  <div class="col-md-3">
-    <h3 style='font-weight:bold;'>Informasi Akun</h3>
-    <input type='text' required='required' name='username' placeholder='ID Instansi' class='form-control i1' value="<?= $instansi->username ?>">
-    
-  </div>
+<form class="ins-edit-form" method="post" enctype="multipart/form-data">
+  
   <div class='col-md-3'>
     <h3 style='font-weight:bold;'>Informasi Instansi</h3>
     <input type='text' class='form-control i3' placeholder="Nama Instansi" required='required' name='nama_instansi' value="<?= $instansi->nama_instansi ?>">
@@ -43,7 +40,7 @@
     var ht = new HtRequest();
     var modal = new Modal();
     
-    $(".std-edit-form").submit(function(ev){
+    $(".ins-edit-form").submit(function(ev){
       ev.preventDefault();
       var data = $(this).serialize();
       ht.fireForm("../action/editInstansi.php",data);
