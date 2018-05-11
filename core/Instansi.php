@@ -105,20 +105,7 @@
 
 		}
 
-		function pendaftarCari($data)
-		{
-			$username = $_SESSION['username'];
-
-			$query 	= "SELECT mahasiswa.*, proses_magang.status_pengajuan FROM mahasiswa JOIN proses_magang WHERE mahasiswa.nim = proses_magang.nim AND mahasiswa.tempat_magang='$username' AND proses_magang.status_pengajuan = 1 AND proses_magang.accepted = 0 AND mahasiswa.nim LIKE '%$data%' OR mahasiswa.nama LIKE '%$data%' AND tempat_magang = '$username'";
-			$result = $this->conn->query($query);
-
-			$this->datas = [];
-			while($row = $result->fetch_object())
-			{
-				$this->datas[] = $row;
-			}
-		}
-
+		
 		function tambahInstansi($username, $nama_instansi, $kapasitas, $kriteria, $syarat, $alamat, $deskripsi, $password)
 		{
 			$query = "INSERT INTO instansi(username, nama_instansi, kapasitas, deskripsi, syarat, kriteria, alamat_instansi) VALUES ('$username', '$nama_instansi', '$kapasitas', '$deskripsi', '$syarat', '$kriteria', '$alamat')";
@@ -180,8 +167,8 @@
 			$query = "UPDATE proses_magang SET accepted = 2 WHERE nim = '$id'";
 			if($this->conn->query($query) == true){
 
-				$query2 = "UPDATE instansi SET pemagang_terdaftar - 1 WHERE username = '$username'";
-				$this->conn->query($query2);
+				$query2 = "UPDATE instansi SET pemagang_terdaftar = pemagang_terdaftar - 1 WHERE username = '$username'";
+				return $this->conn->query($query2);
 			}else{
 				return false;
 			}

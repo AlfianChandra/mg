@@ -74,15 +74,15 @@
 </div>
 
 <div class="col-md-12">
-    <button type='button' class='btn btn-default backbtn col-md-3'>Kembali</button>  
-    <button type='button' class='btn btn-success balasan col-md-3'>tindak lanjuti</button>
-
+    <button type='button' class='btn btn-default backbtn'>Kembali</button>  
+    <button type='button' class='btn btn-success balasan'>tindak lanjuti</button>
+    <a href="../mhs/file/pengajuan_<?= $_SESSION['id']; ?>.pdf" class='btn btn-info'><i class="material-icons">cloud_download</i> surat pengajuan</a>
     <?php if (file_exists($proposalPath)): ?>
-    <a href="<?= $proposal ?>" class='btn btn-info'>download proposal magang</a>
+    <a href="<?= $proposal ?>" class='btn btn-info'><i class="material-icons">cloud_download</i> proposal magang</a>
     <?php endif ?>  
 
     <?php if (file_exists($cvPath)): ?>
-    <a href="<?= $cv ?>" class='btn btn-info'>download cv magang</a>
+    <a href="<?= $cv ?>" class='btn btn-info'><i class="material-icons">cloud_download</i> cv magang</a>
     <?php endif ?>  
 </div>
   

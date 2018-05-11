@@ -51,7 +51,7 @@
     <tbody>
 
       <?php foreach ($dosen->datas as $key) : ?>
-          <tr style='color:purple;font-weight:bold;text-transform: uppercase;' class='data-row' id='<?= $key->nip ?>'><td><?= $key->nip ?></td><td><?= $key->nama ?></td><td><?= $key->nim ?></td><td><?= $key->nama_mhs ?></td></tr>
+          <tr style='color:purple;font-weight:bold;text-transform: uppercase;' class='data-row' id='<?= $key->nim ?>'><td><?= $key->nip ?></td><td><?= $key->nama ?></td><td><?= $key->nim ?></td><td><?= $key->nama_mhs ?></td></tr>
       <?php endforeach ?>
 
     </tbody>
